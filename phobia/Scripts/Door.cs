@@ -5,7 +5,7 @@ using System;
 /// <summary>
 /// The Door class takes an animation player and plays an animation when the player interacts with it.
 /// </summary>
-public partial class Door : CsgBox3D
+public partial class Door : StaticBody3D
 {
 
 	private bool doorClosed = false;
