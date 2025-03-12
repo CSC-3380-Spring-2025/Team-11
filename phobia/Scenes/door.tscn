@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3ndb5r5psy0u"]
+[gd_scene load_steps=12 format=3 uid="uid://b3ndb5r5psy0u"]
 
 [ext_resource type="Script" path="res://Scripts/Door.cs" id="1_6cwem"]
 [ext_resource type="Texture2D" uid="uid://b76gsn11bekic" path="res://Assets/Textures/Door/doorAlt1.png" id="1_8055h"]
@@ -57,9 +57,16 @@ _data = {
 "open": SubResource("Animation_r1q56")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7sh6"]
-shading_mode = 0
+[sub_resource type="BoxShape3D" id="BoxShape3D_6dl44"]
+size = Vector3(1.6, 2.1, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4qbox"]
 albedo_texture = ExtResource("1_8055h")
+uv1_scale = Vector3(3, 2, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uv6gm"]
+material = SubResource("StandardMaterial3D_4qbox")
+size = Vector3(1.6, 2.1, 0.3)
 
 [node name="Door" type="Node3D"]
 
@@ -74,21 +81,24 @@ one_shot = true
 [node name="Hinge" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.770363, 1.04458, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Hinge" node_paths=PackedStringArray("doorAnimPlayer", "doorTimer")]
-transform = Transform3D(1, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 0.770363, 0.155425, -0.1)
-material_override = SubResource("StandardMaterial3D_e7sh6")
-use_collision = true
-size = Vector3(1.6, 2.1, 0.3)
+[node name="StaticBody3D" type="StaticBody3D" parent="Hinge" node_paths=PackedStringArray("doorAnimPlayer", "doorTimer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.770363, 0.0567695, 0)
 script = ExtResource("1_6cwem")
 doorAnimPlayer = NodePath("../../AnimationPlayer")
 doorTimer = NodePath("../../DoorTimer")
 
-[node name="DoorCloseSFX" type="AudioStreamPlayer3D" parent="Hinge/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.74228e-08, 0, -8.74228e-08, 1, 0, -1.2, 0.1)
+[node name="DoorCloseSFX" type="AudioStreamPlayer3D" parent="Hinge/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160816, -1.04308e-07)
 stream = ExtResource("3_whg0j")
 volume_db = -25.714
 
-[node name="DoorOpenSFX" type="AudioStreamPlayer3D" parent="Hinge/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.74228e-08, 0, -8.74228e-08, 1, 0, -1.2, 0.1)
+[node name="DoorOpenSFX" type="AudioStreamPlayer3D" parent="Hinge/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160816, -1.04308e-07)
 stream = ExtResource("4_ebgmw")
 volume_db = -25.905
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/StaticBody3D"]
+shape = SubResource("BoxShape3D_6dl44")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hinge/StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_uv6gm")
