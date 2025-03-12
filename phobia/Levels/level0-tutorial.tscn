@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://babtgem4ympij"]
+[gd_scene load_steps=27 format=3 uid="uid://babtgem4ympij"]
 
 [ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="1_jmcyp"]
 [ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="2_7du6y"]
@@ -19,6 +19,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bc8c8vufqd1ga" path="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_seperate.obj" id="17_vnbgw"]
 [ext_resource type="ArrayMesh" uid="uid://cmdaw68ph332o" path="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_pillar_broken.obj" id="18_32tti"]
 [ext_resource type="ArrayMesh" uid="uid://cb8j5m38yfppy" path="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_pillar.obj" id="19_6ax46"]
+[ext_resource type="Texture2D" uid="uid://p58vjd6nrn4e" path="res://icon.svg" id="20_s31s7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gqep8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,6 +41,9 @@ uv1_world_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ecae0"]
 size = Vector3(1, 1.46484, 4.86621)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8lhl"]
+albedo_texture = ExtResource("20_s31s7")
 
 [node name="Level0-tutorial" type="Node3D"]
 
@@ -247,3 +251,7 @@ mesh = ExtResource("17_vnbgw")
 [node name="FencePillar2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.066, 0.442814, -15.9011)
 mesh = ExtResource("19_6ax46")
+
+[node name="TestMat" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.54228, 12.2009)
+material = SubResource("StandardMaterial3D_r8lhl")
