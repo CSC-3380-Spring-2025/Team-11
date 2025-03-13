@@ -7,23 +7,15 @@ using System;
 /// </summary>
 public partial class Door : StaticBody3D
 {
-
+	[Export]
+	private AnimationPlayer doorAnimPlayer {get; set; }
+	[Export]
+	private Timer doorTimer {get; set; }
 	private bool doorClosed = false;
 	private bool interactable = true;
 	private AudioStreamPlayer3D doorCloseSound;
 	private AudioStreamPlayer3D doorOpenSound;
-	
 
-
-	[Export]
-	private AnimationPlayer doorAnimPlayer {get; set; }
-
-
-	[Export]
-
-	private Timer doorTimer {get; set; }
-
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		doorCloseSound = GetNode<AudioStreamPlayer3D>("DoorCloseSFX");
@@ -34,15 +26,10 @@ public partial class Door : StaticBody3D
 		doorAnimPlayer.AnimationStarted += OnAnimStarted;
 		doorTimer.Timeout += OnDoorTimerTimeout;
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 	}
 
-	/// <summary>
-	/// Interact() Allows the player to interact with the door. Plays an animation on close and open.
-	/// </summary>
 	public void Interact()
 	{
 		if (interactable == true)

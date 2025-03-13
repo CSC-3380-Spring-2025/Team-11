@@ -11,12 +11,11 @@ public partial class Raycast : RayCast3D
 	public delegate void DoorHoveredEventHandler();
 	[Signal]
 	public delegate void DoorNotHoveredEventHandler();
-	// Called when the node enters the scene tree for the first time.
+
 	public override void _Ready()
 	{
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		if (IsColliding())
@@ -38,6 +37,5 @@ public partial class Raycast : RayCast3D
 			EmitSignal(SignalName.DoorNotHovered);
 		}
 		
-
 	}
 }

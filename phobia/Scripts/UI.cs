@@ -7,9 +7,6 @@ using System;
 /// </summary>
 public partial class UI : Control
 {
-	// Called when the node enters the scene tree for the first time.
-
-
 	private int batteryPercentage;
 	private Player player;
 	private Label battery;
@@ -24,10 +21,9 @@ public partial class UI : Control
 		playerRaycast.DoorNotHovered += OnDoorNotHovered;
 		player.BatteryDepleted += OnBatteryDepleted;
 		player.Ready += OnPlayerReady;
+		UpdateBatteryPercentage();
 
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 	}
@@ -46,18 +42,20 @@ public partial class UI : Control
 
 	private void OnBatteryDepleted()
 	{
-		updateBatteryPercentage();
+		UpdateBatteryPercentage();
 	}
 
 	private void OnPlayerReady()
 	{
-		updateBatteryPercentage();
+		GD.Print("Player Ready");
+		UpdateBatteryPercentage();
 	}
 
-	private void updateBatteryPercentage()
+	private void UpdateBatteryPercentage()
 	{
 		batteryPercentage = player.flashlightBattery;
 		battery.Text = "Battery: " + batteryPercentage + "%";
+		
 		if(batteryPercentage <= 100  && batteryPercentage >= 75)
 		{
 			battery.SelfModulate = Colors.Green;

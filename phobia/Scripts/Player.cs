@@ -3,20 +3,22 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
-	public const float speed = 5.0f;
-	public const float jumpVelocity = 4.5f;
-	public const float camSensitivity = 0.006f;
 
 	[Signal]
 	public delegate void BatteryDepletedEventHandler();
+	[Signal]
+	public delegate void PlayerReadyEventHandler();
+	public const float speed = 5.0f;
+	public const float jumpVelocity = 4.5f;
+	public const float camSensitivity = 0.006f;
 	public int flashlightBattery = 100;
 
 	private Node3D head;
 	private Camera3D cam;
 	private Node3D hand;
 	private SpotLight3D flashlight;
-
 	private Timer batteryTimer;
+	private int batteryDepletionRate = 2;
 	private double timeLeft;
 	private bool flashlightOn = true;
 
@@ -31,6 +33,7 @@ public partial class Player : CharacterBody3D
 		batteryTimer = GetNode<Timer>("BatteryTimer");
 		batteryTimer.Timeout += OnBatteryTimerTimeOut;
 		timeLeft = batteryTimer.WaitTime;
+		EmitSignal(SignalName.PlayerReady);
 
 	}
 	
@@ -94,8 +97,6 @@ public partial class Player : CharacterBody3D
 		MoveAndSlide();
 		
 	}
-
-
 	public override void _Process(double delta)
 	{
 		HandleFlashlightBattery();
@@ -123,11 +124,9 @@ public partial class Player : CharacterBody3D
 		}	
 
 	}
-
-
 	private void OnBatteryTimerTimeOut()
 	{		
-		flashlightBattery = Math.Max(0, flashlightBattery - 2);
+		flashlightBattery = Math.Max(0, flashlightBattery - batteryDepletionRate);
 		batteryTimer.Start();
 		EmitSignal(SignalName.BatteryDepleted);
 	}
