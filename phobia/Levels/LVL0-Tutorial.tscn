@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://cm57otwj3sfxg"]
 
-[ext_resource type="Texture2D" uid="uid://eedevtflwrih" path="res://Assets/Textures/Ground.jpg" id="1_daspt"]
-[ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="1_totby"]
-[ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="2_ltu8m"]
-[ext_resource type="PackedScene" uid="uid://b3ndb5r5psy0u" path="res://Scenes/door.tscn" id="3_rv25q"]
+[ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="1_a2jbq"]
+[ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="2_g7xt8"]
+[ext_resource type="Texture2D" uid="uid://eedevtflwrih" path="res://Assets/Textures/Ground.jpg" id="3_5mxh7"]
+[ext_resource type="PackedScene" uid="uid://b3ndb5r5psy0u" path="res://Scenes/door.tscn" id="4_0qtx4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0sdxg"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -28,7 +28,7 @@ adjustment_enabled = true
 adjustment_brightness = 1.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yggsy"]
-albedo_texture = ExtResource("1_daspt")
+albedo_texture = ExtResource("3_5mxh7")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
@@ -37,9 +37,9 @@ size = Vector3(1, 1.46484, 4.86621)
 
 [node name="World" type="Node3D"]
 
-[node name="UI" parent="." instance=ExtResource("1_totby")]
+[node name="UI" parent="." instance=ExtResource("1_a2jbq")]
 
-[node name="Player" parent="UI" instance=ExtResource("2_ltu8m")]
+[node name="Player" parent="UI" instance=ExtResource("2_g7xt8")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -80,14 +80,14 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.325
 use_collision = true
 size = Vector3(1.02173, 3.31834, 10.4281)
 
-[node name="Door" parent="." instance=ExtResource("3_rv25q")]
+[node name="Door" parent="." instance=ExtResource("4_0qtx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14558, 0.442814, 3.08385)
 
-[node name="Door3" parent="." instance=ExtResource("3_rv25q")]
+[node name="Door3" parent="." instance=ExtResource("4_0qtx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14558, 0.286237, -6.92372)
 
-[node name="Door2" parent="." instance=ExtResource("3_rv25q")]
+[node name="Door2" parent="." instance=ExtResource("4_0qtx4")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484904, 0.442814, 3.08385)
 
-[node name="Door4" parent="." instance=ExtResource("3_rv25q")]
+[node name="Door4" parent="." instance=ExtResource("4_0qtx4")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484904, 0.183969, -6.79188)
