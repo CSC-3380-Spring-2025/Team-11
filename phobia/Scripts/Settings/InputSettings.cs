@@ -13,7 +13,7 @@ public partial class InputSettings : Control
 	private VBoxContainer actionList;
 	private Control settingsMenu;
 	private bool isRemapping = false;
-
+	public bool close = false;
 	private StringName actionToRemap = null;
 	private Button remappingButton = null;
 	
@@ -109,6 +109,25 @@ public override void _Input(InputEvent @event)
 			InputMap.ActionEraseEvents(actionToRemap);
 			InputMap.ActionAddEvent(actionToRemap, @event);
 			UpdateActionList(remappingButton, @event);
+
+			isRemapping = false;
+			actionToRemap = null;
+			remappingButton = null;
+
+			AcceptEvent();
+		}
+	}
+	else if (@event is InputEventKey eventKey)
+	{
+		if (eventKey.Pressed && eventKey.Keycode == Key.Escape && Visible == true)
+		{
+			Visible = false;
+			AcceptEvent();
+		}
+		else if (eventKey.Pressed && eventKey.Keycode == Key.Escape && Visible == false)
+		{
+			close = true;
+			AcceptEvent();
 		}
 	}
 }
@@ -117,7 +136,6 @@ private void UpdateActionList(Button button, InputEvent @event)
 {
 	Label labelInput = (Label)button.FindChild("LabelInput");
 	labelInput.Text = @event.AsText().TrimSuffix(" (Physical)");
-	
 
 }
 }
