@@ -34,7 +34,7 @@ mouse_filter = 1
 text = "Action Name"
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
