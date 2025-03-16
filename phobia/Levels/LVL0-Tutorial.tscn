@@ -11,12 +11,12 @@ sky_horizon_color = Color(0.109702, 0.0182421, 0.0129511, 1)
 ground_bottom_color = Color(0, 0, 0, 1)
 ground_horizon_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Sky" id="Sky_83lnr"]
+[sub_resource type="Sky" id="Sky_x8l8f"]
 sky_material = SubResource("ProceduralSkyMaterial_0sdxg")
 
 [sub_resource type="Environment" id="Environment_gpycu"]
 background_mode = 2
-sky = SubResource("Sky_83lnr")
+sky = SubResource("Sky_x8l8f")
 tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
