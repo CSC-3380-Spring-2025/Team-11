@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d08jldxylid85"]
 
 [ext_resource type="Texture2D" uid="uid://p58vjd6nrn4e" path="res://icon.svg" id="1_5lur4"]
-[ext_resource type="Script" path="res://Scripts/TestNpc.cs" id="2_4qpdf"]
+[ext_resource type="Script" path="res://Scripts/TestNPC.cs" id="2_4qpdf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhtv1"]
 
