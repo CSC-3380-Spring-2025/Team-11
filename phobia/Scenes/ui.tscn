@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgo1scaeg7ov5"]
+[gd_scene load_steps=2 format=3 uid="uid://bgo1scaeg7ov5"]
 
 [ext_resource type="Script" path="res://Scripts/UI.cs" id="1_gqvtt"]
-[ext_resource type="PackedScene" uid="uid://cqrlp834a7l4o" path="res://Scenes/tutorial_ui.tscn" id="2_jm246"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -9,9 +8,6 @@ anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 647.0
 script = ExtResource("1_gqvtt")
-
-[node name="TutorialUI" parent="." instance=ExtResource("2_jm246")]
-layout_mode = 1
 
 [node name="DoorOverlay" type="Label" parent="."]
 visible = false

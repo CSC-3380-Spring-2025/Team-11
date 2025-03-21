@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://oew40qmlbk85"]
 
-[ext_resource type="Script" path="res://Scenes/Settings/SettingsMenu.cs" id="1_rqm7n"]
+[ext_resource type="Script" path="res://Scripts/Settings/SettingsMenu.cs" id="1_rqm7n"]
 [ext_resource type="PackedScene" uid="uid://cedyvfpynk54t" path="res://Scenes/Settings/input_settings.tscn" id="2_4qwv6"]
 
 [node name="SettingsMenu" type="Control"]
