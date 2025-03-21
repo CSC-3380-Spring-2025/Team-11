@@ -8,7 +8,9 @@ public partial class Player : CharacterBody3D
 	public delegate void BatteryDepletedEventHandler();
 	[Signal]
 	public delegate void PlayerReadyEventHandler();
-	public const float speed = 5.0f;
+	public const float baseSpeed = 4.0f;
+	public const float sprintModifier = 0.6f;
+	public float currentSpeed = baseSpeed;
 	public const float jumpVelocity = 4.5f;
 	public const float camSensitivity = 0.006f;
 	public int flashlightBattery = 100;
@@ -82,16 +84,29 @@ public partial class Player : CharacterBody3D
 		// As good practice, you should replace UI actions with custom gameplay actions.
 		Vector2 inputDir = Input.GetVector("move_left", "move_right", "move_forward", "move_backwards");
 		Vector3 direction = (head.GlobalTransform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-		if (direction != Vector3.Zero)
+
+
+		if(Input.IsActionPressed("sprint"))
 		{
-			velocity.X = direction.X * speed;
-			velocity.Z = direction.Z * speed;
+			currentSpeed = baseSpeed + (baseSpeed * sprintModifier);
 		}
 		else
 		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, speed);
-			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, speed);
+			currentSpeed = baseSpeed;
 		}
+
+		if (direction != Vector3.Zero)
+		{	
+			velocity.X = direction.X * currentSpeed;
+			velocity.Z = direction.Z * currentSpeed;
+		}
+		else
+		{
+			velocity.X = Mathf.MoveToward(Velocity.X, 0, currentSpeed);
+			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, currentSpeed);
+		}
+		
+
 
 		Velocity = velocity;
 		MoveAndSlide();
