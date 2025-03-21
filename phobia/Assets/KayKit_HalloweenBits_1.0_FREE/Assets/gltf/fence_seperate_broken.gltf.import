@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b675cbnt8yw4u"
-path="res://.godot/imported/fence_seperate_broken.gltf-44f103cd6e73fca3c75b28c22e629b37.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/fence_seperate_broken.gltf"
-dest_files=["res://.godot/imported/fence_seperate_broken.gltf-44f103cd6e73fca3c75b28c22e629b37.scn"]
 
 [params]
 

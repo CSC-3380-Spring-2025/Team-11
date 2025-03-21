@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dpmdm3bkjwwt7"
-path="res://.godot/imported/path_B.gltf-a5cc2ab64deceeb3226dc0a8f84a97fc.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/path_B.gltf"
-dest_files=["res://.godot/imported/path_B.gltf-a5cc2ab64deceeb3226dc0a8f84a97fc.scn"]
 
 [params]
 

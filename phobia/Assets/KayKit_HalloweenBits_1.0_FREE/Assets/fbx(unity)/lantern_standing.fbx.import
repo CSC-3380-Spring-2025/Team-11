@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://47d1grss6h81"
-path="res://.godot/imported/lantern_standing.fbx-198086e21a4afb56762ea9d43eb86930.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx(unity)/lantern_standing.fbx"
-dest_files=["res://.godot/imported/lantern_standing.fbx-198086e21a4afb56762ea9d43eb86930.scn"]
 
 [params]
 

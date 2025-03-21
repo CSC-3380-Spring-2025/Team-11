@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c1w24f5uhcabv"
-path="res://.godot/imported/lantern_hanging.gltf-fc1bb5e45f86b2d15301d57a0df5468d.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/lantern_hanging.gltf"
-dest_files=["res://.godot/imported/lantern_hanging.gltf-fc1bb5e45f86b2d15301d57a0df5468d.scn"]
 
 [params]
 

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bv6sueywnxomb"
-path="res://.godot/imported/candle_thin.fbx-1450a0f4c29c8a29e50954a477915f7e.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx/candle_thin.fbx"
-dest_files=["res://.godot/imported/candle_thin.fbx-1450a0f4c29c8a29e50954a477915f7e.scn"]
 
 [params]
 

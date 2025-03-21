@@ -4,14 +4,11 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://sgui3swlxq2e"
-path="res://.godot/imported/lantern_standing.obj-8ed49b802edef71d97206bfdb35c7c78.mesh"
+valid=false
 
 [deps]
 
-files=["res://.godot/imported/lantern_standing.obj-8ed49b802edef71d97206bfdb35c7c78.mesh"]
-
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/lantern_standing.obj"
-dest_files=["res://.godot/imported/lantern_standing.obj-8ed49b802edef71d97206bfdb35c7c78.mesh", "res://.godot/imported/lantern_standing.obj-8ed49b802edef71d97206bfdb35c7c78.mesh"]
 
 [params]
 

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bm0ksif4y7e23"
-path="res://.godot/imported/plaque_candles.gltf-e162e980522cba22f9ccc6fea246fd51.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/plaque_candles.gltf"
-dest_files=["res://.godot/imported/plaque_candles.gltf-e162e980522cba22f9ccc6fea246fd51.scn"]
 
 [params]
 

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://80u4sneo7sms"
-path="res://.godot/imported/gravestone.gltf-db3dc025bc563ccb5284078f5a290d9c.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/gravestone.gltf"
-dest_files=["res://.godot/imported/gravestone.gltf-db3dc025bc563ccb5284078f5a290d9c.scn"]
 
 [params]
 

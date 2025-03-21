@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://s2v30np588vq"
-path="res://.godot/imported/skull_candle.fbx-1838db57ee101db20bba8a87e6ee4d68.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx(unity)/skull_candle.fbx"
-dest_files=["res://.godot/imported/skull_candle.fbx-1838db57ee101db20bba8a87e6ee4d68.scn"]
 
 [params]
 

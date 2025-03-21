@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d10jbu0n5njk1"
-path="res://.godot/imported/floor_dirt.gltf-6af49569b66ef0fa563674b97d94d49e.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/floor_dirt.gltf"
-dest_files=["res://.godot/imported/floor_dirt.gltf-6af49569b66ef0fa563674b97d94d49e.scn"]
 
 [params]
 

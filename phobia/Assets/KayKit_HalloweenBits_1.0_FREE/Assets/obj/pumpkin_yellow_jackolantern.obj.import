@@ -4,14 +4,11 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://b8ra5ugffsttc"
-path="res://.godot/imported/pumpkin_yellow_jackolantern.obj-5d72b290331bcb12556bae5b56f5c684.mesh"
+valid=false
 
 [deps]
 
-files=["res://.godot/imported/pumpkin_yellow_jackolantern.obj-5d72b290331bcb12556bae5b56f5c684.mesh"]
-
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/pumpkin_yellow_jackolantern.obj"
-dest_files=["res://.godot/imported/pumpkin_yellow_jackolantern.obj-5d72b290331bcb12556bae5b56f5c684.mesh", "res://.godot/imported/pumpkin_yellow_jackolantern.obj-5d72b290331bcb12556bae5b56f5c684.mesh"]
 
 [params]
 

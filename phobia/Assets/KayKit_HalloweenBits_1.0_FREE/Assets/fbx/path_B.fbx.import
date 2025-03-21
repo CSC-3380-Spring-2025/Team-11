@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://426re8kj85l3"
-path="res://.godot/imported/path_B.fbx-6a874c1b2ddb27d94f3ea77f328baa27.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx/path_B.fbx"
-dest_files=["res://.godot/imported/path_B.fbx-6a874c1b2ddb27d94f3ea77f328baa27.scn"]
 
 [params]
 

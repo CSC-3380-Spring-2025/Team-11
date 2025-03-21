@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://datrd7osojogi"
-path="res://.godot/imported/pumpkin_orange.fbx-26e2bdee59992a8e910231156ec05653.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx/pumpkin_orange.fbx"
-dest_files=["res://.godot/imported/pumpkin_orange.fbx-26e2bdee59992a8e910231156ec05653.scn"]
 
 [params]
 

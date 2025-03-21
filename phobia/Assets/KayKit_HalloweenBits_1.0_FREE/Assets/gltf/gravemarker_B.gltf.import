@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://chje2ei0c5wne"
-path="res://.godot/imported/gravemarker_B.gltf-9639684e7eb7665c741d4f1e7b89f297.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/gravemarker_B.gltf"
-dest_files=["res://.godot/imported/gravemarker_B.gltf-9639684e7eb7665c741d4f1e7b89f297.scn"]
 
 [params]
 

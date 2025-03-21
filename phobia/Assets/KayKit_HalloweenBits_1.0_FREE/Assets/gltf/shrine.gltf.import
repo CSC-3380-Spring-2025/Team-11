@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dvpldafbdvwil"
-path="res://.godot/imported/shrine.gltf-bc360bfd52caa57ecfd23b57545a5f43.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/shrine.gltf"
-dest_files=["res://.godot/imported/shrine.gltf-bc360bfd52caa57ecfd23b57545a5f43.scn"]
 
 [params]
 

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dt4pwo2msnnra"
-path="res://.godot/imported/post_skull.gltf-753bc6193c9a0b9ff535c39014737ac3.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/post_skull.gltf"
-dest_files=["res://.godot/imported/post_skull.gltf-753bc6193c9a0b9ff535c39014737ac3.scn"]
 
 [params]
 

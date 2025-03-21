@@ -18,12 +18,7 @@ public partial class PauseUi : Control
 			paused = true;
 			GetTree().Paused = true;
 		}
-		if (Input.IsActionJustPressed("toggle_pause") && Visible) 
-		{
-			Visible = false;
-			paused = false;
-			GetTree().Paused = false;
-		}
+		
 	}
 	
 	public void _on_resume_pressed() 
@@ -31,18 +26,28 @@ public partial class PauseUi : Control
 		paused = false;
 		Visible = false;
 		GetTree().Paused = false;
+		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
 	public void _on_restart_pressed() 
 	{
+		paused = false;
+		Visible = false;
+		GetTree().Paused = false;
 		GetTree().ReloadCurrentScene(); 
 	}
 	public void _on_settings_pressed() 
 	{
+		paused= false; 
+		Visible = false;
+		GetTree().Paused = false;
+		GetTree().ChangeSceneToFile("res://Scenes/Settings/settings_menu.tscn");
 		
 	}
 	public void _on_quit_pressed() 
 	{
-		
+		paused = false; 
+		Visible = false;
+		GetTree().Paused = false;
 		GetTree().ChangeSceneToFile("res://Menus/MainMenu.tscn");
 	}
 }

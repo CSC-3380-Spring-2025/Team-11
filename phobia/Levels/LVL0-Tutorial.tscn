@@ -40,6 +40,7 @@ size = Vector3(1, 1.46484, 4.86621)
 [node name="UI" parent="." instance=ExtResource("1_a2jbq")]
 
 [node name="Player" parent="UI" instance=ExtResource("2_g7xt8")]
+process_mode = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)

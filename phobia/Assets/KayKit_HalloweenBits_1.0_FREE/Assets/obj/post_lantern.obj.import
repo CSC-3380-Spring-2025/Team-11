@@ -4,14 +4,11 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://df86167enekwf"
-path="res://.godot/imported/post_lantern.obj-b20663b78224a0a680a575af684328aa.mesh"
+valid=false
 
 [deps]
 
-files=["res://.godot/imported/post_lantern.obj-b20663b78224a0a680a575af684328aa.mesh"]
-
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/post_lantern.obj"
-dest_files=["res://.godot/imported/post_lantern.obj-b20663b78224a0a680a575af684328aa.mesh", "res://.godot/imported/post_lantern.obj-b20663b78224a0a680a575af684328aa.mesh"]
 
 [params]
 

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b8s2kttu66iph"
-path="res://.godot/imported/fence.fbx-cce744efe89b57fa1bfd3c4850954902.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx(unity)/fence.fbx"
-dest_files=["res://.godot/imported/fence.fbx-cce744efe89b57fa1bfd3c4850954902.scn"]
 
 [params]
 

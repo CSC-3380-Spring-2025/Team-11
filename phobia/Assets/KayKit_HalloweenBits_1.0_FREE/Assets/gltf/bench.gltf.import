@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ra7nt2evdxfo"
-path="res://.godot/imported/bench.gltf-be4c8365ee4638b60b21f2c48a500e19.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/bench.gltf"
-dest_files=["res://.godot/imported/bench.gltf-be4c8365ee4638b60b21f2c48a500e19.scn"]
 
 [params]
 

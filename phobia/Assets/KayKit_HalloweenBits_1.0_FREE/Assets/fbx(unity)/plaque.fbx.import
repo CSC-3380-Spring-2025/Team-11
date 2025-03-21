@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bpm5u2nqr8rmv"
-path="res://.godot/imported/plaque.fbx-cd4f639482d7dd84f78cfd9abf8f1c8b.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx(unity)/plaque.fbx"
-dest_files=["res://.godot/imported/plaque.fbx-cd4f639482d7dd84f78cfd9abf8f1c8b.scn"]
 
 [params]
 

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ckdxfuts5o2fn"
-path="res://.godot/imported/shrine_candles.gltf-118eeca37b83e57c50011699bc5e9cd3.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/shrine_candles.gltf"
-dest_files=["res://.godot/imported/shrine_candles.gltf-118eeca37b83e57c50011699bc5e9cd3.scn"]
 
 [params]
 

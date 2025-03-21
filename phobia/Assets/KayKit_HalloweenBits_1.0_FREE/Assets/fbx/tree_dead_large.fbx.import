@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cjttvdtk4pxoo"
-path="res://.godot/imported/tree_dead_large.fbx-42102b2eef9f662e8bc6ddde9fcc873a.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx/tree_dead_large.fbx"
-dest_files=["res://.godot/imported/tree_dead_large.fbx-42102b2eef9f662e8bc6ddde9fcc873a.scn"]
 
 [params]
 

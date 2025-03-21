@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://khsbwcxm2st8"
-path="res://.godot/imported/candle_melted.gltf-52bfaaeca16b95db82a3db4aa99a3aff.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/candle_melted.gltf"
-dest_files=["res://.godot/imported/candle_melted.gltf-52bfaaeca16b95db82a3db4aa99a3aff.scn"]
 
 [params]
 

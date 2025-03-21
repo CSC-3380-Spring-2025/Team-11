@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://5r0b3jqw3cra"
-path="res://.godot/imported/grave_A_destroyed.gltf-0511ea03fe14897cc36c928220084267.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/grave_A_destroyed.gltf"
-dest_files=["res://.godot/imported/grave_A_destroyed.gltf-0511ea03fe14897cc36c928220084267.scn"]
 
 [params]
 

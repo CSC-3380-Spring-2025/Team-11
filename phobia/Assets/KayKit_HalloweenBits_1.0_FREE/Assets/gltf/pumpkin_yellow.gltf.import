@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b07ehwkmas06q"
-path="res://.godot/imported/pumpkin_yellow.gltf-a6f64b21d9a9680adc39cea5c8e571a6.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/pumpkin_yellow.gltf"
-dest_files=["res://.godot/imported/pumpkin_yellow.gltf-a6f64b21d9a9680adc39cea5c8e571a6.scn"]
 
 [params]
 

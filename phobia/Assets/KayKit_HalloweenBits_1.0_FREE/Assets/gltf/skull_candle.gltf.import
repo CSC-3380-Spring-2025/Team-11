@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://djgh7qc46x5lk"
-path="res://.godot/imported/skull_candle.gltf-b745599cad39811babd51050d628a886.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/skull_candle.gltf"
-dest_files=["res://.godot/imported/skull_candle.gltf-b745599cad39811babd51050d628a886.scn"]
 
 [params]
 

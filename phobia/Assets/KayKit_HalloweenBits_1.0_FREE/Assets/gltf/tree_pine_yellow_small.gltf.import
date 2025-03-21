@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://08s7053mhppu"
-path="res://.godot/imported/tree_pine_yellow_small.gltf-a505fcc21a2284f5cedd1f486e63ff8a.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/tree_pine_yellow_small.gltf"
-dest_files=["res://.godot/imported/tree_pine_yellow_small.gltf-a505fcc21a2284f5cedd1f486e63ff8a.scn"]
 
 [params]
 

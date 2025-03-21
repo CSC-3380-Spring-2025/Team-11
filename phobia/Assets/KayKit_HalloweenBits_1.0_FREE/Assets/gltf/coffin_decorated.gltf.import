@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bh2ncedmrgcr0"
-path="res://.godot/imported/coffin_decorated.gltf-2af6cc44c76462cc3b49dc6bbc084863.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/coffin_decorated.gltf"
-dest_files=["res://.godot/imported/coffin_decorated.gltf-2af6cc44c76462cc3b49dc6bbc084863.scn"]
 
 [params]
 

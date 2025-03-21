@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dcqnl4uyoxrd0"
-path="res://.godot/imported/shrine.fbx-c3fe1f7563989e727f3af445ae825b26.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx(unity)/shrine.fbx"
-dest_files=["res://.godot/imported/shrine.fbx-c3fe1f7563989e727f3af445ae825b26.scn"]
 
 [params]
 

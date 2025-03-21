@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c588anfkifvih"
-path="res://.godot/imported/grave_A_destroyed.fbx-41533072a5d579a75382db08caf2e021.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx(unity)/grave_A_destroyed.fbx"
-dest_files=["res://.godot/imported/grave_A_destroyed.fbx-41533072a5d579a75382db08caf2e021.scn"]
 
 [params]
 

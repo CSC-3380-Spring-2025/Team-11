@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dqed0gkapcpv7"
-path="res://.godot/imported/floor_dirt.fbx-ad65fcc878195ecc3477dda18b13e853.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx/floor_dirt.fbx"
-dest_files=["res://.godot/imported/floor_dirt.fbx-ad65fcc878195ecc3477dda18b13e853.scn"]
 
 [params]
 

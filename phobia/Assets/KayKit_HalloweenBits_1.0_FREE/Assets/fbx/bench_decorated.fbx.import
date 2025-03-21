@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dsf43qy6qw4gs"
-path="res://.godot/imported/bench_decorated.fbx-bef07a056473d62ab02243ae60dd3901.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx/bench_decorated.fbx"
-dest_files=["res://.godot/imported/bench_decorated.fbx-bef07a056473d62ab02243ae60dd3901.scn"]
 
 [params]
 

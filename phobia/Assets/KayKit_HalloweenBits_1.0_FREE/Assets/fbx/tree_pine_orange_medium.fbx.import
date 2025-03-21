@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://3qagq2tpnwn8"
-path="res://.godot/imported/tree_pine_orange_medium.fbx-c70ac800aff9ea971bb1dbeadf757438.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx/tree_pine_orange_medium.fbx"
-dest_files=["res://.godot/imported/tree_pine_orange_medium.fbx-c70ac800aff9ea971bb1dbeadf757438.scn"]
 
 [params]
 

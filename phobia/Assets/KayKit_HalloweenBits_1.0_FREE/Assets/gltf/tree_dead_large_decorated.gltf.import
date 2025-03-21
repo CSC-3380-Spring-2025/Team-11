@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://hx3af8irivb3"
-path="res://.godot/imported/tree_dead_large_decorated.gltf-6f25ca28e0e283c1289369cd62ffeeea.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/tree_dead_large_decorated.gltf"
-dest_files=["res://.godot/imported/tree_dead_large_decorated.gltf-6f25ca28e0e283c1289369cd62ffeeea.scn"]
 
 [params]
 

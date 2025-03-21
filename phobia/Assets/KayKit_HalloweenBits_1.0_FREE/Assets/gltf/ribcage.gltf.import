@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dg1v6vthcdig"
-path="res://.godot/imported/ribcage.gltf-88b929e4365038dbd49d6ae82f4cd3d7.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/ribcage.gltf"
-dest_files=["res://.godot/imported/ribcage.gltf-88b929e4365038dbd49d6ae82f4cd3d7.scn"]
 
 [params]
 
