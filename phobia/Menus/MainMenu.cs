@@ -9,9 +9,6 @@ public partial class MainMenu : Control
 	
 	public void _on_quit_button_pressed () {
 		GetTree().Quit();
-	}
-	
-	
-	
+	}	
 	
 }
