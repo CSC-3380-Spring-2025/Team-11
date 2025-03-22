@@ -7,30 +7,27 @@ using System;
 /// </summary>
 public partial class Door : StaticBody3D
 {
+	
 	[Export]
 	private AnimationPlayer doorAnimPlayer {get; set; }
 	[Export]
 	private Timer doorTimer {get; set; }
+	[Export]
+	private AudioStreamPlayer3D doorCloseSound;
+	[Export]
+	private AudioStreamPlayer3D doorOpenSound;
 	private bool doorClosed = false;
 	private bool interactable = true;
-	private AudioStreamPlayer3D doorCloseSound;
-	private AudioStreamPlayer3D doorOpenSound;
 
+
+
+	
 	public override void _Ready()
 	{
-		doorCloseSound = GetNode<AudioStreamPlayer3D>("DoorCloseSFX");
-		doorOpenSound = GetNode<AudioStreamPlayer3D>("DoorOpenSFX");
-
-
-		doorAnimPlayer.AnimationFinished += OnAnimFinished;
-		doorAnimPlayer.AnimationStarted += OnAnimStarted;
-		doorTimer.Timeout += OnDoorTimerTimeout;
-	}
-	public override void _Process(double delta)
-	{
+		connectSignals();
 	}
 
-	public void Interact()
+	public virtual void Interact()
 	{
 		if (interactable == true)
 		{
@@ -42,7 +39,6 @@ public partial class Door : StaticBody3D
 				doorAnimPlayer.Play("close");
 			}
 			if (doorClosed == true)
-
 			{
 				doorAnimPlayer.Play("open");
 			}
@@ -70,5 +66,12 @@ public partial class Door : StaticBody3D
 	private void OnDoorTimerTimeout()
 	{
 		interactable = true;
+	}
+
+	protected void connectSignals()
+	{
+		doorAnimPlayer.AnimationFinished += OnAnimFinished;
+		doorAnimPlayer.AnimationStarted += OnAnimStarted;
+		doorTimer.Timeout += OnDoorTimerTimeout;
 	}
 }
