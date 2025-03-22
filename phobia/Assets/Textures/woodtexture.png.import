@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3niv668mvgcv"
-path.s3tc="res://.godot/imported/halloweenbits_texture.png-3eb18a2ffd723deff00d71fa4ee29d8a.s3tc.ctex"
+uid="uid://dxtsqs2joo4sy"
+path.s3tc="res://.godot/imported/woodtexture.png-c8e0f32ece95cc172b77b02b25e62744.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/halloweenbits_texture.png"
-dest_files=["res://.godot/imported/halloweenbits_texture.png-3eb18a2ffd723deff00d71fa4ee29d8a.s3tc.ctex"]
+source_file="res://Assets/Textures/woodtexture.png"
+dest_files=["res://.godot/imported/woodtexture.png-c8e0f32ece95cc172b77b02b25e62744.s3tc.ctex"]
 
 [params]
 

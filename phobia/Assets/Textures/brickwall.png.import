@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3niv668mvgcv"
-path.s3tc="res://.godot/imported/halloweenbits_texture.png-3eb18a2ffd723deff00d71fa4ee29d8a.s3tc.ctex"
+uid="uid://0qcbgv2l0qww"
+path="res://.godot/imported/brickwall.png-486a1d6b315e76cc5f330c7b0169cc60.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/halloweenbits_texture.png"
-dest_files=["res://.godot/imported/halloweenbits_texture.png-3eb18a2ffd723deff00d71fa4ee29d8a.s3tc.ctex"]
+source_file="res://Assets/Textures/brickwall.png"
+dest_files=["res://.godot/imported/brickwall.png-486a1d6b315e76cc5f330c7b0169cc60.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
