@@ -6,7 +6,6 @@ public partial class ExitDoor : Door
 	[Signal]
 	public delegate void ExitDoorOpenedEventHandler();
 
-
 	public override void _Ready()
 	{
 		connectSignals();
