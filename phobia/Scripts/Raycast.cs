@@ -8,7 +8,7 @@ public partial class Raycast : RayCast3D
 {
 	
 	[Signal]
-	public delegate void DoorHoveredEventHandler();
+	public delegate void DoorHoveredEventHandler(Door doorObject);
 	[Signal]
 	public delegate void DoorNotHoveredEventHandler();
 
@@ -23,8 +23,9 @@ public partial class Raycast : RayCast3D
 			Object hitObj = GetCollider();
 			if(hitObj is Door)
 			{
-				EmitSignal(SignalName.DoorHovered);
+				
 				Door doorObj = (Door) hitObj;
+				EmitSignal(SignalName.DoorHovered, doorObj);
 				if(Input.IsActionJustPressed("interact"))
 				{
 					doorObj.Interact();
