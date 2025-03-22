@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b2l4hius6muoh"
+uid="uid://c1d5quofrcv3r"
 path="res://.godot/imported/tree_pine_orange_large.gltf-84f3126161af404cf44a5e0b251e77be.scn"
 
 [deps]
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

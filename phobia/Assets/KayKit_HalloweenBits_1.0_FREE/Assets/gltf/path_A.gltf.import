@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b8imdadfjbo78"
+uid="uid://ca77rpxj85iys"
 path="res://.godot/imported/path_A.gltf-2efa6a9b90d4d82ce14250bb2f1ee5d2.scn"
 
 [deps]
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

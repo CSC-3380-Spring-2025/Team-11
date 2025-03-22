@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cedyvfpynk54t" path="res://Scenes/Settings/input_settings.tscn" id="2_4qwv6"]
 
 [node name="SettingsMenu" type="Control"]
+top_level = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

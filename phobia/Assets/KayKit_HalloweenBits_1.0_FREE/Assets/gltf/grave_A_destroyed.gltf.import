@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5r0b3jqw3cra"
+uid="uid://b32r01fmel4uh"
 path="res://.godot/imported/grave_A_destroyed.gltf-0511ea03fe14897cc36c928220084267.scn"
 
 [deps]
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

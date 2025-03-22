@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0ac2j"]
 
 [node name="Player" type="CharacterBody3D"]
+process_mode = 1
 script = ExtResource("1_2xaad")
 
 [node name="Head" type="Node3D" parent="."]

@@ -21,24 +21,6 @@ public partial class SettingsMenu : Control
 		settingsButton.Pressed += OnSettingsButtonPressed; 
 	}
 
-// 	public override void _Input(InputEvent @event)
-// {
-// 	if (@event is InputEventKey eventKey)
-// 	{
-// 		GD.Print(inputSettings.Visible);
-// 		if(eventKey.Pressed && eventKey.Keycode == Key.Escape)
-// 		{
-// 			GD.Print("Escape Hit");
-// 		}
-// 		if ((eventKey.Pressed && eventKey.Keycode == Key.Escape) && inputSettings.Visible == false)
-// 		{
-// 			Visible = false;
-// 		}
-// 		AcceptEvent();
-// 	}
-// }
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		if (inputSettings.close == true)
