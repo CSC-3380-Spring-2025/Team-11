@@ -35,7 +35,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_urljg")
 
 [node name="SettingsMenu" parent="Panel" node_paths=PackedStringArray("settingsButton") instance=ExtResource("2_pydd2")]
 visible = false
+
 top_level = true
+
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -84,3 +86,5 @@ stream = ExtResource("3_f7a4p")
 autoplay = true
 
 [connection signal="pressed" from="Panel/VBoxContainer/StartButton" to="." method="start"]
+[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+

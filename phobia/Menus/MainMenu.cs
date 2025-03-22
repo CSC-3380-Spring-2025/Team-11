@@ -7,7 +7,8 @@ public partial class MainMenu : Control
 		GetTree().ChangeSceneToFile("res://Levels/LVL0-Tutorial.tscn");
 	}
 	
-	
-	
+	public void _on_quit_button_pressed () {
+		GetTree().Quit();
+	}	
 	
 }
