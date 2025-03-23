@@ -9,6 +9,8 @@ using System.Xml.Resolvers;
 
 public partial class InputSettings : Control
 {
+	private ConfigFile config = new ConfigFile();
+	private LoadSettings loadSettings;
 	private PackedScene inputButtonScene;
 	private VBoxContainer actionList;
 	private Control settingsMenu;
@@ -28,19 +30,11 @@ public partial class InputSettings : Control
 		
 		inputButtonScene = GD.Load<PackedScene>("res://Scenes/Settings/input_button.tscn");
 		actionList = GetNode<VBoxContainer>("PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList");
+		loadSettings = GetParent().GetNode<LoadSettings>("LoadSettings");
 
 		inputActions.Add("interact", "Interact");
 		inputActions.Add("toggle_flashlight", "Toggle Flashlight");
 		CreateActionList();
-
-		// for (int j = 0; j < buttons.Length; j++)
-		// {
-		// 	if (buttons[j] != null)
-		// 	{
-		// 		buttons[j].Pressed += () => OnInputButtonPressed(buttons[j], actions[j]);
-		// 	}
-		// }
-
 		
 	}
 
@@ -51,7 +45,9 @@ public partial class InputSettings : Control
 
 	private void CreateActionList()
 	{
-		InputMap.LoadFromProjectSettings();
+
+		
+		loadSettings.LoadInputSettings(config, "user://input_settings.cfg");
 
 		foreach (Node item in actionList.GetChildren())
 		{
@@ -109,7 +105,6 @@ public override void _Input(InputEvent @event)
 			InputMap.ActionEraseEvents(actionToRemap);
 			InputMap.ActionAddEvent(actionToRemap, @event);
 			UpdateActionList(remappingButton, @event);
-
 			isRemapping = false;
 			actionToRemap = null;
 			remappingButton = null;
@@ -127,6 +122,22 @@ public override void _Input(InputEvent @event)
 		else if (eventKey.Pressed && eventKey.Keycode == Key.Escape && Visible == false)
 		{
 			close = true;
+			
+			foreach(StringName action in InputMap.GetActions())
+			{
+				GD.Print("checking action");
+				if (inputActions.ContainsKey(action))
+				{
+					Godot.Collections.Array<InputEvent> events = InputMap.ActionGetEvents(action);
+					if(events.Count > 0)
+					{
+					GD.Print("Adding action: " + action + " event: " + events[0]);	
+					config.SetValue(action, action, events[0]);
+					}
+				}
+			}
+
+			config.Save("user://input_settings.cfg");
 			AcceptEvent();
 		}
 	}
