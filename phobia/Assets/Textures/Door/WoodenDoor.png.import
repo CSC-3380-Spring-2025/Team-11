@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b76gsn11bekic"
-path="res://.godot/imported/doorAlt1.png-aa890a40cb42cd08f3d4ed9681c91d08.ctex"
+uid="uid://dwuvboruexfey"
+path="res://.godot/imported/WoodenDoor.png-32b240a9a6af7e080c1f38ff977ee1ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Door/doorAlt1.png"
-dest_files=["res://.godot/imported/doorAlt1.png-aa890a40cb42cd08f3d4ed9681c91d08.ctex"]
+source_file="res://Assets/Textures/Door/WoodenDoor.png"
+dest_files=["res://.godot/imported/WoodenDoor.png-32b240a9a6af7e080c1f38ff977ee1ee.ctex"]
 
 [params]
 

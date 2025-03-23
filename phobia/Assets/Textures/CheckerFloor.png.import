@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx7tw4kqcidqb"
-path.s3tc="res://.godot/imported/CheckerFloor.png-62d1aafb4b2c74ad8b09cd0da932e0c5.s3tc.ctex"
+path="res://.godot/imported/CheckerFloor.png-62d1aafb4b2c74ad8b09cd0da932e0c5.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Textures/CheckerFloor.png"
-dest_files=["res://.godot/imported/CheckerFloor.png-62d1aafb4b2c74ad8b09cd0da932e0c5.s3tc.ctex"]
+dest_files=["res://.godot/imported/CheckerFloor.png-62d1aafb4b2c74ad8b09cd0da932e0c5.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
