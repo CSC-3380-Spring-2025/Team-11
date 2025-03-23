@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dg1v6vthcdig"
+uid="uid://dayxbilv1lgno"
 path="res://.godot/imported/ribcage.gltf-88b929e4365038dbd49d6ae82f4cd3d7.scn"
 
 [deps]
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

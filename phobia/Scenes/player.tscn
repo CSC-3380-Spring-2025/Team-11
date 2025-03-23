@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0ac2j"]
 
 [node name="Player" type="CharacterBody3D"]
+process_mode = 1
 script = ExtResource("1_2xaad")
 
 [node name="Head" type="Node3D" parent="."]
@@ -39,5 +40,5 @@ spot_angle = 27.73
 spot_angle_attenuation = 3.0
 
 [node name="BatteryTimer" type="Timer" parent="."]
-wait_time = 12.0
+wait_time = 10.0
 autostart = true

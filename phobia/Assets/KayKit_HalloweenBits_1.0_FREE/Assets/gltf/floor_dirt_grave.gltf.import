@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cwhv72rn612hg"
+uid="uid://bdoqa7s6eteaw"
 path="res://.godot/imported/floor_dirt_grave.gltf-a259c328650d3b09d10a7c677ddc70ed.scn"
 
 [deps]
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

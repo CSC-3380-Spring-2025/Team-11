@@ -1,17 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgo1scaeg7ov5"]
+[gd_scene load_steps=4 format=3 uid="uid://bgo1scaeg7ov5"]
 
 [ext_resource type="Script" path="res://Scripts/UI.cs" id="1_gqvtt"]
-[ext_resource type="PackedScene" uid="uid://cqrlp834a7l4o" path="res://Scenes/tutorial_ui.tscn" id="2_jm246"]
+[ext_resource type="PackedScene" uid="uid://oew40qmlbk85" path="res://Scenes/Settings/settings_menu.tscn" id="2_2yqeh"]
+[ext_resource type="Script" path="res://Scripts/PauseUi.cs" id="3_w5dx1"]
 
 [node name="UI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1150.0
-offset_bottom = 647.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 648.0
 script = ExtResource("1_gqvtt")
 
-[node name="TutorialUI" parent="." instance=ExtResource("2_jm246")]
+[node name="SettingsMenu" parent="." node_paths=PackedStringArray("settingsButton") instance=ExtResource("2_2yqeh")]
+visible = false
 layout_mode = 1
+settingsButton = NodePath("../PauseUI/GridContainer/Settings")
 
 [node name="DoorOverlay" type="Label" parent="."]
 visible = false
@@ -34,3 +40,64 @@ layout_mode = 1
 offset_right = 94.0
 offset_bottom = 23.0
 text = "Sample Test"
+
+[node name="PauseUI" type="Control" parent="." node_paths=PackedStringArray("shortcut_context")]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut_context = NodePath("..")
+script = ExtResource("3_w5dx1")
+
+[node name="ColorRect" type="ColorRect" parent="PauseUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25098, 0.25098, 0.25098, 0.705882)
+
+[node name="GridContainer" type="GridContainer" parent="PauseUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 6
+
+[node name="Label" type="Label" parent="PauseUI/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+
+[node name="Resume" type="Button" parent="PauseUI/GridContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PauseUI/GridContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Settings" type="Button" parent="PauseUI/GridContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="PauseUI/GridContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="PauseUI/GridContainer/Resume" to="PauseUI" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseUI/GridContainer/Restart" to="PauseUI" method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseUI/GridContainer/Settings" to="PauseUI" method="_on_settings_pressed"]
+[connection signal="pressed" from="PauseUI/GridContainer/Quit" to="PauseUI" method="_on_quit_pressed"]

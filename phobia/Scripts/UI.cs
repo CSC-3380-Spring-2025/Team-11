@@ -26,11 +26,27 @@ public partial class UI : Control
 	}
 	public override void _Process(double delta)
 	{
+		
+
 	}
 
-	private void OnDoorHovered()
+	private void OnDoorHovered(Door doorObject)
 	{
+		Godot.Collections.Array<InputEvent> events = InputMap.ActionGetEvents("interact");
 
+		if(doorObject is ExitDoor && events.Count > 0)
+		{
+			doorOverlay.Text = "Press " + events[0].AsText().TrimSuffix(" (Physical)") + " to go to next level.";
+		}
+		else if (!(doorObject is ExitDoor) && events.Count > 0)
+		{
+			doorOverlay.Text  = "Press " + events[0].AsText().TrimSuffix(" (Physical)") + " to open door.";
+		}
+		else
+		{
+			doorOverlay.Text = "";
+		}
+		
 		doorOverlay.Visible = true;
 	}
 

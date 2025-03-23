@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://btgs3edit00wa"
+uid="uid://c34vbt3tjot1g"
 path="res://.godot/imported/pumpkin_orange_small.gltf-dde960c3a64479614e8960d58463a492.scn"
 
 [deps]
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

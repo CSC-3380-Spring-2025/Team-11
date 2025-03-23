@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b410xywhel62g"
+uid="uid://cpvt10u0ukhqc"
 path="res://.godot/imported/tree_dead_medium.gltf-3bb02f703cdc44534a60676c3ca3ce36.scn"
 
 [deps]
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1
