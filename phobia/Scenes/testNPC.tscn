@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d08jldxylid85"]
+[gd_scene load_steps=4 format=3 uid="uid://d08jldxylid85"]
 
-[ext_resource type="Texture2D" uid="uid://p58vjd6nrn4e" path="res://icon.svg" id="1_5lur4"]
 [ext_resource type="Script" path="res://Scripts/TestNPC.cs" id="2_4qpdf"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2b0fy"]
-albedo_texture = ExtResource("1_5lur4")
+[ext_resource type="SpriteFrames" uid="uid://d2oiypi4al6et" path="res://Assets/NPCSprites/NpcBugFrames.tres" id="2_277bq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhtv1"]
 
@@ -14,8 +11,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815977, 0)
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("2_4qpdf")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
-material = SubResource("StandardMaterial3D_2b0fy")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_qhtv1")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+texture_filter = 0
+sprite_frames = ExtResource("2_277bq")
+animation = &"BugIdle"
+autoplay = "BugIdle"
+frame = 2
+frame_progress = 0.812486

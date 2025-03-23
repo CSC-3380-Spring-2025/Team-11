@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://d2oiypi4al6et"]
+
+[ext_resource type="Texture2D" uid="uid://b5gybj6pfrou1" path="res://Assets/NPCSprites/BugIdle.png" id="1_lm4pj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebkc6"]
+atlas = ExtResource("1_lm4pj")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40rkn"]
+atlas = ExtResource("1_lm4pj")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvcwk"]
+atlas = ExtResource("1_lm4pj")
+region = Rect2(200, 0, 100, 100)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebkc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40rkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvcwk")
+}],
+"loop": true,
+"name": &"BugIdle",
+"speed": 5.0
+}]
