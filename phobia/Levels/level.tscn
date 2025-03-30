@@ -73,7 +73,7 @@ size = Vector3(1.79468, 1.17749, 2.12085)
 [node name="UI" parent="." instance=ExtResource("1_wtiud")]
 
 [node name="Player" parent="UI" instance=ExtResource("2_67ocj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.27834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5.27834)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -328,7 +328,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0431809, 1.16686, -10.9914
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.41788, 1.79965, 7.18486)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TestEnemy"]
-collision_layer = 5
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestEnemy/StaticBody3D"]
 shape = SubResource("BoxShape3D_1bba2")
@@ -340,6 +340,8 @@ mesh = SubResource("BoxMesh_pfb5p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79925, 1.61863, 2.84928)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ItemForTestingSound"]
+collision_layer = 8
+collision_mask = 3
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ItemForTestingSound/StaticBody3D"]

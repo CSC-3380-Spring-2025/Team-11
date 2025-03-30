@@ -24,6 +24,8 @@ public partial class Player : CharacterBody3D
 	private double timeLeft;
 	private bool flashlightOn = true;
 
+	private Area3D hurtBox;
+
 	
 	public override void _Ready(){
 		Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -35,6 +37,8 @@ public partial class Player : CharacterBody3D
 		batteryTimer = GetNode<Timer>("BatteryTimer");
 		batteryTimer.Timeout += OnBatteryTimerTimeOut;
 		timeLeft = batteryTimer.WaitTime;
+		hurtBox = (Area3D)FindChild("Hurtbox").FindChild("Area3D");
+		hurtBox.BodyEntered += OnBodyEntered;
 		EmitSignal(SignalName.PlayerReady);
 
 	}
@@ -146,4 +150,30 @@ public partial class Player : CharacterBody3D
 		EmitSignal(SignalName.BatteryDepleted);
 	}
 
+	private void OnBodyEntered(Node3D body)
+	{
+		PhysicsBody3D bodyEntered = (PhysicsBody3D)body;
+
+		GD.Print("Body Entered" + bodyEntered);
+		GD.Print("COl Layer: " + bodyEntered.CollisionLayer);
+
+		if(bodyEntered.CollisionLayer == 4)
+		{
+			
+			GD.Print("In COL " + bodyEntered.CollisionLayer);
+			GD.Print("Previous Scene is :" + Globals.Instance.previousScene);
+			Globals.Instance.previousScene = GetTree().CurrentScene.SceneFilePath;
+			GD.Print("Previous Scene is NOW: " + Globals.Instance.previousScene);
+			CallDeferred(MethodName.ChangeToGameOver);
+		}
+		else
+		{
+			GD.Print("Not in COL " + 4 + " Actual COL layer is " + bodyEntered.CollisionLayer);
+		}
+	}
+	private void ChangeToGameOver()
+	{
+		Input.MouseMode = Input.MouseModeEnum.Visible;
+		GetTree().ChangeSceneToFile("res://Scenes/game_over_screen.tscn");
+	}
 }
