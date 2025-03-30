@@ -1,15 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn41q3cofy6kt"]
+[gd_scene load_steps=8 format=3 uid="uid://bn41q3cofy6kt"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_2xaad"]
+[ext_resource type="PackedScene" uid="uid://d3q241xeysqql" path="res://Scenes/play_audio_on_body_enter.tscn" id="2_7d2l8"]
 [ext_resource type="Script" path="res://Scripts/Raycast.cs" id="2_egso8"]
+[ext_resource type="AudioStream" uid="uid://da0ov1o6kgja" path="res://Assets/SFX/332815__loudernoises__heartbeat-20bpm-limited.wav" id="4_p0kqx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yag4e"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0ac2j"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7fhf2"]
+size = Vector3(4.14941, 3.33008, 4.94922)
+
 [node name="Player" type="CharacterBody3D"]
 process_mode = 1
+collision_layer = 3
 script = ExtResource("1_2xaad")
+
+[node name="HeartBeatCooldown" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(0.999878, -0.0142271, -0.00638064, 0.0142159, 0.999897, -0.00179185, 0.00640548, 0.00170093, 0.999978, 0, 1.53427, 0)
@@ -42,3 +51,19 @@ spot_angle_attenuation = 3.0
 [node name="BatteryTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="Heatbeat" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_p0kqx")
+
+[node name="HeartbeatAudio" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.926338, 0)
+
+[node name="PlayAudioOnBodyEnter" parent="HeartbeatAudio" node_paths=PackedStringArray("cooldownTimer", "audio") instance=ExtResource("2_7d2l8")]
+collision_mask = 4
+continuous = true
+cooldownTimer = NodePath("../../HeartBeatCooldown")
+audio = NodePath("../../Heatbeat")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HeartbeatAudio/PlayAudioOnBodyEnter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.571777, 0, -1.27295)
+shape = SubResource("BoxShape3D_7fhf2")
