@@ -125,13 +125,12 @@ public override void _Input(InputEvent @event)
 			
 			foreach(StringName action in InputMap.GetActions())
 			{
-				GD.Print("checking action");
 				if (inputActions.ContainsKey(action))
 				{
 					Godot.Collections.Array<InputEvent> events = InputMap.ActionGetEvents(action);
 					if(events.Count > 0)
 					{
-					GD.Print("Adding action: " + action + " event: " + events[0]);	
+					//GD.Print("Adding action: " + action + " event: " + events[0]);	
 					config.SetValue(action, action, events[0]);
 					}
 				}

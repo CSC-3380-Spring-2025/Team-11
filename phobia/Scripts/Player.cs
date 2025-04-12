@@ -24,6 +24,8 @@ public partial class Player : CharacterBody3D
 	private double timeLeft;
 	private bool flashlightOn = true;
 
+	private Area3D hurtBox;
+
 	
 	public override void _Ready(){
 		Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -35,6 +37,8 @@ public partial class Player : CharacterBody3D
 		batteryTimer = GetNode<Timer>("BatteryTimer");
 		batteryTimer.Timeout += OnBatteryTimerTimeOut;
 		timeLeft = batteryTimer.WaitTime;
+		hurtBox = (Area3D)FindChild("Hurtbox").FindChild("Area3D");
+		hurtBox.BodyEntered += OnBodyEnteredHurtbox;
 		EmitSignal(SignalName.PlayerReady);
 
 	}
@@ -146,4 +150,22 @@ public partial class Player : CharacterBody3D
 		EmitSignal(SignalName.BatteryDepleted);
 	}
 
+	private void OnBodyEnteredHurtbox(Node3D body)
+	{
+		PhysicsBody3D bodyEntered = (PhysicsBody3D)body;
+
+		//Currently detects if collision eleent is an enemy using col layer but when
+		//an enemy class is created it will check for enemy class
+		if(bodyEntered.CollisionLayer == 4)
+		{
+			Globals.Instance.previousScene = GetTree().CurrentScene.SceneFilePath;
+			CallDeferred(MethodName.ChangeToGameOver);
+		}
+	}
+
+	private void ChangeToGameOver()
+	{
+		Input.MouseMode = Input.MouseModeEnum.Visible;
+		GetTree().ChangeSceneToFile("res://Scenes/game_over_screen.tscn");
+	}
 }
