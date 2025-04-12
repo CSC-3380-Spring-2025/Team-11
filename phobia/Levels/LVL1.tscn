@@ -1,0 +1,337 @@
+[gd_scene load_steps=11 format=3 uid="uid://drogcfbic2e3q"]
+
+[ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="1_ijwg8"]
+[ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="2_ff4ol"]
+[ext_resource type="Texture2D" uid="uid://dxtsqs2joo4sy" path="res://Assets/Textures/woodtexture.png" id="3_ocgr1"]
+[ext_resource type="Texture2D" uid="uid://88udc8oj6pw" path="res://Assets/Textures/gooey wall texture.png" id="4_cwuob"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g53v7"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.109702, 0.0182421, 0.0129511, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_fvlcy"]
+sky_material = SubResource("ProceduralSkyMaterial_g53v7")
+
+[sub_resource type="Environment" id="Environment_sjxjx"]
+background_mode = 2
+sky = SubResource("Sky_fvlcy")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.668629, 0.668629, 0.668629, 1)
+volumetric_fog_emission = Color(0.299547, 0.299547, 0.299547, 1)
+volumetric_fog_emission_energy = 0.2
+volumetric_fog_length = 128.0
+adjustment_enabled = true
+adjustment_brightness = 1.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhrsw"]
+size = Vector3(1, 1.46484, 4.86621)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4p3a"]
+albedo_texture = ExtResource("3_ocgr1")
+uv1_scale = Vector3(0.565, 0.565, 0.565)
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1j3v"]
+shading_mode = 0
+albedo_texture = ExtResource("4_cwuob")
+uv1_scale = Vector3(0.35, 0.35, 0.35)
+uv1_triplanar = true
+uv2_triplanar = true
+texture_filter = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="UI" parent="." instance=ExtResource("1_ijwg8")]
+
+[node name="Player" parent="UI" instance=ExtResource("2_ff4ol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26228, 0, 30.8856)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 12.5553, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sjxjx")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33817, 1.45872, 3.53234)
+shape = SubResource("BoxShape3D_fhrsw")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00279617, -0.0631218, 0.117912)
+material_override = SubResource("StandardMaterial3D_c4p3a")
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="MazeWalls" type="Node" parent="."]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06001, 1.82078, 20.4759)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 33.7308)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15339, 1.82594, 27.7615)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 7.03186)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 12.5539, 1.82712, 23.6619)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 23.8437)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9048, 1.82594, 28.1873)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 18.6501)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8825, 1.82157, 16.1922)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 41.7349)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.3905, 1.82157, 13.123)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 36.788)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8431, 1.82157, 4.4726)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 79.4138)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2611, 1.82157, -5.11892)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 78.1801)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 0.602214, 1.82712, 43.4512)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 63.9126)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 6.7429, 1.82712, 9.01831)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 12.2214)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 1.26708, 1.82712, 37.3748)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 13.6066)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, -6.23996, 1.82712, 17.7572)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 24.275)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 0.213739, 1.82712, -4.16048)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 25.1708)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 0.439136, 1.82712, 3.16364)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 12.0932)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 15.513, 1.82712, -17.831)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 20.3333)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 15.2612, 1.82712, 2.45908)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 8.05365)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 16.4713, 1.82712, 30.899)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 5.69317)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, -21.8593, 1.82712, 37.573)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 7.06628)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 21.5078, 1.86604, -10.9281)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 20.506)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, -14.8923, 1.82712, 23.7302)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 6.99045)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, -22.482, 1.82712, 9.33545)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 6.74939)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 24.7324, 1.82712, -24.2115)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 16)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 0.766978, 1.82712, -24.3466)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 18.5621)
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, -8.00843, 1.82712, -30.5622)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 23.7498)
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 0.101314, 1.82712, -44.4084)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 65.349)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, 14.575, 1.82712, -37.4102)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 22.5914)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, -14.4721, 1.82712, -37.9062)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 23.0663)
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9807, 1.82157, -17.6767)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 13.2704)
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2391, 1.82157, 3.81273)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 16.5399)
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4, 1.82157, -20.8411)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 18.8118)
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2475, 1.82157, 36.9937)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 12.7446)
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1653, 1.82157, 36.9937)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 12.7446)
+
+[node name="CSGBox3D34" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3374, 1.82157, 16.3468)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 13.8724)
+
+[node name="CSGBox3D35" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7639, 1.82157, 9.3242)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 12.7917)
+
+[node name="CSGBox3D36" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.816808, 1.82157, -11.0128)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 12.7446)
+
+[node name="CSGBox3D37" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88943, 1.82157, -10.875)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 12.8312)
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(-0.00776669, 0, 0.99997, 0, 1, 0, -0.99997, 0, -0.00776669, -19.8143, 1.82712, -11.4343)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 23.0657)
+
+[node name="CSGBox3D39" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16021, 1.82157, 13.031)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 9.16281)
+
+[node name="CSGBox3D40" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5591, 1.82156, -27.6049)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 18.8936)
+
+[node name="CSGBox3D41" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.521, 1.82157, -27.7284)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 20.6026)
+
+[node name="CSGBox3D42" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3519, 1.82157, -6.91463)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 7.55783)
+
+[node name="CSGBox3D43" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3003, 1.82157, -27.8685)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 7.41428)
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4138, 1.82157, -34.0033)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 7.41428)
+
+[node name="CSGBox3D45" type="CSGBox3D" parent="MazeWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49305, 1.82157, 33.8065)
+material_override = SubResource("StandardMaterial3D_y1j3v")
+use_collision = true
+size = Vector3(1, 2.76862, 6.62493)
