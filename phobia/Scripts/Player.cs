@@ -38,7 +38,7 @@ public partial class Player : CharacterBody3D
 		batteryTimer.Timeout += OnBatteryTimerTimeOut;
 		timeLeft = batteryTimer.WaitTime;
 		hurtBox = (Area3D)FindChild("Hurtbox").FindChild("Area3D");
-		hurtBox.BodyEntered += OnBodyEntered;
+		hurtBox.BodyEntered += OnBodyEnteredHurtbox;
 		EmitSignal(SignalName.PlayerReady);
 
 	}
@@ -150,27 +150,19 @@ public partial class Player : CharacterBody3D
 		EmitSignal(SignalName.BatteryDepleted);
 	}
 
-	private void OnBodyEntered(Node3D body)
+	private void OnBodyEnteredHurtbox(Node3D body)
 	{
 		PhysicsBody3D bodyEntered = (PhysicsBody3D)body;
 
-		GD.Print("Body Entered" + bodyEntered);
-		GD.Print("COl Layer: " + bodyEntered.CollisionLayer);
-
+		//Currently detects if collision eleent is an enemy using col layer but when
+		//an enemy class is created it will check for enemy class
 		if(bodyEntered.CollisionLayer == 4)
 		{
-			
-			GD.Print("In COL " + bodyEntered.CollisionLayer);
-			GD.Print("Previous Scene is :" + Globals.Instance.previousScene);
 			Globals.Instance.previousScene = GetTree().CurrentScene.SceneFilePath;
-			GD.Print("Previous Scene is NOW: " + Globals.Instance.previousScene);
 			CallDeferred(MethodName.ChangeToGameOver);
 		}
-		else
-		{
-			GD.Print("Not in COL " + 4 + " Actual COL layer is " + bodyEntered.CollisionLayer);
-		}
 	}
+
 	private void ChangeToGameOver()
 	{
 		Input.MouseMode = Input.MouseModeEnum.Visible;

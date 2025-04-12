@@ -51,7 +51,7 @@ texture_filter = 2
 [node name="UI" parent="." instance=ExtResource("1_ijwg8")]
 
 [node name="Player" parent="UI" instance=ExtResource("2_ff4ol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26228, 0, 30.8856)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26228, 3.94243, 30.8856)
 
 [node name="ExitDoor" parent="UI" instance=ExtResource("3_b6oqx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42085, 0.436879, 14.4133)
