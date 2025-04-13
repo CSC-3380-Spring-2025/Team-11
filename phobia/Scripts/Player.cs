@@ -8,6 +8,9 @@ public partial class Player : CharacterBody3D
 	public delegate void BatteryDepletedEventHandler();
 	[Signal]
 	public delegate void PlayerReadyEventHandler();
+
+	[Signal]
+	public delegate void StaminaUpdateEventHandler();
 	public const float baseSpeed = 4.0f;
 	public const float sprintModifier = 0.6f;
 	public float currentSpeed = baseSpeed;
@@ -15,16 +18,24 @@ public partial class Player : CharacterBody3D
 	public const float camSensitivity = 0.006f;
 	public int flashlightBattery = 100;
 
+	public const int maxStamina = 100;
+	public int currentStamina = maxStamina;
+
 	private Node3D head;
 	private Camera3D cam;
 	private Node3D hand;
 	private SpotLight3D flashlight;
 	private Timer batteryTimer;
-	private int batteryDepletionRate = 2;
-	private double timeLeft;
-	private bool flashlightOn = true;
 
 	private Area3D hurtBox;
+	private Timer staminaDepletionTimer;
+	private Timer staminaRegenerationTimer;
+	private int batteryDepletionRate = 2;
+	private int staminaDepletionRate = 5;
+	private int staminaRegenerationRate = 5;
+	private double timeLeft;
+	private bool flashlightOn = true;
+	private bool isSprinting = false;
 
 	
 	public override void _Ready(){
@@ -37,10 +48,16 @@ public partial class Player : CharacterBody3D
 		batteryTimer = GetNode<Timer>("BatteryTimer");
 		batteryTimer.Timeout += OnBatteryTimerTimeOut;
 		timeLeft = batteryTimer.WaitTime;
+
 		hurtBox = (Area3D)FindChild("Hurtbox").FindChild("Area3D");
 		hurtBox.BodyEntered += OnBodyEnteredHurtbox;
-		EmitSignal(SignalName.PlayerReady);
 
+
+		EmitSignal(SignalName.PlayerReady);
+		staminaDepletionTimer = GetNode<Timer>("StaminaTimer");
+		staminaDepletionTimer.Timeout += OnStaminaDepletionTimeout;
+		staminaRegenerationTimer = GetNode<Timer>("StaminaRegeneration");
+		staminaRegenerationTimer.Timeout += OnStaminaRegenerationTimeout;
 	}
 	
 	public override void _Input(InputEvent @event){
@@ -90,15 +107,6 @@ public partial class Player : CharacterBody3D
 		Vector3 direction = (head.GlobalTransform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 
 
-		if(Input.IsActionPressed("sprint"))
-		{
-			currentSpeed = baseSpeed + (baseSpeed * sprintModifier);
-		}
-		else
-		{
-			currentSpeed = baseSpeed;
-		}
-
 		if (direction != Vector3.Zero)
 		{	
 			velocity.X = direction.X * currentSpeed;
@@ -119,6 +127,9 @@ public partial class Player : CharacterBody3D
 	public override void _Process(double delta)
 	{
 		HandleFlashlightBattery();
+
+		HandleSprint();
+
 	}
 	private void HandleFlashlightBattery()
 	{
@@ -143,6 +154,41 @@ public partial class Player : CharacterBody3D
 		}	
 
 	}
+
+	private void HandleSprint()
+	{
+		if(Input.IsActionPressed("sprint") && !isSprinting && currentStamina > 0)
+		{
+			currentSpeed = baseSpeed + (baseSpeed * sprintModifier);
+			isSprinting = true;
+			staminaDepletionTimer.Start();
+		}
+		else if (isSprinting && currentStamina <= 0)
+		{
+			currentStamina = 0;
+			currentSpeed = baseSpeed;
+			isSprinting = false;
+			staminaDepletionTimer.Stop();
+			staminaRegenerationTimer.Start();
+		}
+		else
+		{
+			currentSpeed = baseSpeed;
+			isSprinting = false;
+			staminaDepletionTimer.Stop();
+
+		}
+		if (!isSprinting && currentStamina < maxStamina) 
+		{
+			staminaRegenerationTimer.Start();
+		}
+		if (currentStamina > maxStamina)
+		{
+			currentStamina = maxStamina;
+			staminaRegenerationTimer.Stop();
+		}
+	}
+
 	private void OnBatteryTimerTimeOut()
 	{		
 		flashlightBattery = Math.Max(0, flashlightBattery - batteryDepletionRate);
@@ -168,4 +214,21 @@ public partial class Player : CharacterBody3D
 		Input.MouseMode = Input.MouseModeEnum.Visible;
 		GetTree().ChangeSceneToFile("res://Scenes/game_over_screen.tscn");
 	}
+
+	private void OnStaminaDepletionTimeout()
+	{
+		currentStamina -= staminaDepletionRate;
+		staminaDepletionTimer.Start();
+		EmitSignal(SignalName.StaminaUpdate);
+		Console.WriteLine(currentStamina);
+	}
+	private void OnStaminaRegenerationTimeout()
+	{
+		currentStamina += staminaRegenerationRate;
+		staminaRegenerationTimer.Start();
+		EmitSignal(SignalName.StaminaUpdate);
+		Console.WriteLine(currentStamina);
+	}
+
+
 }

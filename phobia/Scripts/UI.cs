@@ -8,25 +8,34 @@ using System;
 public partial class UI : Control
 {
 	private int batteryPercentage;
+
+	private int staminaPercentage;
 	private Player player;
 	private Label battery;
 	private Label doorOverlay;
+	private ProgressBar staminaBar;
+
 	public override void _Ready()
 	{
 		Raycast playerRaycast = GetNode<Raycast>("Player/Head/RayCast3D");
 		player = GetNode<Player>("Player");
 		battery = GetNode<Label>("Battery");
 		doorOverlay = GetNode<Label>("DoorOverlay");
+
+		staminaBar = GetNode<ProgressBar>("StaminaBar");
 		playerRaycast.DoorHovered += OnDoorHovered;
 		playerRaycast.DoorNotHovered += OnDoorNotHovered;
 		player.BatteryDepleted += OnBatteryDepleted;
+		player.StaminaUpdate += OnStaminaUpdate;
 		player.Ready += OnPlayerReady;
 		UpdateBatteryPercentage();
+		UpdateStaminaPercentage();
+
 
 	}
 	public override void _Process(double delta)
 	{
-		
+
 
 	}
 
@@ -61,6 +70,13 @@ public partial class UI : Control
 		UpdateBatteryPercentage();
 	}
 
+	
+	private void OnStaminaUpdate()
+	{
+		UpdateStaminaPercentage();
+	}
+
+
 	private void OnPlayerReady()
 	{
 		GD.Print("Player Ready");
@@ -90,5 +106,11 @@ public partial class UI : Control
 		}
 
 	}
-	
+
+	private void UpdateStaminaPercentage()
+	{
+		staminaPercentage = player.currentStamina;
+		staminaBar.Value = staminaPercentage;
+	}
+
 }

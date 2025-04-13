@@ -20,22 +20,23 @@ public partial class PauseUi : Control
 		}
 		
 	}
-	
-	public void _on_resume_pressed() 
+	private void _on_resume_pressed() 
 	{
 		paused = false;
 		Visible = false;
 		GetTree().Paused = false;
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
-	public void _on_restart_pressed() 
+
+	private void _on_restart_pressed() 
 	{
 		paused = false;
 		Visible = false;
 		GetTree().Paused = false;
 		GetTree().ReloadCurrentScene(); 
 	}
-	public void _on_settings_pressed() 
+
+	private void _on_settings_pressed() 
 	{
 		//paused= false; 
 		//Visible = false;
@@ -43,7 +44,8 @@ public partial class PauseUi : Control
 		//GetTree().ChangeSceneToFile("res://Scenes/Settings/settings_menu.tscn");
 		
 	}
-	public void _on_quit_pressed() 
+
+	private void _on_quit_pressed() 
 	{
 		paused = false; 
 		Visible = false;

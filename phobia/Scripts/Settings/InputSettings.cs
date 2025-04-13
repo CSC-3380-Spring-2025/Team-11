@@ -8,8 +8,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Xml.Resolvers;
 
 
-
-
 public partial class InputSettings : Control
 {
 	private ConfigFile config = new ConfigFile();
@@ -128,12 +126,15 @@ public override void _Input(InputEvent @event)
 			
 			foreach(StringName action in InputMap.GetActions())
 			{
+
 				if (inputActions.ContainsKey(action))
 				{
 					Godot.Collections.Array<InputEvent> events = InputMap.ActionGetEvents(action);
 					if(events.Count > 0)
 					{
+
 					//GD.Print("Adding action: " + action + " event: " + events[0]);	
+
 					config.SetValue(action, action, events[0]);
 					}
 				}

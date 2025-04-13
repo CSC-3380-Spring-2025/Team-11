@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgo1scaeg7ov5"]
+[gd_scene load_steps=8 format=3 uid="uid://bgo1scaeg7ov5"]
 
 [ext_resource type="Script" path="res://Scripts/UI.cs" id="1_gqvtt"]
 [ext_resource type="PackedScene" uid="uid://oew40qmlbk85" path="res://Scenes/Settings/settings_menu.tscn" id="2_2yqeh"]
 [ext_resource type="Script" path="res://Scripts/PauseUi.cs" id="3_w5dx1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_05q6a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4gfk"]
+bg_color = Color(0.368666, 0.586092, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_foyqc"]
+bg_color = Color(0, 0.445685, 0.15625, 1)
+
+[sub_resource type="Theme" id="Theme_8p5a8"]
+/styles/Blue = SubResource("StyleBoxFlat_p4gfk")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_foyqc")
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -96,6 +108,16 @@ text = "Settings"
 [node name="Quit" type="Button" parent="PauseUI/GridContainer"]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="StaminaBar" type="ProgressBar" parent="."]
+process_mode = 3
+material = SubResource("CanvasItemMaterial_05q6a")
+layout_mode = 0
+offset_top = 25.0
+offset_right = 197.0
+offset_bottom = 52.0
+theme = SubResource("Theme_8p5a8")
+value = 100.0
 
 [connection signal="pressed" from="PauseUI/GridContainer/Resume" to="PauseUI" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseUI/GridContainer/Restart" to="PauseUI" method="_on_restart_pressed"]

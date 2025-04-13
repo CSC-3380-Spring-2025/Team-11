@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bdf3ictvou1i5"]
 
-[ext_resource type="MeshLibrary" uid="uid://du27scn67wg87" path="res://tileset.meshlib" id="1_xnxd4"]
+[ext_resource type="MeshLibrary" uid="uid://bh6fi68nebwmi" path="res://tileset.meshlib" id="1_xnxd4"]
 [ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="2_iuc18"]
 [ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="3_ey7de"]
 [ext_resource type="Script" path="res://Scripts/pathfinding.cs" id="4_j6fgf"]
