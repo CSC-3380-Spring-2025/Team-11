@@ -9,7 +9,7 @@ public partial class pathfinding : CharacterBody3D
 	
 	private NavigationAgent3D nav;
 	private Vector3 velocity = Vector3.Zero;
-
+	
 	public override void _Ready()
 	{
 		nav = GetNode<NavigationAgent3D>("NavigationAgent3D");

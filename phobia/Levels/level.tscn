@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://babtgem4ympij"]
+[gd_scene load_steps=38 format=3 uid="uid://babtgem4ympij"]
 
 [ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="1_wtiud"]
 [ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="2_67ocj"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://d08jldxylid85" path="res://Scenes/testNPC.tscn" id="20_wn7ai"]
 [ext_resource type="PackedScene" uid="uid://d3q241xeysqql" path="res://Scenes/play_audio_on_body_enter.tscn" id="21_3bja3"]
 [ext_resource type="AudioStream" uid="uid://cvk6twvwcqiu0" path="res://Assets/SFX/bellring.wav" id="22_hj0eh"]
+[ext_resource type="PackedScene" uid="uid://sschth8wg27p" path="res://Scenes/item_object.tscn" id="23_d5sn2"]
+[ext_resource type="Texture2D" uid="uid://p58vjd6nrn4e" path="res://icon.svg" id="24_moh6r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gqep8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -65,8 +67,11 @@ top_radius = 0.205
 bottom_radius = 0.205
 height = 0.877
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_o3t2f"]
+size = Vector3(1.41235, 1.26758, 1.3252)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_h20rl"]
-size = Vector3(1.79468, 1.17749, 2.12085)
+size = Vector3(2.30762, 1.65063, 2.8728)
 
 [node name="Level0-tutorial" type="Node3D"]
 
@@ -351,20 +356,33 @@ shape = SubResource("CylinderShape3D_newxf")
 mesh = SubResource("CylinderMesh_qosls")
 skeleton = NodePath("../..")
 
-[node name="DingAudio" type="Node3D" parent="ItemForTestingSound"]
-metadata/_edit_lock_ = true
+[node name="ItemObject" parent="." node_paths=PackedStringArray("spriteNode", "itemHitbox") instance=ExtResource("23_d5sn2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0307207, 2.06253, -0.340053)
+spriteNode = NodePath("Sprite3D")
+itemHitbox = NodePath("Area3D")
 
-[node name="PlayAudioOnBodyEnter" parent="ItemForTestingSound/DingAudio" node_paths=PackedStringArray("cooldownTimer", "audio") instance=ExtResource("21_3bja3")]
+[node name="Sprite3D" type="Sprite3D" parent="ItemObject"]
+texture = ExtResource("24_moh6r")
+
+[node name="Area3D" type="Area3D" parent="ItemObject"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemObject/Area3D"]
+shape = SubResource("BoxShape3D_o3t2f")
+
+[node name="DingAudio" type="Node3D" parent="ItemObject"]
+
+[node name="PlayAudioOnBodyEnter" parent="ItemObject/DingAudio" node_paths=PackedStringArray("cooldownTimer", "audio") instance=ExtResource("21_3bja3")]
 collision_layer = 8
 collision_mask = 2
 cooldownTimer = NodePath("../DingTimer")
 audio = NodePath("../DingAudio")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemForTestingSound/DingAudio/PlayAudioOnBodyEnter"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemObject/DingAudio/PlayAudioOnBodyEnter"]
 shape = SubResource("BoxShape3D_h20rl")
 
-[node name="DingTimer" type="Timer" parent="ItemForTestingSound/DingAudio"]
+[node name="DingTimer" type="Timer" parent="ItemObject/DingAudio"]
 
-[node name="DingAudio" type="AudioStreamPlayer3D" parent="ItemForTestingSound/DingAudio"]
+[node name="DingAudio" type="AudioStreamPlayer3D" parent="ItemObject/DingAudio"]
 stream = ExtResource("22_hj0eh")
 max_db = -15.0
