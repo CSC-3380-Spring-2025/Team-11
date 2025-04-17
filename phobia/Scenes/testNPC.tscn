@@ -17,5 +17,13 @@ script = ExtResource("2_4qpdf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_qhtv1")
 
+<<<<<<< Updated upstream
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 material = SubResource("StandardMaterial3D_2b0fy")
+=======
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+texture_filter = 0
+sprite_frames = ExtResource("2_277bq")
+animation = &"BugIdle"
+autoplay = "BugIdle"
+>>>>>>> Stashed changes

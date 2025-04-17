@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://r5lluehnywnt"]
+
+[ext_resource type="Script" path="res://Scripts/BatteryPickup.cs" id="1_ge8o1"]
+[ext_resource type="Texture2D" uid="uid://cakqa4cmrd2q2" path="res://Assets/Textures/batterypickup.png" id="1_i4cc0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cclwr"]
+
+[node name="BatteryPickup" type="Area3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ge8o1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_cclwr")
+
+[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D"]
+layers = 3
+texture_filter = 0
+texture = ExtResource("1_i4cc0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 3
+skeleton = NodePath("../CollisionShape3D")
