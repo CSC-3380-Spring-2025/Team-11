@@ -1,8 +1,6 @@
 is_global = true
 build_property.GodotDisabledSourceGenerators = 
-
-build_property.GodotProjectDir = /Users/baylapatin/Documents/GitHub/Team-11/phobia/
-
+build_property.GodotProjectDir = C:\Users\brent\Documents\CSC 3380\MAIN REPO\Team-11\phobia\
 build_property.GodotProjectDirBase64 = 
 build_property.GodotSourceGenerators = 
 build_property.IsGodotToolsProject = 
@@ -12,8 +10,11 @@ build_property.UsingMicrosoftNETSdkWeb =
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ENDLESS
-
-build_property.ProjectDir = /Users/baylapatin/Documents/GitHub/Team-11/phobia/
-
+build_property.ProjectDir = C:\Users\brent\Documents\CSC 3380\MAIN REPO\Team-11\phobia\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
