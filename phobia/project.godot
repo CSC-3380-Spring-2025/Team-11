@@ -27,6 +27,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="ENDLESS"
 
+[global_group]
+
+Persist=""
+
 [input]
 
 move_left={

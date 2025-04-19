@@ -37,7 +37,7 @@ public partial class Player : CharacterBody3D
 	private double timeLeft;
 	private bool flashlightOn = true;
 	private bool isSprinting = false;
-
+	private ConfigFile config = new ConfigFile();
 	
 	public override void _Ready(){
 		Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -57,6 +57,8 @@ public partial class Player : CharacterBody3D
 		staminaDepletionTimer.Timeout += OnStaminaDepletionTimeout;
 		staminaRegenerationTimer = GetNode<Timer>("StaminaRegeneration");
 		staminaRegenerationTimer.Timeout += OnStaminaRegenerationTimeout;
+
+		Load();
 
 		EmitSignal(SignalName.PlayerReady);
 	}
@@ -131,6 +133,29 @@ public partial class Player : CharacterBody3D
 
 		HandleSprint();
 
+	}
+
+	public void Save()
+	{
+		config.SetValue("Player", "flashlightBattery", flashlightBattery);
+		config.Save("user://player_vars.cfg");
+	}
+
+	private void Load()
+	{
+		Error err = config.Load("user://player_vars.cfg");
+		
+		if(err != Error.Ok)
+		{
+			GD.Print("Save File Does Not Exist");
+		}
+		else
+		{
+			foreach (String player in config.GetSections())
+			{
+				flashlightBattery = (int)config.GetValue(player, "flashlightBattery");
+			}	
+		} 
 	}
 
 	public void OnItemCollected(String itemType, int itemValue)
