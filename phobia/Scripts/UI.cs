@@ -25,7 +25,7 @@ public partial class UI : Control
 		staminaBar = GetNode<ProgressBar>("StaminaBar");
 		playerRaycast.DoorHovered += OnDoorHovered;
 		playerRaycast.DoorNotHovered += OnDoorNotHovered;
-		player.BatteryDepleted += OnBatteryDepleted;
+		player.BatteryUpdated += OnBatteryUpdated;
 		player.StaminaUpdate += OnStaminaUpdate;
 		player.Ready += OnPlayerReady;
 		UpdateBatteryPercentage();
@@ -65,7 +65,7 @@ public partial class UI : Control
 		doorOverlay.Visible = false;
 	}
 
-	private void OnBatteryDepleted()
+	private void OnBatteryUpdated()
 	{
 		UpdateBatteryPercentage();
 	}

@@ -5,7 +5,7 @@ public partial class Player : CharacterBody3D
 {
 
 	[Signal]
-	public delegate void BatteryDepletedEventHandler();
+	public delegate void BatteryUpdatedEventHandler();
 	[Signal]
 	public delegate void PlayerReadyEventHandler();
 
@@ -16,7 +16,8 @@ public partial class Player : CharacterBody3D
 	public float currentSpeed = baseSpeed;
 	public const float jumpVelocity = 4.5f;
 	public const float camSensitivity = 0.006f;
-	public int flashlightBattery = 100;
+	public const int maxFlashlightBattery = 100; 
+	public int flashlightBattery = maxFlashlightBattery / 2;
 
 	public const int maxStamina = 100;
 	public int currentStamina = maxStamina;
@@ -36,7 +37,7 @@ public partial class Player : CharacterBody3D
 	private double timeLeft;
 	private bool flashlightOn = true;
 	private bool isSprinting = false;
-
+	private ConfigFile config = new ConfigFile();
 	
 	public override void _Ready(){
 		Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -52,12 +53,14 @@ public partial class Player : CharacterBody3D
 		hurtBox = (Area3D)FindChild("Hurtbox").FindChild("Area3D");
 		hurtBox.BodyEntered += OnBodyEnteredHurtbox;
 
-
-		EmitSignal(SignalName.PlayerReady);
 		staminaDepletionTimer = GetNode<Timer>("StaminaTimer");
 		staminaDepletionTimer.Timeout += OnStaminaDepletionTimeout;
 		staminaRegenerationTimer = GetNode<Timer>("StaminaRegeneration");
 		staminaRegenerationTimer.Timeout += OnStaminaRegenerationTimeout;
+
+		Load();
+
+		EmitSignal(SignalName.PlayerReady);
 	}
 	
 	public override void _Input(InputEvent @event){
@@ -131,6 +134,40 @@ public partial class Player : CharacterBody3D
 		HandleSprint();
 
 	}
+
+	public void Save()
+	{
+		config.SetValue("Player", "flashlightBattery", flashlightBattery);
+		config.Save("user://player_vars.cfg");
+	}
+
+	private void Load()
+	{
+		Error err = config.Load("user://player_vars.cfg");
+		
+		if(err != Error.Ok)
+		{
+			GD.Print("Save File Does Not Exist");
+		}
+		else
+		{
+			foreach (String player in config.GetSections())
+			{
+				flashlightBattery = (int)config.GetValue(player, "flashlightBattery");
+			}	
+		} 
+	}
+
+	public void OnItemCollected(String itemType, int itemValue)
+	{
+		if(itemType.Equals("battery"))
+		{
+			flashlightBattery += itemValue;
+			flashlightBattery = Math.Min(flashlightBattery, maxFlashlightBattery);
+			EmitSignal(SignalName.BatteryUpdated);
+		}
+	}
+
 	private void HandleFlashlightBattery()
 	{
 		if(flashlightBattery > 0)
@@ -193,7 +230,7 @@ public partial class Player : CharacterBody3D
 	{		
 		flashlightBattery = Math.Max(0, flashlightBattery - batteryDepletionRate);
 		batteryTimer.Start();
-		EmitSignal(SignalName.BatteryDepleted);
+		EmitSignal(SignalName.BatteryUpdated);
 	}
 
 	private void OnBodyEnteredHurtbox(Node3D body)
@@ -229,6 +266,4 @@ public partial class Player : CharacterBody3D
 		EmitSignal(SignalName.StaminaUpdate);
 		Console.WriteLine(currentStamina);
 	}
-
-
 }
