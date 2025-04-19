@@ -11,7 +11,13 @@ public partial class ItemObject : Node3D
 	public float spinSpeed = 0.05f;
 	[Export]
 	public Area3D itemHitbox;
-
+	[Export]
+	public String itemType;
+	[Export]
+	public int itemValue;
+	[Signal]
+	public delegate void ItemCollectedEventHandler(String type, int value);
+	
 
 
 	public override void _Ready()
@@ -33,8 +39,14 @@ public partial class ItemObject : Node3D
 	{
 		if(body is Player)
 		{
-			GD.Print("Item Picked Up by " + body.GetType());
+			Player player = (Player)body;
+			GD.Print(itemType + " with value " + itemValue + " picked up by " + body.GetType());
+			ItemCollected += player.OnItemCollected;
+			EmitSignal(SignalName.ItemCollected, itemType, itemValue);
+			
 			QueueFree();
+			spriteNode.QueueFree();
+			itemHitbox.QueueFree();
 		}
 	}
 }

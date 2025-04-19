@@ -40,7 +40,7 @@ agent_height = 2.0
 
 [node name="UI" parent="." instance=ExtResource("2_iuc18")]
 
-[node name="Player" parent="UI" instance=ExtResource("3_ey7de")]
+[node name="Player" parent="UI" groups=["Persist"] instance=ExtResource("3_ey7de")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7965, 3.02859, 6.71297)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
