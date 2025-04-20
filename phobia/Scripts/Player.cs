@@ -8,8 +8,22 @@ public partial class Player : CharacterBody3D
 	public const float camSensitivity = 0.006f;
 
 	[Signal]
-	public delegate void BatteryDepletedEventHandler();
-	public int flashlightBattery = 100;
+	public delegate void BatteryUpdatedEventHandler();
+	[Signal]
+	public delegate void PlayerReadyEventHandler();
+
+	[Signal]
+	public delegate void StaminaUpdateEventHandler();
+	public const float baseSpeed = 4.0f;
+	public const float sprintModifier = 0.6f;
+	public float currentSpeed = baseSpeed;
+	public const float jumpVelocity = 4.5f;
+	public const float camSensitivity = 0.006f;
+	public const int maxFlashlightBattery = 100; 
+	public int flashlightBattery = maxFlashlightBattery / 2;
+
+	public const int maxStamina = 100;
+	public int currentStamina = maxStamina;
 
 	private Node3D head;
 	private Camera3D cam;
@@ -19,7 +33,8 @@ public partial class Player : CharacterBody3D
 	private Timer batteryTimer;
 	private double timeLeft;
 	private bool flashlightOn = true;
-
+	private bool isSprinting = false;
+	private ConfigFile config = new ConfigFile();
 	
 	public override void _Ready(){
 		Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -32,6 +47,17 @@ public partial class Player : CharacterBody3D
 		batteryTimer.Timeout += OnBatteryTimerTimeOut;
 		timeLeft = batteryTimer.WaitTime;
 
+		hurtBox = (Area3D)FindChild("Hurtbox").FindChild("Area3D");
+		hurtBox.BodyEntered += OnBodyEnteredHurtbox;
+
+		staminaDepletionTimer = GetNode<Timer>("StaminaTimer");
+		staminaDepletionTimer.Timeout += OnStaminaDepletionTimeout;
+		staminaRegenerationTimer = GetNode<Timer>("StaminaRegeneration");
+		staminaRegenerationTimer.Timeout += OnStaminaRegenerationTimeout;
+
+		Load();
+
+		EmitSignal(SignalName.PlayerReady);
 	}
 	
 	public override void _Input(InputEvent @event){
@@ -99,7 +125,44 @@ public partial class Player : CharacterBody3D
 	public override void _Process(double delta)
 	{
 		HandleFlashlightBattery();
+
+		HandleSprint();
+
 	}
+
+	public void Save()
+	{
+		config.SetValue("Player", "flashlightBattery", flashlightBattery);
+		config.Save("user://player_vars.cfg");
+	}
+
+	private void Load()
+	{
+		Error err = config.Load("user://player_vars.cfg");
+		
+		if(err != Error.Ok)
+		{
+			GD.Print("Save File Does Not Exist");
+		}
+		else
+		{
+			foreach (String player in config.GetSections())
+			{
+				flashlightBattery = (int)config.GetValue(player, "flashlightBattery");
+			}	
+		} 
+	}
+
+	public void OnItemCollected(String itemType, int itemValue)
+	{
+		if(itemType.Equals("battery"))
+		{
+			flashlightBattery += itemValue;
+			flashlightBattery = Math.Min(flashlightBattery, maxFlashlightBattery);
+			EmitSignal(SignalName.BatteryUpdated);
+		}
+	}
+
 	private void HandleFlashlightBattery()
 	{
 		if(flashlightBattery > 0)
@@ -129,7 +192,40 @@ public partial class Player : CharacterBody3D
 	{		
 		flashlightBattery = Math.Max(0, flashlightBattery - 2);
 		batteryTimer.Start();
-		EmitSignal(SignalName.BatteryDepleted);
+		EmitSignal(SignalName.BatteryUpdated);
 	}
 
+	private void OnBodyEnteredHurtbox(Node3D body)
+	{
+		PhysicsBody3D bodyEntered = (PhysicsBody3D)body;
+
+		//Currently detects if collision eleent is an enemy using col layer but when
+		//an enemy class is created it will check for enemy class
+		if(bodyEntered.CollisionLayer == 4)
+		{
+			Globals.Instance.previousScene = GetTree().CurrentScene.SceneFilePath;
+			CallDeferred(MethodName.ChangeToGameOver);
+		}
+	}
+
+	private void ChangeToGameOver()
+	{
+		Input.MouseMode = Input.MouseModeEnum.Visible;
+		GetTree().ChangeSceneToFile("res://Scenes/game_over_screen.tscn");
+	}
+
+	private void OnStaminaDepletionTimeout()
+	{
+		currentStamina -= staminaDepletionRate;
+		staminaDepletionTimer.Start();
+		EmitSignal(SignalName.StaminaUpdate);
+		Console.WriteLine(currentStamina);
+	}
+	private void OnStaminaRegenerationTimeout()
+	{
+		currentStamina += staminaRegenerationRate;
+		staminaRegenerationTimer.Start();
+		EmitSignal(SignalName.StaminaUpdate);
+		Console.WriteLine(currentStamina);
+	}
 }

@@ -22,7 +22,8 @@ public partial class UI : Control
 		doorOverlay = GetNode<Label>("DoorOverlay");
 		playerRaycast.DoorHovered += OnDoorHovered;
 		playerRaycast.DoorNotHovered += OnDoorNotHovered;
-		player.BatteryDepleted += OnBatteryDepleted;
+		player.BatteryUpdated += OnBatteryUpdated;
+		player.StaminaUpdate += OnStaminaUpdate;
 		player.Ready += OnPlayerReady;
 
 	}
@@ -44,7 +45,7 @@ public partial class UI : Control
 		doorOverlay.Visible = false;
 	}
 
-	private void OnBatteryDepleted()
+	private void OnBatteryUpdated()
 	{
 		updateBatteryPercentage();
 	}

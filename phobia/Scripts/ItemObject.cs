@@ -4,15 +4,12 @@ using System;
 public partial class ItemObject : Node3D
 {
 	// Called when the node enters the scene tree for the first time.
-
 	[Export]
 	public Sprite3D spriteNode;
 	[Export]
 	public float spinSpeed = 0.05f;
 	[Export]
 	public Area3D itemHitbox;
-
-
 
 	public override void _Ready()
 	{

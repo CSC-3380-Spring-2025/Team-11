@@ -26,4 +26,3 @@ texture_filter = 0
 sprite_frames = ExtResource("2_277bq")
 animation = &"BugIdle"
 autoplay = "BugIdle"
->>>>>>> Stashed changes

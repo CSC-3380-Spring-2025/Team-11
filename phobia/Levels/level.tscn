@@ -21,10 +21,11 @@
 [ext_resource type="ArrayMesh" uid="uid://cf3ekywvthf54" path="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_pillar.obj" id="19_f4rbd"]
 [ext_resource type="PackedScene" uid="uid://d08jldxylid85" path="res://Scenes/testNPC.tscn" id="20_wn7ai"]
 [ext_resource type="PackedScene" uid="uid://d3q241xeysqql" path="res://Scenes/play_audio_on_body_enter.tscn" id="21_3bja3"]
+[ext_resource type="Texture2D" uid="uid://cwd3c2xx4b3tm" path="res://Assets/items/batterypickup.png" id="22_1v5rg"]
 [ext_resource type="AudioStream" uid="uid://cvk6twvwcqiu0" path="res://Assets/SFX/bellring.wav" id="22_hj0eh"]
 [ext_resource type="Texture2D" uid="uid://cakqa4cmrd2q2" path="res://Assets/Textures/batterypickup.png" id="22_w418y"]
 [ext_resource type="PackedScene" uid="uid://sschth8wg27p" path="res://Scenes/item_object.tscn" id="23_d5sn2"]
-[ext_resource type="PackedScene" uid="uid://r5lluehnywnt" path="res://Scenes/BatteryPickup.tscn" id="25_bpf0c"]
+[ext_resource type="PackedScene" uid="uid://dudt14x6kjhfl" path="res://BatteryPickup.tscn" id="25_33foi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gqep8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -364,7 +365,7 @@ itemHitbox = NodePath("Area3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="ItemObject"]
 texture_filter = 0
-texture = ExtResource("22_w418y")
+texture = ExtResource("22_1v5rg")
 
 [node name="Area3D" type="Area3D" parent="ItemObject"]
 collision_mask = 2
@@ -389,5 +390,5 @@ shape = SubResource("BoxShape3D_h20rl")
 stream = ExtResource("22_hj0eh")
 max_db = -15.0
 
-[node name="BatteryPickup" parent="." instance=ExtResource("25_bpf0c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15822, 1.02371, 9.13474)
+[node name="BatteryPickup" parent="." instance=ExtResource("25_33foi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.04235, 1.04117, -0.751327)
