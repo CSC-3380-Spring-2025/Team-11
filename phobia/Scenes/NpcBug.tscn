@@ -7,5 +7,6 @@
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = ExtResource("2_jecln")
-animation = &"BugIdle"
-frame_progress = 0.549864
+animation = &"BugWalk"
+frame = 4
+frame_progress = 0.185934

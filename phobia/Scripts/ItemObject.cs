@@ -4,13 +4,13 @@ using System;
 public partial class ItemObject : Node3D
 {
 	// Called when the node enters the scene tree for the first time.
-
 	[Export]
 	public Sprite3D spriteNode;
 	[Export]
 	public float spinSpeed = 0.05f;
 	[Export]
 	public Area3D itemHitbox;
+<<<<<<< Updated upstream
 	[Export]
 	public String itemType;
 	[Export]
@@ -19,6 +19,8 @@ public partial class ItemObject : Node3D
 	public delegate void ItemCollectedEventHandler(String type, int value);
 	
 
+=======
+>>>>>>> Stashed changes
 
 	public override void _Ready()
 	{
@@ -31,8 +33,8 @@ public partial class ItemObject : Node3D
 		float spinWeight = 1f - Mathf.Exp(-spinSpeed * (float)delta);
 		spriteNode.Rotation = spriteNode.Rotation.Lerp(new Vector3(spriteNode.Rotation.X, spriteNode.Rotation.Y + 90f, spriteNode.Rotation.Z), spinWeight);
 		Transform3D transform = Transform;
-        transform.Basis = Basis.Identity;
-        Transform = transform;
+		transform.Basis = Basis.Identity;
+		Transform = transform;
 	}
 
 	private void OnBodyEntered(Node3D body)

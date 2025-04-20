@@ -50,6 +50,7 @@ shadow_enabled = true
 environment = SubResource("Environment_jvron")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.358609, 0)
 navigation_mesh = SubResource("NavigationMesh_5jia8")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D"]

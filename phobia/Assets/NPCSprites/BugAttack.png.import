@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwd3c2xx4b3tm"
-path="res://.godot/imported/batterypickup.png-789bbaede0d1456429dbed2db5f32ed0.ctex"
+uid="uid://d21qb4bxibcgl"
+path="res://.godot/imported/BugAttack.png-500c74a1d41f4aa218e12351e4fe407f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/items/batterypickup.png"
-dest_files=["res://.godot/imported/batterypickup.png-789bbaede0d1456429dbed2db5f32ed0.ctex"]
+source_file="res://Assets/NPCSprites/BugAttack.png"
+dest_files=["res://.godot/imported/BugAttack.png-500c74a1d41f4aa218e12351e4fe407f.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
