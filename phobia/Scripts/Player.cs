@@ -266,8 +266,4 @@ public partial class Player : CharacterBody3D
 		EmitSignal(SignalName.StaminaUpdate);
 		Console.WriteLine(currentStamina);
 	}
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes

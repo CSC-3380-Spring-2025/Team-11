@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0itkmgx2hr8h"]
 
 [ext_resource type="PackedScene" uid="uid://sschth8wg27p" path="res://Scenes/item_object.tscn" id="1_4el06"]
-[ext_resource type="Texture2D" uid="uid://scbb1i05gjdl" path="res://Assets/Items/batterypickup.png" id="1_q6ck6"]
+[ext_resource type="Texture2D" uid="uid://baqnqfavh1v81" path="res://Assets/Items/batterypickup.png" id="1_q6ck6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uge87"]
 size = Vector3(1.47363, 1.43164, 1)
@@ -15,12 +15,11 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_uge87")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-modulate = Color(0.255066, 0.755613, 0, 1)
-texture = ExtResource("1_q6ck6")
-
 [node name="ItemObject" parent="." node_paths=PackedStringArray("spriteNode", "itemHitbox") instance=ExtResource("1_4el06")]
 spriteNode = NodePath("../Sprite3D")
 itemHitbox = NodePath("../Area3D")
 itemType = "battery"
 itemValue = 20
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_q6ck6")

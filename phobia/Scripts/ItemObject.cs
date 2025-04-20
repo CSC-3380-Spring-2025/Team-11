@@ -10,7 +10,6 @@ public partial class ItemObject : Node3D
 	public float spinSpeed = 0.05f;
 	[Export]
 	public Area3D itemHitbox;
-<<<<<<< Updated upstream
 	[Export]
 	public String itemType;
 	[Export]
@@ -18,9 +17,6 @@ public partial class ItemObject : Node3D
 	[Signal]
 	public delegate void ItemCollectedEventHandler(String type, int value);
 	
-
-=======
->>>>>>> Stashed changes
 
 	public override void _Ready()
 	{
