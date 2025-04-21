@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0itkmgx2hr8h"]
 
 [ext_resource type="PackedScene" uid="uid://sschth8wg27p" path="res://Scenes/item_object.tscn" id="1_4el06"]
-[ext_resource type="Texture2D" uid="uid://baqnqfavh1v81" path="res://Assets/Items/batterypickup.png" id="1_q6ck6"]
+[ext_resource type="Texture2D" uid="uid://c1orsp7bpmg02" path="res://Assets/Items/batterypickup.png" id="1_q6ck6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uge87"]
 size = Vector3(1.47363, 1.43164, 1)

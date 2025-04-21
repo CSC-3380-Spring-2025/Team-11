@@ -14,6 +14,7 @@ public partial class UI : Control
 	private Label battery;
 	private Label doorOverlay;
 	private ProgressBar staminaBar;
+	private Label concealmentObjectOverlay;
 
 	public override void _Ready()
 	{
@@ -21,10 +22,13 @@ public partial class UI : Control
 		player = GetNode<Player>("Player");
 		battery = GetNode<Label>("Battery");
 		doorOverlay = GetNode<Label>("DoorOverlay");
+		concealmentObjectOverlay = GetNode<Label>("ObjectOverlay");
 
 		staminaBar = GetNode<ProgressBar>("StaminaBar");
 		playerRaycast.DoorHovered += OnDoorHovered;
 		playerRaycast.DoorNotHovered += OnDoorNotHovered;
+		playerRaycast.ConcealmentObjectHovered += OnConcealmentObjectHovered;
+		playerRaycast.ConcealmentObjectNotHovered += OnConcealmentObjectNotHovered;
 		player.BatteryUpdated += OnBatteryUpdated;
 		player.StaminaUpdate += OnStaminaUpdate;
 		player.Ready += OnPlayerReady;
@@ -63,6 +67,16 @@ public partial class UI : Control
 	{
 
 		doorOverlay.Visible = false;
+	}
+	
+	private void OnConcealmentObjectHovered(ConcealmentObject concealmentObject)
+	{
+		concealmentObjectOverlay.Visible = true;
+	}
+	
+	private void OnConcealmentObjectNotHovered()
+	{
+		concealmentObjectOverlay.Visible = false;
 	}
 
 	private void OnBatteryUpdated()

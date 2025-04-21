@@ -11,6 +11,10 @@ public partial class Raycast : RayCast3D
 	public delegate void DoorHoveredEventHandler(Door doorObject);
 	[Signal]
 	public delegate void DoorNotHoveredEventHandler();
+	[Signal]
+	public delegate void ConcealmentObjectHoveredEventHandler(ConcealmentObject concealmentObject);
+	[Signal]
+	public delegate void ConcealmentObjectNotHoveredEventHandler();
 
 	public override void _Ready()
 	{
@@ -32,10 +36,20 @@ public partial class Raycast : RayCast3D
 				}
 				
 			}
+			else if (hitObj is ConcealmentObject)
+			{
+				ConcealmentObject concealmentObj = (ConcealmentObject) hitObj;
+				EmitSignal(SignalName.ConcealmentObjectHovered, concealmentObj);
+				if(Input.IsActionJustPressed("interact"))
+				{
+					concealmentObj.Interaction();
+				}
+			}
 		}
 		else
 		{
 			EmitSignal(SignalName.DoorNotHovered);
+			EmitSignal(SignalName.ConcealmentObjectNotHovered);
 		}
 		
 	}
