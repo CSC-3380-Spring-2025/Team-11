@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ENDLESS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fce07a56a66cf9089260c1666a36f33f0a803694")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f22ed7235074c55d66f8822bef8650b614dcd170")]
 [assembly: System.Reflection.AssemblyProductAttribute("ENDLESS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ENDLESS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

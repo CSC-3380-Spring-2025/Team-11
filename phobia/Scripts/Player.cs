@@ -239,7 +239,14 @@ public partial class Player : CharacterBody3D
 
 		//Currently detects if collision eleent is an enemy using col layer but when
 		//an enemy class is created it will check for enemy class
-		if(bodyEntered.CollisionLayer == 4)
+		// if(bodyEntered.CollisionLayer == 4)
+		// {
+		// 	Globals.Instance.previousScene = GetTree().CurrentScene.SceneFilePath;
+		// 	CallDeferred(MethodName.ChangeToGameOver);
+		// }
+
+		GD.Print(bodyEntered.Name.ToString());
+		if(bodyEntered.Name.ToString().Contains("Enemy"))
 		{
 			Globals.Instance.previousScene = GetTree().CurrentScene.SceneFilePath;
 			CallDeferred(MethodName.ChangeToGameOver);

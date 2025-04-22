@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Levels/lvl1.cs" id="1_h15kb"]
 [ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="1_ijwg8"]
+[ext_resource type="PackedScene" uid="uid://dvf71api70axi" path="res://AI/basic_enemy_ai.tscn" id="2_3xhbj"]
 [ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="2_ff4ol"]
-[ext_resource type="PackedScene" uid="uid://b0c1buiwtijxo" path="res://Scenes/enemy.tscn" id="2_lsjyi"]
 [ext_resource type="PackedScene" uid="uid://bw1t6u6ldnfbf" path="res://Scenes/Doors/exit_door.tscn" id="3_b6oqx"]
 [ext_resource type="Texture2D" uid="uid://dxtsqs2joo4sy" path="res://Assets/Textures/woodtexture.png" id="3_ocgr1"]
 [ext_resource type="Texture2D" uid="uid://88udc8oj6pw" path="res://Assets/Textures/gooey wall texture.png" id="4_cwuob"]
@@ -55,13 +55,13 @@ texture_filter = 2
 [node name="LVL1" type="Node3D"]
 script = ExtResource("1_h15kb")
 
-[node name="Enemy" parent="." instance=ExtResource("2_lsjyi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.297, 0.854028, 25.282)
+[node name="BasicEnemyAI" parent="." instance=ExtResource("2_3xhbj")]
+transform = Transform3D(0.0247636, 0, 0.999693, 0, 1, 0, -0.999693, 0, 0.0247636, 8.70831, 1.66952, 28.9963)
 
 [node name="UI" parent="." instance=ExtResource("1_ijwg8")]
 
 [node name="Player" parent="UI" groups=["Persist"] instance=ExtResource("2_ff4ol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26228, 3.94243, 30.8856)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26228, 1.94373, 27.4909)
 
 [node name="ExitDoor" parent="UI" instance=ExtResource("3_b6oqx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42085, 0.436879, 14.4133)
@@ -75,6 +75,7 @@ shadow_enabled = true
 environment = SubResource("Environment_sjxjx")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+visible = false
 navigation_mesh = SubResource("NavigationMesh_efqtj")
 
 [node name="Maze" type="Node" parent="NavigationRegion3D"]
