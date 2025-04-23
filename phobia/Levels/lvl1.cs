@@ -9,6 +9,7 @@ public partial class lvl1 : Node3D
 	public override void _Ready()
 	{
 		player = GetNode<Node3D>("UI/Player");
+		Globals.Instance.root = GetNode(this.GetPath());
 	}
 
 	public override void _PhysicsProcess(double delta)

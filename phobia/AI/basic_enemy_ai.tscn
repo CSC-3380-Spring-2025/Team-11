@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvf71api70axi"]
+[gd_scene load_steps=11 format=3 uid="uid://dvf71api70axi"]
 
-[ext_resource type="Script" path="res://AI/BasicEnemyAI.cs" id="1_xosly"]
+[ext_resource type="PackedScene" uid="uid://c7pvww5y3x1e3" path="res://AI/behavior_tree.tscn" id="1_jg5ct"]
 [ext_resource type="PackedScene" uid="uid://7gdbai5sobg4" path="res://AI/cone.tscn" id="2_blp7p"]
+[ext_resource type="PackedScene" uid="uid://c3aj0nrpymmie" path="res://AI/repeater_node.tscn" id="2_cl5jh"]
+[ext_resource type="PackedScene" uid="uid://d0swl4337piee" path="res://AI/sequence_node.tscn" id="3_13dej"]
+[ext_resource type="PackedScene" uid="uid://cj0wcgg0um2lc" path="res://AI/find_target.tscn" id="3_72a5c"]
+[ext_resource type="PackedScene" uid="uid://bbjw7qo7nx4aj" path="res://AI/move_to_target.tscn" id="4_4d5c2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vfq63"]
 
@@ -16,7 +20,20 @@ points = PackedVector3Array(-0.000195742, 1, -0.000195742, 0.194988, -1, -0.9808
 
 [node name="BasicEnemyAI" type="CharacterBody3D"]
 collision_layer = 5
-script = ExtResource("1_xosly")
+
+[node name="BehaviorTree" parent="." node_paths=PackedStringArray("root") instance=ExtResource("1_jg5ct")]
+root = NodePath("RepeaterNode")
+
+[node name="RepeaterNode" parent="BehaviorTree" node_paths=PackedStringArray("node") instance=ExtResource("2_cl5jh")]
+node = NodePath("SequenceNode")
+
+[node name="SequenceNode" parent="BehaviorTree/RepeaterNode" node_paths=PackedStringArray("nodes") instance=ExtResource("3_13dej")]
+nodes = [NodePath("FindTarget"), NodePath("MoveToTarget")]
+
+[node name="FindTarget" parent="BehaviorTree/RepeaterNode/SequenceNode" instance=ExtResource("3_72a5c")]
+
+[node name="MoveToTarget" parent="BehaviorTree/RepeaterNode/SequenceNode" node_paths=PackedStringArray("movementNode") instance=ExtResource("4_4d5c2")]
+movementNode = NodePath("../../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_vfq63")
@@ -26,6 +43,10 @@ mesh = SubResource("CapsuleMesh_lnbun")
 
 [node name="LOS" type="Area3D" parent="."]
 collision_mask = 3
+
+[node name="VisionRayCast" type="RayCast3D" parent="LOS"]
+target_position = Vector3(0, 0, -100)
+debug_shape_custom_color = Color(0.954435, 0.000215505, 0.000117054, 1)
 
 [node name="Cone" parent="LOS" instance=ExtResource("2_blp7p")]
 transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, 0, 0, -10.5184)
@@ -38,9 +59,5 @@ shape = SubResource("ConvexPolygonShape3D_eyrom")
 [node name="VisionTimer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
-
-[node name="VisionRayCast" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, -100)
-debug_shape_custom_color = Color(0.954435, 0.000215505, 0.000117054, 1)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
