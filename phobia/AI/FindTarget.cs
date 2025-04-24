@@ -9,6 +9,7 @@ public partial class FindTarget : BehaviorNode
 	public override BehaviorNode.Status Evaluate(Dictionary<StringName, Node> context)
 	{
 		Node targetNode = Globals.Instance.root.FindChild(targetName);
+		
 		if(targetNode == null)
 		{
 			return BehaviorNode.Status.ERROR;

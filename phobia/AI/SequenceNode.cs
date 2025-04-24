@@ -20,24 +20,32 @@ public partial class SequenceNode : BehaviorNode
 			_ResetState();
 			return BehaviorNode.Status.SUCCESS;
 		}
-		GD.Print("current Node: " + currentNode);
+		
+
 		BehaviorNode btNode = nodes[currentNode];
 		BehaviorNode.Status result = btNode.Evaluate(context);
+
 
 		if(result == BehaviorNode.Status.ERROR)
 		{
 			_ResetState();
 			return BehaviorNode.Status.ERROR;
 		}
+		
 		if(result == BehaviorNode.Status.SUCCESS)
 		{
-			if(currentNode == nodes.Length)
+			if(currentNode == nodes.Length - 1)
 			{
 				_ResetState();
 				return BehaviorNode.Status.SUCCESS;
 			}
 		}
-		currentNode += 1;
+		
+		if(result != BehaviorNode.Status.RUNNING)
+		{
+			currentNode += 1;
+		}
+
 		return BehaviorNode.Status.RUNNING;
 		
 	}

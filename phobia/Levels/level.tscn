@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://babtgem4ympij"]
+[gd_scene load_steps=42 format=3 uid="uid://babtgem4ympij"]
 
 [ext_resource type="PackedScene" uid="uid://dvf71api70axi" path="res://AI/basic_enemy_ai.tscn" id="1_1sqfu"]
 [ext_resource type="Script" path="res://Levels/lvl1.cs" id="1_45t48"]
@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://cvk6twvwcqiu0" path="res://Assets/SFX/bellring.wav" id="22_hj0eh"]
 [ext_resource type="PackedScene" uid="uid://sschth8wg27p" path="res://Scenes/item_object.tscn" id="23_d5sn2"]
 [ext_resource type="Texture2D" uid="uid://p58vjd6nrn4e" path="res://icon.svg" id="24_moh6r"]
+[ext_resource type="PackedScene" uid="uid://cjnvrfdexwoe" path="res://Scenes/random_target.tscn" id="27_g6xq2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gqep8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -404,3 +405,14 @@ size = Vector3(100, 1, 100)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14723, 2.89979, 7.36248)
 use_collision = true
 size = Vector3(4, 4, 4)
+
+[node name="RandomTargets" type="Node" parent="."]
+
+[node name="RandomTarget0" parent="RandomTargets" instance=ExtResource("27_g6xq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.237, 27.8939)
+
+[node name="RandomTarget1" parent="RandomTargets" instance=ExtResource("27_g6xq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.65509, 1.237, -9.46653)
+
+[node name="RandomTarget2" parent="RandomTargets" instance=ExtResource("27_g6xq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7132, 1.237, 9.98482)

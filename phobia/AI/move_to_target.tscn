@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbjw7qo7nx4aj"]
-
-[ext_resource type="Script" path="res://AI/MoveToTarget.cs" id="1_l8eew"]
-
-[node name="MoveToTarget" type="Node"]
-script = ExtResource("1_l8eew")
