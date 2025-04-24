@@ -16,13 +16,10 @@ public partial class ConcealmentObject : StaticBody3D
 	{
 		if (interactable == true) 
 		{
+			interactable = false;
+			playerBody.Visible = false;
 			concealed = true;
-			interactable = !interactable;
 			
-			if (concealed == true) 
-			{
-				playerBody.Visible = false;
-			}
 			if (concealed && Input.IsActionJustPressed("interact"))
 			{
 				playerBody.Visible = true;

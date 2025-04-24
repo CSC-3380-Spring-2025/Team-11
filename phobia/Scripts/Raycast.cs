@@ -36,7 +36,12 @@ public partial class Raycast : RayCast3D
 				}
 				
 			}
-			else if (hitObj is ConcealmentObject)
+			else
+			{
+				EmitSignal(SignalName.DoorNotHovered);
+			}
+			
+			if (hitObj is ConcealmentObject)
 			{
 				ConcealmentObject concealmentObj = (ConcealmentObject) hitObj;
 				EmitSignal(SignalName.ConcealmentObjectHovered, concealmentObj);
@@ -48,7 +53,6 @@ public partial class Raycast : RayCast3D
 		}
 		else
 		{
-			EmitSignal(SignalName.DoorNotHovered);
 			EmitSignal(SignalName.ConcealmentObjectNotHovered);
 		}
 		
