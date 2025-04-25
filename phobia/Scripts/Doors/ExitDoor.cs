@@ -16,9 +16,9 @@ public partial class ExitDoor : Door
 	{
 	}
 
-    public override void Interact()
-    {
-        base.Interact();
+	public override void Interact()
+	{
+		base.Interact();
 		EmitSignal(SignalName.ExitDoorOpened);
-    }
+	}
 }

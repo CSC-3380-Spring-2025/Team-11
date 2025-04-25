@@ -22,7 +22,7 @@
 [ext_resource type="ArrayMesh" uid="uid://beku2lc4s1cia" path="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_pillar_broken.obj" id="18_yuuvp"]
 [ext_resource type="ArrayMesh" uid="uid://cf3ekywvthf54" path="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_pillar.obj" id="19_f4rbd"]
 [ext_resource type="PackedScene" uid="uid://d08jldxylid85" path="res://Scenes/testNPC.tscn" id="20_wn7ai"]
-[ext_resource type="PackedScene" uid="uid://d3q241xeysqql" path="res://Scenes/play_audio_on_body_enter.tscn" id="21_3bja3"]
+[ext_resource type="PackedScene" path="res://Scenes/play_audio_on_body_enter.tscn" id="21_3bja3"]
 [ext_resource type="Texture2D" uid="uid://c1orsp7bpmg02" path="res://Assets/Items/batterypickup.png" id="22_1v5rg"]
 [ext_resource type="AudioStream" uid="uid://cvk6twvwcqiu0" path="res://Assets/SFX/bellring.wav" id="22_hj0eh"]
 [ext_resource type="PackedScene" uid="uid://sschth8wg27p" path="res://Scenes/item_object.tscn" id="23_d5sn2"]
