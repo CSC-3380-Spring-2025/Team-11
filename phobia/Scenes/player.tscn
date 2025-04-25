@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://bn41q3cofy6kt"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_2xaad"]
+[ext_resource type="PackedScene" uid="uid://d3q241xeysqql" path="res://Scenes/play_audio_on_body_enter.tscn" id="2_7d2l8"]
+[ext_resource type="Script" path="res://Scripts/Raycast.cs" id="2_egso8"]
+[ext_resource type="AudioStream" uid="uid://da0ov1o6kgja" path="res://Assets/SFX/332815__loudernoises__heartbeat-20bpm-limited.wav" id="4_p0kqx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7fhf2"]
+size = Vector3(4.14941, 3.33008, 4.94922)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_el67s"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gunib"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c3v83"]
+size = Vector3(1.01367, 2.07227, 1.19434)
+
+[node name="Player" type="CharacterBody3D"]
+process_mode = 1
+collision_layer = 3
+collision_mask = 29
+script = ExtResource("1_2xaad")
+
+[node name="HeartBeatCooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(0.999878, -0.0142271, -0.00638064, 0.0142159, 0.999897, -0.00179185, 0.00640548, 0.00170093, 0.999978, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0435162, 0.115861, -0.36116)
+fov = 79.0735
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -2)
+script = ExtResource("2_egso8")
+
+[node name="Hand" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Hand"]
+light_color = Color(0.776775, 0.68906, 0.633984, 1)
+light_energy = 10.212
+light_volumetric_fog_energy = 0.2
+shadow_enabled = true
+spot_range = 9.003
+spot_angle = 27.73
+spot_angle_attenuation = 3.0
+
+[node name="BatteryTimer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="Heatbeat" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_p0kqx")
+
+[node name="HeartbeatAudio" type="Node3D" parent="."]
+
+[node name="PlayAudioOnBodyEnter" parent="HeartbeatAudio" node_paths=PackedStringArray("cooldownTimer", "audio") instance=ExtResource("2_7d2l8")]
+collision_mask = 4
+continuous = true
+cooldownTimer = NodePath("../../HeartBeatCooldown")
+audio = NodePath("../../Heatbeat")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HeartbeatAudio/PlayAudioOnBodyEnter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.571777, 0, -1.27295)
+shape = SubResource("BoxShape3D_7fhf2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_el67s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_gunib")
+
+[node name="Hurtbox" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="Hurtbox"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox/Area3D"]
+shape = SubResource("BoxShape3D_c3v83")
+
+[node name="StaminaTimer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="StaminaRegeneration" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="StaminaTimer" to="." method="OnStaminaDepletionTimeout"]
+[connection signal="timeout" from="StaminaRegeneration" to="." method="OnStaminaRegenerationTimeout"]
