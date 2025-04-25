@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvf71api70axi"]
+[gd_scene load_steps=23 format=3 uid="uid://dvf71api70axi"]
 
 [ext_resource type="PackedScene" uid="uid://c7pvww5y3x1e3" path="res://AI/behavior_tree.tscn" id="1_jg5ct"]
 [ext_resource type="PackedScene" uid="uid://7gdbai5sobg4" path="res://AI/cone.tscn" id="2_blp7p"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bx3hdwe2hrvmb" path="res://AI/idle_node.tscn" id="6_m271x"]
 [ext_resource type="PackedScene" uid="uid://bvnku8hjnd5l7" path="res://AI/choose_random_target.tscn" id="7_h0vbq"]
 [ext_resource type="PackedScene" uid="uid://ckkks6vjb73dp" path="res://AI/go_to_target.tscn" id="8_u46lj"]
+[ext_resource type="Texture2D" uid="uid://b63r3xnjdhmau" path="res://Assets/NPCSprites/SadukoIdle.png" id="12_crr1x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vfq63"]
 
@@ -22,6 +23,49 @@ material = SubResource("StandardMaterial3D_vm7j6")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eyrom"]
 points = PackedVector3Array(-0.000195742, 1, -0.000195742, 0.194988, -1, -0.980814, -0.000195742, -1, -1, -0.195184, -1, -0.980814, -0.382733, -1, -0.924041, -0.555599, -1, -0.831637, -0.707126, -1, -0.707126, -0.831637, -1, -0.555599, -0.924041, -1, -0.382733, -0.980814, -1, -0.195184, -1, -1, -0.000195742, -0.980814, -1, 0.194988, -0.924041, -1, 0.382537, -0.831637, -1, 0.555403, -0.707126, -1, 0.70693, -0.555599, -1, 0.831441, -0.382733, -1, 0.923845, -0.195184, -1, 0.980619, -0.000195742, -1, 1, 0.194988, -1, 0.980619, 0.382537, -1, 0.923845, 0.555403, -1, 0.831441, 0.70693, -1, 0.70693, 0.831441, -1, 0.555403, 0.923845, -1, 0.382537, 0.980619, -1, 0.194988, 1, -1, -0.000195742, 0.980619, -1, -0.195184, 0.923845, -1, -0.382733, 0.831441, -1, -0.555599, 0.70693, -1, -0.707126, 0.555403, -1, -0.831637, 0.382537, -1, -0.924041)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw7da"]
+atlas = ExtResource("12_crr1x")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45vc8"]
+atlas = ExtResource("12_crr1x")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qmri"]
+atlas = ExtResource("12_crr1x")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pv4i"]
+atlas = ExtResource("12_crr1x")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv2rs"]
+atlas = ExtResource("12_crr1x")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_djl6n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw7da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45vc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qmri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pv4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cv2rs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BasicEnemyAI" type="CharacterBody3D"]
 collision_layer = 4
@@ -64,6 +108,7 @@ movementNode = NodePath("../../../../..")
 shape = SubResource("CapsuleShape3D_vfq63")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+visible = false
 mesh = SubResource("CapsuleMesh_lnbun")
 
 [node name="LOS" type="Area3D" parent="."]
@@ -87,3 +132,10 @@ wait_time = 0.25
 autostart = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Sprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1.50075, 0, 0, 0, 1.62402, 0, 0, 0, 1, 0, 0, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_djl6n")
+autoplay = "default"
+frame_progress = 0.605237
