@@ -17,12 +17,12 @@ sky_horizon_color = Color(0.109702, 0.0182421, 0.0129511, 1)
 ground_bottom_color = Color(0, 0, 0, 1)
 ground_horizon_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Sky" id="Sky_fvlcy"]
+[sub_resource type="Sky" id="Sky_2ln8g"]
 sky_material = SubResource("ProceduralSkyMaterial_g53v7")
 
 [sub_resource type="Environment" id="Environment_sjxjx"]
 background_mode = 2
-sky = SubResource("Sky_fvlcy")
+sky = SubResource("Sky_2ln8g")
 tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true

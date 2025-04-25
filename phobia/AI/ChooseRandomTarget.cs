@@ -16,9 +16,9 @@ public partial class ChooseRandomTarget : BehaviorNode
 		else
 		{
 			Random rand = new Random();
-			GD.Print("Number of Random Targets :" + randomTargets.GetChildCount());
+			//GD.Print("Number of Random Targets :" + randomTargets.GetChildCount());
 			int targetNum = rand.Next(randomTargets.GetChildCount());
-			GD.Print("Target chosen : RandomTarget" + targetNum);
+			//GD.Print("Target chosen : RandomTarget" + targetNum);
 			if(context.ContainsKey("target"))
 			{
 				context["target"] = randomTargets.FindChild("RandomTarget" + targetNum);

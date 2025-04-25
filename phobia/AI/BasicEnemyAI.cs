@@ -65,7 +65,7 @@ public partial class BasicEnemyAI : CharacterBody3D
 						if (collider is Player)
 						{
 							visionRaycast.DebugShapeCustomColor = Color.Color8(174, 0, 0);
-							GD.Print("I see " + overlap.Name);
+							//GD.Print("I see " + overlap.Name);
 							chaseTarget = (Player)collider;
 							isChasing = true;
 							
@@ -73,7 +73,7 @@ public partial class BasicEnemyAI : CharacterBody3D
 						else
 						{
 							visionRaycast.DebugShapeCustomColor = Color.Color8(0, 255, 0);
-							GD.Print("I don't see " + overlap.Name);
+							//GD.Print("I don't see " + overlap.Name);
 						}
 					}
 					
