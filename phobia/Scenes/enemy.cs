@@ -5,7 +5,7 @@ using System;
 public partial class enemy : CharacterBody3D
 {
 	public float Speed = 3.0f;
-	public float gravity = 9.8f;
+	
 
 
 	private NavigationAgent3D navAgent;

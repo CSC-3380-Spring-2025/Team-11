@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3aj0nrpymmie"]
+
+[ext_resource type="Script" path="res://AI/RepeaterNode.cs" id="1_fbkgn"]
+
+[node name="RepeaterNode" type="Node"]
+script = ExtResource("1_fbkgn")
