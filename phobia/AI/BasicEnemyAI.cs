@@ -45,15 +45,15 @@ public partial class BasicEnemyAI : CharacterBody3D
 	private void OnVisionTimerTimeOut()
 	{
 		Area3D los = GetNode<Area3D>("LOS");
-		RayCast3D visionRaycast = GetNode<RayCast3D>("VisionRayCast");
+		RayCast3D visionRaycast = GetNode<RayCast3D>("LOS/VisionRayCast");
 
 		Godot.Collections.Array<Node3D> overlaps = los.GetOverlappingBodies();
 		
-		if (overlaps.Count > 0 && !isChasing)
+		if (overlaps.Count > 0)
 		{
 			foreach (Node3D overlap in overlaps)
 			{
-				if(overlap is Player)
+				if(overlap is Player && !isChasing)
 				{
 					Vector3 playerPosition = overlap.GlobalPosition;
 					visionRaycast.LookAt(playerPosition, Vector3.Up);
