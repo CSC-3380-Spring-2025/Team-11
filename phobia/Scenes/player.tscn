@@ -39,7 +39,9 @@ script = ExtResource("2_egso8")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Hand"]
 light_color = Color(0.776775, 0.68906, 0.633984, 1)
+light_energy = 10.212
 light_volumetric_fog_energy = 0.2
+shadow_enabled = true
 spot_range = 9.003
 spot_angle = 27.73
 spot_angle_attenuation = 3.0
