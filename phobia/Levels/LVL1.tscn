@@ -77,6 +77,7 @@ nextLevel = ExtResource("4_h18qi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 12.5553, 0)
+visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -545,27 +546,36 @@ shape = SubResource("BoxShape3D_yos7l")
 
 [node name="RandomTarget0" parent="RandomTargets" instance=ExtResource("9_0obvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81193, 21)
+visible = false
 
 [node name="RandomTarget1" parent="RandomTargets" instance=ExtResource("9_0obvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98994, 1.44379, 34.1994)
+visible = false
 
 [node name="RandomTarget2" parent="RandomTargets" instance=ExtResource("9_0obvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.105, 1.33962, 25.9507)
+visible = false
 
 [node name="RandomTarget3" parent="RandomTargets" instance=ExtResource("9_0obvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.65502, 1.33962, 25.9507)
+visible = false
 
 [node name="RandomTarget4" parent="RandomTargets" instance=ExtResource("9_0obvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.65502, 1.33962, 6.36411)
+visible = false
 
 [node name="RandomTarget5" parent="RandomTargets" instance=ExtResource("9_0obvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0069, 1.33962, 6.36411)
+visible = false
 
 [node name="RandomTarget6" parent="RandomTargets" instance=ExtResource("9_0obvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0069, 1.33962, 15.8243)
+visible = false
 
 [node name="RandomTarget7" parent="RandomTargets" instance=ExtResource("9_0obvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0069, 1.33962, -20.0072)
+visible = false
 
 [node name="RandomTarget8" parent="RandomTargets" instance=ExtResource("9_0obvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5929, 1.33962, -20.0072)
+visible = false
