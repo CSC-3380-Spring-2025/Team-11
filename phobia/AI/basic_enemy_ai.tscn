@@ -138,4 +138,4 @@ transform = Transform3D(1.50075, 0, 0, 0, 1.62402, 0, 0, 0, 1, 0, 0, 0)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_djl6n")
 autoplay = "default"
-frame_progress = 0.605237
+frame_progress = 0.883288
