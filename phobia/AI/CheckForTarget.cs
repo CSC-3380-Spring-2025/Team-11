@@ -30,13 +30,13 @@ public partial class CheckForTarget : BehaviorNode
 						if (collider is Player)
 						{
 							visionRaycast.DebugShapeCustomColor = Color.Color8(174, 0, 0);
-							GD.Print("I see " + overlap.Name);
+							//GD.Print("I see " + overlap.Name);
 							return BehaviorNode.Status.SUCCESS;							
 						}
 						else
 						{
 							visionRaycast.DebugShapeCustomColor = Color.Color8(0, 255, 0);
-							GD.Print("I don't see " + overlap.Name);
+							//GD.Print("I don't see " + overlap.Name);
 							return BehaviorNode.Status.ERROR;
 						}
 					}
