@@ -17,7 +17,7 @@ public partial class Player : CharacterBody3D
 	public const float jumpVelocity = 4.5f;
 	public const float camSensitivity = 0.006f;
 	public const int maxFlashlightBattery = 100; 
-	public int flashlightBattery = maxFlashlightBattery / 2;
+	public int flashlightBattery = maxFlashlightBattery - maxFlashlightBattery * 1/4;
 
 	public const int maxStamina = 100;
 	public int currentStamina = maxStamina;
