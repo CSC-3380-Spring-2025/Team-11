@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bn41q3cofy6kt"]
+[gd_scene load_steps=10 format=3 uid="uid://bn41q3cofy6kt"]
 
-[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_2xaad"]
+[ext_resource type="Script" uid="uid://bmm6u5duxprc7" path="res://Scripts/Player.cs" id="1_2xaad"]
 [ext_resource type="PackedScene" uid="uid://d3q241xeysqql" path="res://Scenes/play_audio_on_body_enter.tscn" id="2_7d2l8"]
-[ext_resource type="Script" path="res://Scripts/Raycast.cs" id="2_egso8"]
+[ext_resource type="Script" uid="uid://cf5xrduumvls" path="res://Scripts/Raycast.cs" id="2_egso8"]
 [ext_resource type="AudioStream" uid="uid://da0ov1o6kgja" path="res://Assets/SFX/332815__loudernoises__heartbeat-20bpm-limited.wav" id="4_p0kqx"]
+[ext_resource type="AudioStream" uid="uid://d4nh2ojmjyw8a" path="res://Assets/Music/gurdonark_-_Flying_through_Palo_Duro_Canyon_in_My_Sleep_1.mp3" id="5_fkybt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7fhf2"]
 size = Vector3(4.14941, 3.33008, 4.94922)
@@ -85,6 +86,11 @@ wait_time = 0.25
 
 [node name="StaminaRegeneration" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="gurdonarkBackground" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_fkybt")
+volume_db = -35.0
+pitch_scale = 0.75
 
 [connection signal="timeout" from="StaminaTimer" to="." method="OnStaminaDepletionTimeout"]
 [connection signal="timeout" from="StaminaRegeneration" to="." method="OnStaminaRegenerationTimeout"]

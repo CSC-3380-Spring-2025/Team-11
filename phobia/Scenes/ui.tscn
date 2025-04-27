@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bgo1scaeg7ov5"]
 
-[ext_resource type="Script" path="res://Scripts/UI.cs" id="1_gqvtt"]
+[ext_resource type="Script" uid="uid://crem8cw1cbse3" path="res://Scripts/UI.cs" id="1_gqvtt"]
 [ext_resource type="PackedScene" uid="uid://oew40qmlbk85" path="res://Scenes/Settings/settings_menu.tscn" id="2_2yqeh"]
-[ext_resource type="Script" path="res://Scripts/PauseUi.cs" id="3_w5dx1"]
+[ext_resource type="Script" uid="uid://dj4dfbx4liuo6" path="res://Scripts/PauseUi.cs" id="3_w5dx1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_05q6a"]
 

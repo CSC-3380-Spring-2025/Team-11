@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1gn4adxjlkaa"]
 
-[ext_resource type="Script" path="res://AI/Negation.cs" id="1_fxad5"]
+[ext_resource type="Script" uid="uid://b5th34jttsc6l" path="res://AI/Negation.cs" id="1_fxad5"]
 
 [node name="Negation" type="Node"]
 script = ExtResource("1_fxad5")

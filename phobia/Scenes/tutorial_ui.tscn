@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqrlp834a7l4o"]
 
-[ext_resource type="Script" path="res://Scripts/TutorialUI.cs" id="1_c0vn5"]
+[ext_resource type="Script" uid="uid://dcalryo1bpm0a" path="res://Scripts/TutorialUI.cs" id="1_c0vn5"]
 
 [node name="TutorialUI" type="Control"]
 show_behind_parent = true

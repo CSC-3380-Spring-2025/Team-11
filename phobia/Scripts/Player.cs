@@ -3,6 +3,9 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
+	
+	[Export]
+	private AudioStreamPlayer3D gameplayBackgroundMusic;
 
 	[Signal]
 	public delegate void BatteryUpdatedEventHandler();
@@ -40,6 +43,8 @@ public partial class Player : CharacterBody3D
 	private ConfigFile config = new ConfigFile();
 	
 	public override void _Ready(){
+		gameplayBackgroundMusic = GetNode<AudioStreamPlayer3D>("gurdonarkBackground");
+		
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		head = GetNode<Node3D>("Head");
 		cam = GetNode<Camera3D>("Head/Camera3D");
@@ -64,6 +69,10 @@ public partial class Player : CharacterBody3D
 	}
 	
 	public override void _Input(InputEvent @event){
+		if (!gameplayBackgroundMusic.Playing) {
+			gameplayBackgroundMusic.Play();
+		}
+		
 		if(@event is InputEventMouseMotion m){
 			head.RotateY(-m.Relative.X * camSensitivity);
 			cam.RotateX(-m.Relative.Y * camSensitivity);

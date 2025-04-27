@@ -1,7 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://babtgem4ympij"]
 
 [ext_resource type="PackedScene" uid="uid://dvf71api70axi" path="res://AI/basic_enemy_ai.tscn" id="1_1sqfu"]
-[ext_resource type="Script" path="res://Levels/lvl1.cs" id="1_45t48"]
+[ext_resource type="Script" uid="uid://ba6dmxrdk6inf" path="res://Levels/lvl1.cs" id="1_45t48"]
 [ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="1_wtiud"]
 [ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="2_67ocj"]
 [ext_resource type="Texture2D" uid="uid://eedevtflwrih" path="res://Assets/Textures/Ground.jpg" id="3_u13fr"]
