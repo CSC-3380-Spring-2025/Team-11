@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bn41q3cofy6kt"]
 
-[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_2xaad"]
+[ext_resource type="Script" uid="uid://bjmg5x27tgl4f" path="res://Scripts/Player.cs" id="1_2xaad"]
 [ext_resource type="PackedScene" uid="uid://d3q241xeysqql" path="res://Scenes/play_audio_on_body_enter.tscn" id="2_7d2l8"]
-[ext_resource type="Script" path="res://Scripts/Raycast.cs" id="2_egso8"]
+[ext_resource type="Script" uid="uid://c4yoe7dknscmr" path="res://Scripts/Raycast.cs" id="2_egso8"]
 [ext_resource type="AudioStream" uid="uid://da0ov1o6kgja" path="res://Assets/SFX/332815__loudernoises__heartbeat-20bpm-limited.wav" id="4_p0kqx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7fhf2"]
@@ -85,6 +85,8 @@ wait_time = 0.25
 
 [node name="StaminaRegeneration" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="canyonMusic" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="timeout" from="StaminaTimer" to="." method="OnStaminaDepletionTimeout"]
 [connection signal="timeout" from="StaminaRegeneration" to="." method="OnStaminaRegenerationTimeout"]

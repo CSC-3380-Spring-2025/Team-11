@@ -4,6 +4,9 @@ using System;
 public partial class Player : CharacterBody3D
 {
 
+	[Export]
+	public AudioStreamPlayer3D backgroundMusic;
+
 	[Signal]
 	public delegate void BatteryUpdatedEventHandler();
 	[Signal]
@@ -40,6 +43,8 @@ public partial class Player : CharacterBody3D
 	private ConfigFile config = new ConfigFile();
 	
 	public override void _Ready(){
+		backgroundMusic = GetNode<AudioStreamPlayer3D>("canyonMusic");
+		
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		head = GetNode<Node3D>("Head");
 		cam = GetNode<Camera3D>("Head/Camera3D");
@@ -128,6 +133,10 @@ public partial class Player : CharacterBody3D
 	}
 	public override void _Process(double delta)
 	{
+		if (!backgroundMusic.Playing) {
+			backgroundMusic.Play();
+		}
+		
 		HandleFlashlightBattery();
 
 		HandleSprint();
