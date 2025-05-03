@@ -21,5 +21,13 @@ public partial class TutorialUI : Control
 			Visible = false;
 		}
 
+		Godot.Collections.Array<InputEvent> flashlightToggle = InputMap.ActionGetEvents("toggle_flashlight");
+		Godot.Collections.Array<InputEvent> sprintToggle = InputMap.ActionGetEvents("sprint");
+
+		tutorialLabel.Text = "Welcome to the tutorial! You can use the flashlight to find your way through mazes.\n" + 
+		"To use the flashlight press " +  flashlightToggle[0].AsText().TrimSuffix(" (Physical)").ToLower() + ", to move around use WASD or Arrow Keys.\n" +
+		"To sprint press " + sprintToggle[0].AsText().TrimSuffix(" (Physical)").ToLower() + ". (Press Enter to Close)"; 
+
 	}
+
 }

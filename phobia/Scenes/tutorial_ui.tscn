@@ -5,11 +5,7 @@
 [node name="TutorialUI" type="Control"]
 show_behind_parent = true
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_c0vn5")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -18,12 +14,14 @@ anchors_preset = -1
 anchor_top = 0.055
 anchor_right = 0.193
 anchor_bottom = 0.07
-offset_top = 0.360001
-offset_right = 399.0
-offset_bottom = 65.64
+offset_top = 39.0
+offset_right = 803.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="PanelContainer"]
 layout_mode = 2
-text = "Welcome to the tutorial! You can use the 
-flashlight in this game to fend off various enemies. 
-To use the flashlight use left-click, to move around use WASD or Arrow keys. (Press Enter to Close)"
+text = "Welcome to the tutorial! You can use the flashlight in this game to find your way through various mazes.\\n 
+To use the flashlight press left-click, to move around use WASD or Arrow keys.\\n 
+To sprint press the shift button. (Press Enter to Close)"

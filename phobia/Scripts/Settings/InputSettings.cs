@@ -1,11 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml.Resolvers;
+
 
 
 public partial class InputSettings : Control
@@ -35,6 +31,7 @@ public partial class InputSettings : Control
 
 		inputActions.Add("interact", "Interact");
 		inputActions.Add("toggle_flashlight", "Toggle Flashlight");
+		inputActions.Add("sprint", "Sprint");
 		CreateActionList();
 		
 	}
