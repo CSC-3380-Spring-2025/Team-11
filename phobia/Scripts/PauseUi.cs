@@ -3,6 +3,7 @@ using System;
 
 public partial class PauseUi : Control
 {
+	
 	private bool paused = false;
 	
 	public override void _Ready() 
