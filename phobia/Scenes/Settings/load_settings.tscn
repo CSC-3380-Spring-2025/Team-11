@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dj5gbwno3yrg8"]
 
-[ext_resource type="Script" path="res://Scripts/Settings/LoadSettings.cs" id="1_wbpll"]
+[ext_resource type="Script" uid="uid://cv73wn3auw8g1" path="res://Scripts/Settings/LoadSettings.cs" id="1_wbpll"]
 
 [node name="LoadSettings" type="Node"]
 script = ExtResource("1_wbpll")

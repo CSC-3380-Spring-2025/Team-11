@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://erb2wntcjos2"]
 
-[ext_resource type="Script" path="res://AI/RepeatUntilFail.cs" id="1_g753i"]
+[ext_resource type="Script" uid="uid://dhai0v3wvto7c" path="res://AI/RepeatUntilFail.cs" id="1_g753i"]
 
 [node name="RepeatUntilFail" type="Node"]
 script = ExtResource("1_g753i")

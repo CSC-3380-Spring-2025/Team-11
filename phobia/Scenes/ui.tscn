@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bgo1scaeg7ov5"]
 
-[ext_resource type="Script" path="res://Scripts/UI.cs" id="1_gqvtt"]
+[ext_resource type="Script" uid="uid://bf7kh4ows2ros" path="res://Scripts/UI.cs" id="1_gqvtt"]
 [ext_resource type="PackedScene" uid="uid://oew40qmlbk85" path="res://Scenes/Settings/settings_menu.tscn" id="2_2yqeh"]
-[ext_resource type="Script" path="res://Scripts/PauseUi.cs" id="3_w5dx1"]
+[ext_resource type="Script" uid="uid://bu53u7hal2yma" path="res://Scripts/PauseUi.cs" id="3_w5dx1"]
 [ext_resource type="Texture2D" uid="uid://drbxdfxyc1byl" path="res://Assets/Textures/battery.png" id="4_qv5qt"]
 
 [sub_resource type="Theme" id="Theme_815m6"]

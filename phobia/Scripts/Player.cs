@@ -5,8 +5,8 @@ public partial class Player : CharacterBody3D
 {
 
 	[Export]
-	public AudioStreamPlayer3D backgroundMusic;
-
+	private AudioStreamPlayer3D backgroundMusic;
+	
 	[Signal]
 	public delegate void BatteryUpdatedEventHandler();
 	[Signal]
@@ -43,7 +43,8 @@ public partial class Player : CharacterBody3D
 	private ConfigFile config = new ConfigFile();
 	
 	public override void _Ready(){
-		backgroundMusic = GetNode<AudioStreamPlayer3D>("canyonMusic");
+		
+		backgroundMusic = GetNode<AudioStreamPlayer3D>("flyingThroughCanyon");
 		
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		head = GetNode<Node3D>("Head");

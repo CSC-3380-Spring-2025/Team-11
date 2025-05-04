@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvnku8hjnd5l7"]
 
-[ext_resource type="Script" path="res://AI/ChooseRandomTarget.cs" id="1_w81qr"]
+[ext_resource type="Script" uid="uid://dikm5uurorhjp" path="res://AI/ChooseRandomTarget.cs" id="1_w81qr"]
 
 [node name="ChooseRandomTarget" type="Node"]
 script = ExtResource("1_w81qr")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://drogcfbic2e3q"]
 
-[ext_resource type="Script" path="res://Levels/lvl1.cs" id="1_h15kb"]
+[ext_resource type="Script" uid="uid://bh5niq68w23tr" path="res://Levels/lvl1.cs" id="1_h15kb"]
 [ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="1_ijwg8"]
 [ext_resource type="PackedScene" uid="uid://dvf71api70axi" path="res://AI/basic_enemy_ai.tscn" id="2_3xhbj"]
 [ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="2_ff4ol"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://88udc8oj6pw" path="res://Assets/Textures/gooey wall texture.png" id="4_cwuob"]
 [ext_resource type="PackedScene" uid="uid://bdf3ictvou1i5" path="res://Levels/lvl_1_2.tscn" id="4_h18qi"]
 [ext_resource type="PackedScene" uid="uid://cjnvrfdexwoe" path="res://Scenes/random_target.tscn" id="9_0obvl"]
-[ext_resource type="Script" path="res://Scripts/ConcealmentObject.cs" id="9_8c3ke"]
+[ext_resource type="Script" uid="uid://bukoah73w75ex" path="res://Scripts/ConcealmentObject.cs" id="9_8c3ke"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g53v7"]
 sky_top_color = Color(0, 0, 0, 1)

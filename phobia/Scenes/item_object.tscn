@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://sschth8wg27p"]
 
-[ext_resource type="Script" path="res://Scripts/ItemObject.cs" id="1_vlph5"]
+[ext_resource type="Script" uid="uid://r227a7xcv67n" path="res://Scripts/ItemObject.cs" id="1_vlph5"]
 
 [node name="ItemObject" type="Node3D"]
 script = ExtResource("1_vlph5")

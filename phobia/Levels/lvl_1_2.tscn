@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bdf3ictvou1i5"]
 
-[ext_resource type="Script" path="res://Levels/lvl1.cs" id="1_70j0p"]
+[ext_resource type="Script" uid="uid://bh5niq68w23tr" path="res://Levels/lvl1.cs" id="1_70j0p"]
 [ext_resource type="MeshLibrary" uid="uid://bh6fi68nebwmi" path="res://tileset.meshlib" id="1_xnxd4"]
 [ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="2_iuc18"]
 [ext_resource type="PackedScene" uid="uid://dvf71api70axi" path="res://AI/basic_enemy_ai.tscn" id="2_ppkk3"]

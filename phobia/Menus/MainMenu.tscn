@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bkpyarrclkey2"]
 
-[ext_resource type="Script" path="res://Menus/MainMenu.cs" id="1_auwmr"]
+[ext_resource type="Script" uid="uid://bmud0x0bxp4f8" path="res://Menus/MainMenu.cs" id="1_auwmr"]
 [ext_resource type="Texture2D" uid="uid://c0uth35qq6ap7" path="res://Assets/hallway.png" id="2_f5wtj"]
 [ext_resource type="PackedScene" uid="uid://oew40qmlbk85" path="res://Scenes/Settings/settings_menu.tscn" id="2_pydd2"]
 [ext_resource type="AudioStream" uid="uid://c1wib1828ut2b" path="res://Assets/Music/horror1.mp3" id="3_f7a4p"]
