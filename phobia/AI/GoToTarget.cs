@@ -20,9 +20,9 @@ public partial class GoToTarget : BehaviorNode
 		navAgent = (NavigationAgent3D)moveNode.FindChild("NavigationAgent3D");
 	}
 
-    public override void _Process(double delta)
-    {
-    }
+	public override void _Process(double delta)
+	{
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{

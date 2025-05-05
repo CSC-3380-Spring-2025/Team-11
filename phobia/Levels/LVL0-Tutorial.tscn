@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cm57otwj3sfxg"]
+[gd_scene load_steps=14 format=3 uid="uid://cm57otwj3sfxg"]
 
 [ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="1_a2jbq"]
 [ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="2_g7xt8"]
@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ndb5r5psy0u" path="res://Scenes/Doors/door.tscn" id="4_0qtx4"]
 [ext_resource type="Script" path="res://Scripts/Doors/LevelSwitch.cs" id="4_6qqq1"]
 [ext_resource type="PackedScene" uid="uid://bw1t6u6ldnfbf" path="res://Scenes/Doors/exit_door.tscn" id="6_vxu0w"]
-[ext_resource type="PackedScene" uid="uid://drogcfbic2e3q" path="res://Levels/LVL1.tscn" id="7_2rass"]
-[ext_resource type="PackedScene" uid="uid://besd0fc4owgd8" path="res://Levels/lvl_1_3.tscn" id="7_7nsjg"]
+[ext_resource type="PackedScene" uid="uid://dqgxp8ycxlhg" path="res://Levels/LVL1.tscn" id="8_31dvo"]
 [ext_resource type="PackedScene" uid="uid://b0itkmgx2hr8h" path="res://Scenes/Items/battery_item.tscn" id="8_uudcc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0sdxg"]
@@ -119,11 +118,11 @@ size = Vector3(1.02173, 14.9199, 15.1339)
 [node name="Door" parent="doors" instance=ExtResource("4_0qtx4")]
 transform = Transform3D(0.0051487, 0, 0.999987, 0, 1, 0, -0.999987, 0, 0.0051487, 12.2332, 0.442813, -9.41923)
 script = ExtResource("4_6qqq1")
-nextLevel = ExtResource("7_2rass")
+exitDoor = NodePath("")
 
 [node name="ExitDoor" parent="doors" instance=ExtResource("6_vxu0w")]
 transform = Transform3D(0.00979136, 0, 1.49997, 0, 1.5, 0, -1.49997, 0, 0.00979136, 13.3919, 0.442814, -9.37972)
-nextLevel = ExtResource("7_7nsjg")
+nextLevel = ExtResource("8_31dvo")
 
 [node name="BatteryItem" parent="." instance=ExtResource("8_uudcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.393678, 1.83613, -9.39177)
