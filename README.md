@@ -15,7 +15,7 @@ Our project is a first person horror game that takes place in a maze...
 - Linux
 - Windows
 # Important Links
-Kanban Board: [link]\
+Kanban Board: https://github.com/orgs/CSC-3380-Spring-2025/projects/24\
 Designs: [link]\
 Styles Guide(s): [link]
 
