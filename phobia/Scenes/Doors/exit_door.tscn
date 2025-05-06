@@ -68,9 +68,8 @@ uv1_scale = Vector3(3, 2, 3)
 material = SubResource("StandardMaterial3D_4qbox")
 size = Vector3(1.6, 2.1, 0.3)
 
-[node name="ExitDoor" type="Node3D" node_paths=PackedStringArray("exitDoor")]
+[node name="ExitDoor" type="Node3D"]
 script = ExtResource("1_nt1nr")
-exitDoor = NodePath("Hinge/StaticBody3D")
 
 [node name="DoorAnimation" type="AnimationPlayer" parent="."]
 libraries = {

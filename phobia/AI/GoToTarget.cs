@@ -14,10 +14,12 @@ public partial class GoToTarget : BehaviorNode
 	private NavigationAgent3D navAgent;
 	private Area3D los;
 	private Node3D target;
+	private AnimatedSprite3D sprite;
 	public override void _Ready()
 	{
 		los  = (Area3D)moveNode.FindChild("LOS");
 		navAgent = (NavigationAgent3D)moveNode.FindChild("NavigationAgent3D");
+		sprite = (AnimatedSprite3D)moveNode.FindChild("Sprite3D");
 	}
 
 	public override void _Process(double delta)
@@ -40,6 +42,8 @@ public partial class GoToTarget : BehaviorNode
 
 		los.LookAt(nextLocation);
 		los.Rotation = new Vector3(0, los.Rotation.Y, 0); 
+		sprite.LookAt(nextLocation);
+		sprite.Rotation = new Vector3(0, sprite.Rotation.Y, 0);
 
 		}
 	}
