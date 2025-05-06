@@ -16,14 +16,14 @@ public partial class BasicEnemyAI : CharacterBody3D
 		navAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
 	}
 
-    public override void _Process(double delta)
-    {
-        if(isChasing)
+	public override void _Process(double delta)
+	{
+		if(isChasing)
 		{
 			UpdateTargetLocation(chaseTarget.GlobalPosition);
 			GD.Print(chaseTarget.GlobalPosition);
 		}
-    }
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
