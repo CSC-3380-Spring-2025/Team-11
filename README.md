@@ -11,8 +11,6 @@ Our project is a first person horror game that takes place in a maze...
 	Describe a little about what the project is about here.
 ## Platforms Tested on
 - MacOS
-- Android
-- Linux
 - Windows
 # Important Links
 Kanban Board: https://github.com/orgs/CSC-3380-Spring-2025/projects/24 \
@@ -22,10 +20,12 @@ Styles Guide(s): [link]
 # How to Run Dev and Test Environment
 
 ## Dependencies
-Godot...
+Godot 4.3
 - List all dependencies here
 - Don't forget to include versions
 ### Downloading Dependencies
+Download the Godot engine 
+https://godotengine.org/download/archive/4.3-stable/
 Describe where to download the dependencies here. Some will likely require a web download. Provide links here. For IDE extensions, make sure your project works with the free version of them, and detail which IDE(s) these are available in. 
 
 ## Commands
