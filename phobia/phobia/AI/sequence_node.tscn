@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0swl4337piee"]
+
+[ext_resource type="Script" uid="uid://c8aiyo675ox28" path="res://AI/SequenceNode.cs" id="1_g7xan"]
+
+[node name="SequenceNode" type="Node"]
+script = ExtResource("1_g7xan")

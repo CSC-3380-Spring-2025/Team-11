@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cayh5e7uflvec"]
+
+[ext_resource type="Script" uid="uid://c1qb2fussgh0b" path="res://AI/CheckForTarget.cs" id="1_q2beg"]
+
+[node name="CheckForTarget" type="Node"]
+script = ExtResource("1_q2beg")

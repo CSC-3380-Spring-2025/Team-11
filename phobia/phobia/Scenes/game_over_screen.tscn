@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://cijt881bca8ua"]
+
+[ext_resource type="Script" uid="uid://r7kh00ssndtk" path="res://Scripts/GameOverScreen.cs" id="1_31wdr"]
+[ext_resource type="AudioStream" uid="uid://c1wib1828ut2b" path="res://Assets/Music/horror1.mp3" id="2_lar6s"]
+[ext_resource type="AudioStream" uid="uid://dxg73dlpyjv7b" path="res://Assets/SFX/212037__vonfleisch__church-bells-borgweg-hamburg-germany-25th-december-christmas.mp3" id="3_2dj3d"]
+
+[sub_resource type="Theme" id="Theme_i4u4w"]
+default_font_size = 56
+
+[sub_resource type="Theme" id="Theme_uny8n"]
+default_font_size = 23
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_31wdr")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_i4u4w")
+text = "Game Over!"
+uppercase = true
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_uny8n")
+text = "Restart"
+
+[node name="MainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_uny8n")
+text = "Main Menu
+"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_uny8n")
+text = "Quit Game
+"
+
+[node name="GameOverTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lar6s")
+autoplay = true
+parameters/looping = true
+
+[node name="Bells" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2dj3d")
+volume_db = -13.117
+autoplay = true
+parameters/looping = true

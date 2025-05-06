@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://oew40qmlbk85"]
+
+[ext_resource type="Script" path="res://Scripts/Settings/SettingsMenu.cs" id="1_rqm7n"]
+[ext_resource type="PackedScene" uid="uid://cedyvfpynk54t" path="res://Scenes/Settings/input_settings.tscn" id="2_4qwv6"]
+[ext_resource type="PackedScene" uid="uid://dj5gbwno3yrg8" path="res://Scenes/Settings/load_settings.tscn" id="2_gh6xb"]
+
+[node name="SettingsMenu" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rqm7n")
+
+[node name="LoadSettings" parent="." instance=ExtResource("2_gh6xb")]
+
+[node name="InputSettings" parent="." instance=ExtResource("2_4qwv6")]
+visible = false
+top_level = true
+layout_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -511.0
+offset_top = -241.0
+offset_right = 511.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings Menu:"
+
+[node name="Title2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="Title3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="RemapButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Click To Remap Buttons"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
