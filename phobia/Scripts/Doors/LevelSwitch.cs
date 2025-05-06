@@ -7,12 +7,13 @@ public partial class LevelSwitch : Node3D
 {
 	[Export]
 	public PackedScene nextLevel;
-	[Export]
 	private ExitDoor exitDoor;
 	private Godot.Collections.Array<Node> saveNodes;
 	public override void _Ready()
 	{
+
 		saveNodes = GetTree().GetNodesInGroup("Persist");
+		exitDoor = (ExitDoor)FindChild("StaticBody3D");
 		exitDoor.ExitDoorOpened += OnExitDoorOpened;
 	}
 
