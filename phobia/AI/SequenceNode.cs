@@ -2,6 +2,10 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+
+/// <summary>
+/// Goes through each node under it in order.
+/// </summary>
 public partial class SequenceNode : BehaviorNode
 {
 	[Export]

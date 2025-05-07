@@ -1,6 +1,10 @@
 using Godot;
 using System;
 
+
+/// <summary>
+/// Door for going between different levels.
+/// </summary>
 public partial class ExitDoor : Door
 {
 	[Signal]

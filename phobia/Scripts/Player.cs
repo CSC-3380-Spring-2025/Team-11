@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+/// <summary>
+/// The main player class. Responsible for the flashlight, and basic character movements.  
+/// </summary>
 public partial class Player : CharacterBody3D
 {
 
@@ -8,18 +11,15 @@ public partial class Player : CharacterBody3D
 	public delegate void BatteryUpdatedEventHandler();
 	[Signal]
 	public delegate void PlayerReadyEventHandler();
-
 	[Signal]
 	public delegate void StaminaUpdateEventHandler();
 	public const float baseSpeed = 4.0f;
-	public const float sprintModifier = 0.6f;
-	public float currentSpeed = baseSpeed;
-	public const float jumpVelocity = 4.5f;
+	public const float sprintModifier = 0.6f;	public const float jumpVelocity = 4.5f;
 	public const float camSensitivity = 0.006f;
-	public const int maxFlashlightBattery = 100; 
+	public const int maxFlashlightBattery = 100;
+	public const int maxStamina = 100; 
 	public int flashlightBattery = maxFlashlightBattery / 2;
-
-	public const int maxStamina = 100;
+	public float currentSpeed = baseSpeed;
 	public int currentStamina = maxStamina;
 
 	private Node3D head;

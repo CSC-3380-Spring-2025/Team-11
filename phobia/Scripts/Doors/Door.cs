@@ -47,6 +47,13 @@ public partial class Door : StaticBody3D
 		}
 	}
 
+	protected void connectSignals()
+	{
+		doorAnimPlayer.AnimationFinished += OnAnimFinished;
+		doorAnimPlayer.AnimationStarted += OnAnimStarted;
+		doorTimer.Timeout += OnDoorTimerTimeout;
+	}
+
 	private void OnAnimFinished(StringName anim)
 	{
 		if(anim == "close")
@@ -66,12 +73,5 @@ public partial class Door : StaticBody3D
 	private void OnDoorTimerTimeout()
 	{
 		interactable = true;
-	}
-
-	protected void connectSignals()
-	{
-		doorAnimPlayer.AnimationFinished += OnAnimFinished;
-		doorAnimPlayer.AnimationStarted += OnAnimStarted;
-		doorTimer.Timeout += OnDoorTimerTimeout;
 	}
 }

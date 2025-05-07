@@ -1,12 +1,16 @@
 using Godot;
 using System;
 
+
+/// <summary>
+/// The Tutorial UI displays the tutorial and closes when the enter key is pressed.
+/// </summary>
 public partial class TutorialUI : Control
 {
 
 	public bool hidden = false;
-
 	private Label tutorialLabel;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

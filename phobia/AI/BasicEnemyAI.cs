@@ -1,14 +1,18 @@
 using Godot;
 using System;
 
+
+/// <summary>
+/// Handles Basic Enemy AI. It patrols the area and then chases the player when it finds the player.
+/// </summary>
 public partial class BasicEnemyAI : CharacterBody3D
 {
 	public const float Speed = 3.0f;
-	Timer visionTimer;
+	public Timer visionTimer;
 
-	bool isChasing = false;
-	Player chaseTarget;
-	NavigationAgent3D navAgent;
+	public bool isChasing = false;
+	public Player chaseTarget;
+	public NavigationAgent3D navAgent;
 	public override void _Ready()
 	{
 		visionTimer = (Timer)FindChild("VisionTimer");

@@ -1,6 +1,10 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+
+/// <summary>
+/// This node repeats the node node under it forever
+/// </summary>
 public partial class RepeaterNode : BehaviorNode
 {
 	[Export]

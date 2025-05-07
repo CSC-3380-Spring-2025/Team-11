@@ -1,6 +1,10 @@
 using Godot;
 using System;
 
+
+/// <summary>
+/// This screen pops up when the player dies.
+/// </summary>
 public partial class GameOverScreen : Control
 {
 	// Called when the node enters the scene tree for the first time.

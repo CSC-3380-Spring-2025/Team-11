@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdf3ictvou1i5"]
+[gd_scene load_steps=10 format=3 uid="uid://bdf3ictvou1i5"]
 
 [ext_resource type="Script" path="res://Levels/lvl1.cs" id="1_t7mwo"]
 [ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="2_iikvp"]
 [ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="3_862eb"]
 [ext_resource type="MeshLibrary" uid="uid://bh6fi68nebwmi" path="res://tileset.meshlib" id="4_eki8u"]
-[ext_resource type="PackedScene" uid="uid://dvf71api70axi" path="res://AI/basic_enemy_ai.tscn" id="5_wr4i8"]
-[ext_resource type="PackedScene" uid="uid://cjnvrfdexwoe" path="res://Scenes/random_target.tscn" id="6_xccwo"]
+[ext_resource type="PackedScene" uid="uid://b0c1buiwtijxo" path="res://Scenes/enemy.tscn" id="5_o13fv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_37oh6"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -38,6 +37,7 @@ agent_height = 2.0
 script = ExtResource("1_t7mwo")
 
 [node name="UI" parent="." instance=ExtResource("2_iikvp")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="UI" groups=["Persist"] instance=ExtResource("3_862eb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7965, 3.02859, 6.71297)
@@ -62,10 +62,5 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 7, 0)
 
-[node name="BasicEnemyAI" parent="." instance=ExtResource("5_wr4i8")]
-transform = Transform3D(-0.999129, 0, -0.0417187, 0, 1, 0, 0.0417187, 0, -0.999129, 13.155, 1, -2.424)
-
-[node name="RandomTargets" type="Node" parent="."]
-
-[node name="RandomTarget0" parent="RandomTargets" instance=ExtResource("6_xccwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.974935, 0.191751, 0)
+[node name="Enemy" parent="." instance=ExtResource("5_o13fv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.91509, 2.4948, -7.09734)

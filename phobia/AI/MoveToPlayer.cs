@@ -3,6 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
+/// <summary>
+/// The enemy moves toward the player.
+/// </summary>
 public partial class MoveToPlayer : BehaviorNode
 {
 	[Export]

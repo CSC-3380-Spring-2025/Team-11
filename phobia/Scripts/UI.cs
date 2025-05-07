@@ -8,13 +8,13 @@ using System;
 public partial class UI : Control
 {
 	private int batteryPercentage;
-
 	private int staminaPercentage;
 	private Player player;
 	private Label battery;
 	private Label doorOverlay;
-	private ProgressBar staminaBar;
 	private Label concealmentObjectOverlay;
+	private ProgressBar staminaBar;
+	
 
 	public override void _Ready()
 	{

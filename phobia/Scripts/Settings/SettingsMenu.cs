@@ -1,7 +1,10 @@
 using Godot;
 using System;
-using System.Runtime.CompilerServices;
 
+
+/// <summary>
+/// The menu pops up when the player press the settings button.
+/// </summary>
 public partial class SettingsMenu : Control
 {
 	// Called when the node enters the scene tree for the first time.

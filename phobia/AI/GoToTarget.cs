@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Takes the target from ChooseRandomTarget node and then go to that location.
+/// </summary>
 public partial class GoToTarget : BehaviorNode
 {
 	[Export]
