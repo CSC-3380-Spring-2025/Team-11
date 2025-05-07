@@ -4,7 +4,7 @@ Project Manager: Bayla Patin (BaylaPatin)\
 Communications Lead: Mia Miranda (Astarosa-MM)\
 Git Master: Brent Bolden (BrentBolden)\
 Design Lead: Michael Vasquez (Mvasquez1)\
-Quality Assurance Tester: [Name] ([GitHub Name])
+Quality Assurance Tester: Eyzeya Douglas (edoug-the-19th)
 
 # About Our Software
 Our project is a first person horror game that takes place in a maze...	
