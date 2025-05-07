@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://besd0fc4owgd8"]
 
-[ext_resource type="Script" uid="uid://bh5niq68w23tr" path="res://Levels/lvl1.cs" id="1_6i3to"]
+[ext_resource type="Script" path="res://Levels/lvl1.cs" id="1_6i3to"]
 [ext_resource type="PackedScene" uid="uid://dvf71api70axi" path="res://AI/basic_enemy_ai.tscn" id="2_cda57"]
 [ext_resource type="PackedScene" uid="uid://bgo1scaeg7ov5" path="res://Scenes/ui.tscn" id="3_4pd7j"]
 [ext_resource type="PackedScene" uid="uid://bn41q3cofy6kt" path="res://Scenes/player.tscn" id="4_5748l"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bdf3ictvou1i5" path="res://Levels/lvl_1_2.tscn" id="6_0ucls"]
 [ext_resource type="Texture2D" uid="uid://88udc8oj6pw" path="res://Assets/Textures/gooey wall texture.png" id="7_m3eyb"]
 [ext_resource type="Texture2D" uid="uid://dxtsqs2joo4sy" path="res://Assets/Textures/woodtexture.png" id="8_gnj2l"]
-[ext_resource type="Script" uid="uid://bukoah73w75ex" path="res://Scripts/ConcealmentObject.cs" id="9_urkws"]
+[ext_resource type="Script" path="res://Scripts/ConcealmentObject.cs" id="9_urkws"]
 [ext_resource type="PackedScene" uid="uid://cjnvrfdexwoe" path="res://Scenes/random_target.tscn" id="10_kkqjr"]
 [ext_resource type="PackedScene" uid="uid://dpfqxv605lifl" path="res://Scenes/concealment_object.tscn" id="10_w1xuj"]
 [ext_resource type="PackedScene" uid="uid://b0itkmgx2hr8h" path="res://Scenes/Items/battery_item.tscn" id="12_t64gt"]

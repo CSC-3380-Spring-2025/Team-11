@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bw1t6u6ldnfbf"]
 
-[ext_resource type="Script" uid="uid://701aj7vlgrnq" path="res://Scripts/Doors/LevelSwitch.cs" id="1_nt1nr"]
-[ext_resource type="Script" uid="uid://bw5tlcvskhan" path="res://Scripts/Doors/ExitDoor.cs" id="2_mvcpp"]
+[ext_resource type="Script" path="res://Scripts/Doors/LevelSwitch.cs" id="1_nt1nr"]
+[ext_resource type="Script" path="res://Scripts/Doors/ExitDoor.cs" id="2_mvcpp"]
 [ext_resource type="AudioStream" uid="uid://c7m18hatnhk7c" path="res://Assets/SFX/Door/440261__adriann__door-slam-no-reverb.wav" id="2_t6veo"]
 [ext_resource type="AudioStream" uid="uid://b0onr8qsf2lho" path="res://Assets/SFX/Door/434002__snake16547__wood-door-sound.wav" id="3_npqqm"]
 
@@ -52,9 +52,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mf5y8"]
 _data = {
-&"RESET": SubResource("Animation_1d7wm"),
-&"close": SubResource("Animation_vyexb"),
-&"open": SubResource("Animation_r1q56")
+"RESET": SubResource("Animation_1d7wm"),
+"close": SubResource("Animation_vyexb"),
+"open": SubResource("Animation_r1q56")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6dl44"]

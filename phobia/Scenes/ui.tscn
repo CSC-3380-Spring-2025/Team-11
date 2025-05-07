@@ -1,12 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgo1scaeg7ov5"]
+[gd_scene load_steps=8 format=3 uid="uid://bgo1scaeg7ov5"]
 
-[ext_resource type="Script" uid="uid://bf7kh4ows2ros" path="res://Scripts/UI.cs" id="1_gqvtt"]
+[ext_resource type="Script" path="res://Scripts/UI.cs" id="1_gqvtt"]
 [ext_resource type="PackedScene" uid="uid://oew40qmlbk85" path="res://Scenes/Settings/settings_menu.tscn" id="2_2yqeh"]
-[ext_resource type="Script" uid="uid://bu53u7hal2yma" path="res://Scripts/PauseUi.cs" id="3_w5dx1"]
-[ext_resource type="Texture2D" uid="uid://drbxdfxyc1byl" path="res://Assets/Textures/battery.png" id="4_qv5qt"]
-
-[sub_resource type="Theme" id="Theme_815m6"]
-default_font_size = 20
+[ext_resource type="Script" path="res://Scripts/PauseUi.cs" id="3_w5dx1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_05q6a"]
 
@@ -19,10 +15,6 @@ bg_color = Color(0, 0.445685, 0.15625, 1)
 [sub_resource type="Theme" id="Theme_8p5a8"]
 /styles/Blue = SubResource("StyleBoxFlat_p4gfk")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_foyqc")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3o4i4"]
-atlas = ExtResource("4_qv5qt")
-region = Rect2(10, 10, 70, 32)
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -57,13 +49,9 @@ text = "Press E to Open or Close Door"
 
 [node name="Battery" type="Label" parent="."]
 layout_mode = 1
-offset_left = 76.0
-offset_top = 5.0
-offset_right = 195.0
-offset_bottom = 33.0
-theme = SubResource("Theme_815m6")
-text = "Sample Text
-"
+offset_right = 94.0
+offset_bottom = 23.0
+text = "Sample Test"
 
 [node name="PauseUI" type="Control" parent="." node_paths=PackedStringArray("shortcut_context")]
 process_mode = 3
@@ -147,13 +135,6 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Press E to Hide"
-
-[node name="BatteryTexture" type="TextureRect" parent="."]
-show_behind_parent = true
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("AtlasTexture_3o4i4")
 
 [connection signal="pressed" from="PauseUI/GridContainer/Resume" to="PauseUI" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseUI/GridContainer/Restart" to="PauseUI" method="_on_restart_pressed"]

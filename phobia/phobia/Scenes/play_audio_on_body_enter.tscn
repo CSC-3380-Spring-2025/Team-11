@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3q241xeysqql"]
-
-[ext_resource type="Script" uid="uid://d30mjdvdsy8rx" path="res://Scripts/PlayAudioOnBodyEnter.cs" id="1_lhudm"]
-
-[node name="PlayAudioOnBodyEnter" type="Area3D"]
-script = ExtResource("1_lhudm")

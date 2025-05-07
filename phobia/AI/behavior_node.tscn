@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0my5eee8t37"]
 
-[ext_resource type="Script" uid="uid://5h7eow2bfsfg" path="res://AI/BehaviorNode.cs" id="1_v5432"]
+[ext_resource type="Script" path="res://AI/BehaviorNode.cs" id="1_v5432"]
 
 [node name="BehaviorNode" type="Node"]
 script = ExtResource("1_v5432")

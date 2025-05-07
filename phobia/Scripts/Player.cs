@@ -4,9 +4,6 @@ using System;
 public partial class Player : CharacterBody3D
 {
 
-	[Export]
-	private AudioStreamPlayer3D backgroundMusic;
-	
 	[Signal]
 	public delegate void BatteryUpdatedEventHandler();
 	[Signal]
@@ -20,7 +17,7 @@ public partial class Player : CharacterBody3D
 	public const float jumpVelocity = 4.5f;
 	public const float camSensitivity = 0.006f;
 	public const int maxFlashlightBattery = 100; 
-	public int flashlightBattery = maxFlashlightBattery - maxFlashlightBattery * 1/4;
+	public int flashlightBattery = maxFlashlightBattery / 2;
 
 	public const int maxStamina = 100;
 	public int currentStamina = maxStamina;
@@ -30,6 +27,8 @@ public partial class Player : CharacterBody3D
 	private Node3D hand;
 	private SpotLight3D flashlight;
 	private Timer batteryTimer;
+
+	private AudioStreamPlayer3D backgroundMusic;
 
 	private Area3D hurtBox;
 	private Timer staminaDepletionTimer;
@@ -43,14 +42,13 @@ public partial class Player : CharacterBody3D
 	private ConfigFile config = new ConfigFile();
 	
 	public override void _Ready(){
-		
-		backgroundMusic = GetNode<AudioStreamPlayer3D>("flyingThroughCanyon");
-		
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		head = GetNode<Node3D>("Head");
 		cam = GetNode<Camera3D>("Head/Camera3D");
 		hand = GetNode<Node3D>("Hand");
 		flashlight = GetNode<SpotLight3D>("Hand/SpotLight3D");
+
+		backgroundMusic = GetNode<AudioStreamPlayer3D>("BackgroundMusic");
 
 		batteryTimer = GetNode<Timer>("BatteryTimer");
 		batteryTimer.Timeout += OnBatteryTimerTimeOut;
@@ -134,10 +132,10 @@ public partial class Player : CharacterBody3D
 	}
 	public override void _Process(double delta)
 	{
-		if (!backgroundMusic.Playing) {
+		if(!backgroundMusic.Playing) {
 			backgroundMusic.Play();
 		}
-		
+
 		HandleFlashlightBattery();
 
 		HandleSprint();

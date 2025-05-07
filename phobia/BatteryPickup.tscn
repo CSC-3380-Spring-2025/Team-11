@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dudt14x6kjhfl"]
 
-[ext_resource type="Texture2D" uid="uid://c1orsp7bpmg02" path="res://Assets/items/batterypickup.png" id="1_vf1tr"]
-[ext_resource type="Script" uid="uid://d22lv4hxmsu6q" path="res://Scripts/BatteryPickup.cs" id="1_xvrr6"]
+[ext_resource type="Texture2D" uid="uid://cwd3c2xx4b3tm" path="res://Assets/items/batterypickup.png" id="1_vf1tr"]
+[ext_resource type="Script" path="res://Scripts/BatteryPickup.cs" id="1_xvrr6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_als7a"]
 

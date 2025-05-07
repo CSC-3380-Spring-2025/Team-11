@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cj0wcgg0um2lc"]
 
-[ext_resource type="Script" uid="uid://wyy28ph6qur" path="res://AI/FindTarget.cs" id="1_u1jr3"]
+[ext_resource type="Script" path="res://AI/FindTarget.cs" id="1_u1jr3"]
 
 [node name="FindTarget" type="Node"]
 script = ExtResource("1_u1jr3")

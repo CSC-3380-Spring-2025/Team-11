@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d08jldxylid85"]
 
-[ext_resource type="Script" uid="uid://bs2ym3ui2me4y" path="res://Scripts/TestNPC.cs" id="2_4qpdf"]
+[ext_resource type="Script" path="res://Scripts/TestNPC.cs" id="2_4qpdf"]
 [ext_resource type="SpriteFrames" uid="uid://d2oiypi4al6et" path="res://Assets/NPCSprites/NpcBugFrames.tres" id="2_277bq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhtv1"]
