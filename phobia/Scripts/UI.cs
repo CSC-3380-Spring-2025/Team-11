@@ -1,10 +1,9 @@
 using Godot;
 using System;
-using System.Numerics;
 
 
 /// <summary>
-/// The UI method toogles between visible and invisible based on the signals it recieves from the Player Raycast.
+/// The UI method toogles between visible and invissible based on the signals it recieves from the Player Raycast.
 /// </summary>
 public partial class UI : Control
 {
@@ -16,10 +15,7 @@ public partial class UI : Control
 	private Label doorOverlay;
 	private ProgressBar staminaBar;
 	private Label concealmentObjectOverlay;
-	private TextureRect batteryTextureRect;
-	private AtlasTexture batteryTexture;
-	private Godot.Vector2 batteryTextureOffset = new Godot.Vector2(10, 10);
-	private Godot.Vector2 batteryTextureSize = new Godot.Vector2(70, 32);
+
 	public override void _Ready()
 	{
 		Raycast playerRaycast = GetNode<Raycast>("Player/Head/RayCast3D");
@@ -27,11 +23,8 @@ public partial class UI : Control
 		battery = GetNode<Label>("Battery");
 		doorOverlay = GetNode<Label>("DoorOverlay");
 		concealmentObjectOverlay = GetNode<Label>("ObjectOverlay");
-		staminaBar = GetNode<ProgressBar>("StaminaBar");
-		batteryTextureRect = GetNode<TextureRect>("BatteryTexture");
-		batteryTexture = (AtlasTexture)batteryTextureRect.Texture;
-		batteryTexture.Region = new Rect2(batteryTextureOffset.X, batteryTextureOffset.Y, batteryTextureSize.X, batteryTextureSize.Y);
 
+		staminaBar = GetNode<ProgressBar>("StaminaBar");
 		playerRaycast.DoorHovered += OnDoorHovered;
 		playerRaycast.DoorNotHovered += OnDoorNotHovered;
 		playerRaycast.ConcealmentObjectHovered += OnConcealmentObjectHovered;
@@ -107,32 +100,23 @@ public partial class UI : Control
 	private void UpdateBatteryPercentage()
 	{
 		batteryPercentage = player.flashlightBattery;
-		battery.Text = batteryPercentage + "%";
+		battery.Text = "Battery: " + batteryPercentage + "%";
 		
 		if(batteryPercentage <= 100  && batteryPercentage >= 75)
 		{
-			//battery.SelfModulate = Colors.Green;
-			batteryTexture.Region = new Rect2(batteryTextureOffset.X, batteryTextureOffset.Y, batteryTextureSize.X, batteryTextureSize.Y);
+			battery.SelfModulate = Colors.Green;
 		}
 		else if (batteryPercentage <= 75 && batteryPercentage >= 50)
 		{
-			//battery.SelfModulate = Colors.Yellow;
-			batteryTexture.Region = new Rect2(batteryTextureOffset.X * 2 + batteryTextureSize.X, batteryTextureOffset.Y, batteryTextureSize.X, batteryTextureSize.Y);
+			battery.SelfModulate = Colors.Yellow;
 		}
 		else if (batteryPercentage <= 50 && batteryPercentage >= 25)
 		{
-			//battery.SelfModulate = Colors.Orange;
-			batteryTexture.Region = new Rect2(batteryTextureOffset.X * 3 + batteryTextureSize.X * 2, batteryTextureOffset.Y, batteryTextureSize.X, batteryTextureSize.Y);
-		}
-		else if (batteryPercentage < 25 && batteryPercentage > 0)
-		{
-			//battery.SelfModulate = Colors.Red;
-			batteryTexture.Region = new Rect2(batteryTextureOffset.X * 4 + batteryTextureSize.X * 3, batteryTextureOffset.Y, batteryTextureSize.X, batteryTextureSize.Y);
+			battery.SelfModulate = Colors.Orange;
 		}
 		else
 		{
-			//battery.SelfModulate = Colors.Red;
-			batteryTexture.Region = new Rect2(batteryTextureOffset.X * 5 + batteryTextureSize.X * 4, batteryTextureOffset.Y, batteryTextureSize.X, batteryTextureSize.Y);
+			battery.SelfModulate = Colors.Red;
 		}
 
 	}
