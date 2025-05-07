@@ -1,7 +1,9 @@
 using Godot;
 using System;
 
-//Audio plays whenever an object in the area's collision mask is entered. 
+/// <summary>
+/// Audio plays whenever an object in the area's collision mask is entered. 
+/// </summary>
 public partial class PlayAudioOnBodyEnter : Area3D
 {
 

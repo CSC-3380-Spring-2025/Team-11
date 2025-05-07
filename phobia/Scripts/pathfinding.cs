@@ -1,12 +1,15 @@
 using Godot;
 using System;
 
+
+/// <summary>
+/// Handles the enemy pathfinding by utilizing the navigation mask.
+/// </summary>
 public partial class pathfinding : CharacterBody3D
 {
 
-	public float Speed = 2f;
-	public float Accel = 10f;
-	
+	public float speed = 2f;
+	public float accel = 10f;
 	private NavigationAgent3D nav;
 	private Vector3 velocity = Vector3.Zero;
 	
@@ -27,7 +30,7 @@ public partial class pathfinding : CharacterBody3D
 		direction = nav.GetNextPathPosition() - GlobalPosition;
 		direction = direction.Normalized();
 
-		velocity = velocity.Lerp(direction * Speed, (float)(Accel * delta));
+		velocity = velocity.Lerp(direction * speed, (float)(accel * delta));
 
 		MoveAndSlide();
 	}

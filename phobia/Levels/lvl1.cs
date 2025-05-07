@@ -1,6 +1,10 @@
 using Godot;
 using System;
 
+
+/// <summary>
+/// Let's the enemies know where the player is in each level.
+/// </summary>
 public partial class lvl1 : Node3D
 {
 

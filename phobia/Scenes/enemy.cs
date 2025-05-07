@@ -2,9 +2,13 @@
 using Godot;
 using System;
 
+
+/// <summary>
+/// Prototype enemy used to test the pathfinding.
+/// </summary>
 public partial class enemy : CharacterBody3D
 {
-	public float Speed = 3.0f;
+	public float speed = 3.0f;
 	
 
 
@@ -20,7 +24,7 @@ public partial class enemy : CharacterBody3D
 
 		Vector3 currentLocation = GlobalTransform.Origin;
 		Vector3 nextLocation = navAgent.GetNextPathPosition();
-		Vector3 newVelocity = (nextLocation - currentLocation).Normalized() * Speed;
+		Vector3 newVelocity = (nextLocation - currentLocation).Normalized() * speed;
 
 		Velocity = newVelocity;
 		MoveAndSlide();

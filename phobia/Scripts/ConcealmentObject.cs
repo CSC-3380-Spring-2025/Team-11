@@ -1,6 +1,10 @@
 using Godot;
 using System;
 
+
+/// <summary>
+/// Hides the player when the player interacts with it.
+/// </summary>
 public partial class ConcealmentObject : StaticBody3D
 {
 	private bool interactable = true;

@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 
 
-
+/// <summary>
+/// Saves input settings when they get changed in the settings.
+/// </summary>
 public partial class InputSettings : Control
 {
 	private ConfigFile config = new ConfigFile();
@@ -15,11 +17,9 @@ public partial class InputSettings : Control
 	public bool close = false;
 	private StringName actionToRemap = null;
 	private Button remappingButton = null;
-	
 	private Button[] buttons = new Button[10];
 	private StringName[] actions = new StringName[10];
-
-	Dictionary<StringName, StringName> inputActions = new Dictionary<StringName, StringName>();
+	private Dictionary<StringName, StringName> inputActions = new Dictionary<StringName, StringName>();
 
 
 	public override void _Ready()
@@ -39,6 +39,55 @@ public partial class InputSettings : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+	}
+
+	public override void _Input(InputEvent @event)
+	{
+		if (isRemapping)
+		{
+			if(@event is InputEventKey || (@event is InputEventMouseButton && @event.IsPressed()))
+			{
+				InputMap.ActionEraseEvents(actionToRemap);
+				InputMap.ActionAddEvent(actionToRemap, @event);
+				UpdateActionList(remappingButton, @event);
+				isRemapping = false;
+				actionToRemap = null;
+				remappingButton = null;
+
+				AcceptEvent();
+			}
+		}
+		else if (@event is InputEventKey eventKey)
+		{
+			if (eventKey.Pressed && eventKey.Keycode == Key.Escape && Visible == true)
+			{
+				Visible = false;
+				AcceptEvent();
+			}
+			else if (eventKey.Pressed && eventKey.Keycode == Key.Escape && Visible == false)
+			{
+				close = true;
+				
+				foreach(StringName action in InputMap.GetActions())
+				{
+
+					if (inputActions.ContainsKey(action))
+					{
+						Godot.Collections.Array<InputEvent> events = InputMap.ActionGetEvents(action);
+						if(events.Count > 0)
+						{
+
+						//GD.Print("Adding action: " + action + " event: " + events[0]);	
+
+						config.SetValue(action, action, events[0]);
+						}
+					}
+				}
+
+				config.Save("user://input_settings.cfg");
+				AcceptEvent();
+			}
+		}
 	}
 
 	private void CreateActionList()
@@ -93,55 +142,6 @@ public partial class InputSettings : Control
 		}
 
 	}
-
-public override void _Input(InputEvent @event)
-{
-	if (isRemapping)
-	{
-		if(@event is InputEventKey || (@event is InputEventMouseButton && @event.IsPressed()))
-		{
-			InputMap.ActionEraseEvents(actionToRemap);
-			InputMap.ActionAddEvent(actionToRemap, @event);
-			UpdateActionList(remappingButton, @event);
-			isRemapping = false;
-			actionToRemap = null;
-			remappingButton = null;
-
-			AcceptEvent();
-		}
-	}
-	else if (@event is InputEventKey eventKey)
-	{
-		if (eventKey.Pressed && eventKey.Keycode == Key.Escape && Visible == true)
-		{
-			Visible = false;
-			AcceptEvent();
-		}
-		else if (eventKey.Pressed && eventKey.Keycode == Key.Escape && Visible == false)
-		{
-			close = true;
-			
-			foreach(StringName action in InputMap.GetActions())
-			{
-
-				if (inputActions.ContainsKey(action))
-				{
-					Godot.Collections.Array<InputEvent> events = InputMap.ActionGetEvents(action);
-					if(events.Count > 0)
-					{
-
-					//GD.Print("Adding action: " + action + " event: " + events[0]);	
-
-					config.SetValue(action, action, events[0]);
-					}
-				}
-			}
-
-			config.Save("user://input_settings.cfg");
-			AcceptEvent();
-		}
-	}
-}
 
 private void UpdateActionList(Button button, InputEvent @event)
 {

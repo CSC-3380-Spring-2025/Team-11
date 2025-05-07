@@ -2,6 +2,10 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+
+/// <summary>
+/// This behavior node checks the map for random positions for the AI to patrol.
+/// </summary>
 public partial class ChooseRandomTarget : BehaviorNode
 {
 	public override BehaviorNode.Status Evaluate(Dictionary<StringName, Node> context)

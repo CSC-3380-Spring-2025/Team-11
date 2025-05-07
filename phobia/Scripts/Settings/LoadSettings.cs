@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+/// <summary>
+/// Class used for loading settings keybindings.
+/// </summary>
 public partial class LoadSettings : Node
 {
 	// Called when the node enters the scene tree for the first time.

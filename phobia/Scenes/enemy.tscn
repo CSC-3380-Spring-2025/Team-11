@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0c1buiwtijxo"]
+[gd_scene load_steps=12 format=3 uid="uid://b0c1buiwtijxo"]
 
 [ext_resource type="Script" path="res://Scenes/enemy.cs" id="1_17v41"]
+[ext_resource type="Texture2D" uid="uid://b63r3xnjdhmau" path="res://Assets/NPCSprites/SadukoIdle.png" id="2_02ha3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gueop"]
 albedo_color = Color(1, 0.396078, 0.45098, 1)
@@ -10,16 +11,64 @@ material = SubResource("StandardMaterial3D_gueop")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t7b54"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw7da"]
+atlas = ExtResource("2_02ha3")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45vc8"]
+atlas = ExtResource("2_02ha3")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qmri"]
+atlas = ExtResource("2_02ha3")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pv4i"]
+atlas = ExtResource("2_02ha3")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv2rs"]
+atlas = ExtResource("2_02ha3")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q4deb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw7da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45vc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qmri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pv4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cv2rs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
 script = ExtResource("1_17v41")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_ryghk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_t7b54")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = 0.1
+
+[node name="Sprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1.50075, 0, 0, 0, 1.62402, 0, 0, 0, 1, 0, 0, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_q4deb")
+autoplay = "default"

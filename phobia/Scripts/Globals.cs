@@ -1,6 +1,11 @@
 using Godot;
 using System;
 
+
+
+/// <summary>
+/// Contains varibales that need to persist between scenes.
+/// </summary>
 public partial class Globals : Node
 {
 	public static Globals Instance {get; private set;}

@@ -118,7 +118,6 @@ size = Vector3(1.02173, 14.9199, 15.1339)
 [node name="Door" parent="doors" instance=ExtResource("4_0qtx4")]
 transform = Transform3D(0.0051487, 0, 0.999987, 0, 1, 0, -0.999987, 0, 0.0051487, 12.2332, 0.442813, -9.41923)
 script = ExtResource("4_6qqq1")
-exitDoor = NodePath("")
 
 [node name="ExitDoor" parent="doors" instance=ExtResource("6_vxu0w")]
 transform = Transform3D(0.00979136, 0, 1.49997, 0, 1.5, 0, -1.49997, 0, 0.00979136, 13.3919, 0.442814, -9.37972)
