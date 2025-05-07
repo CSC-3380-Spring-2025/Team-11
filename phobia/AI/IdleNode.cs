@@ -2,6 +2,11 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+
+
+/// <summary>
+/// This causes the enemy to wait for a specified number of time.
+/// </summary>
 public partial class IdleNode : BehaviorNode
 {
 	[Export]

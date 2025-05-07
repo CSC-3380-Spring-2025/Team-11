@@ -3,6 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
+/// <summary>
+/// The enemy moves toward the player.
+/// </summary>
 public partial class MoveToPlayer : BehaviorNode
 {
 	[Export]
@@ -12,12 +16,14 @@ public partial class MoveToPlayer : BehaviorNode
 	public Player target = null;
 	private NavigationAgent3D navAgent;
 	private Area3D los;
+	private AnimatedSprite3D sprite;
 	bool isRunning = false;
 
     public override void _Ready()
     {
         navAgent = (NavigationAgent3D)movementNode.FindChild("NavigationAgent3D");
 		los = (Area3D)movementNode.FindChild("LOS");
+		sprite = (AnimatedSprite3D)movementNode.FindChild("Sprite3D");
     }
 
 
@@ -36,7 +42,9 @@ public partial class MoveToPlayer : BehaviorNode
 		movementNode.MoveAndSlide();
 
 		los.LookAt(nextLocation);
-		los.Rotation = new Vector3(0, los.Rotation.Y, 0); 
+		los.Rotation = new Vector3(0, los.Rotation.Y, 0);
+		sprite.LookAt(nextLocation);
+		sprite.Rotation = new Vector3(0, sprite.Rotation.Y, 0); 
 		}
     }
 

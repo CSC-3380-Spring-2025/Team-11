@@ -2,6 +2,10 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+
+/// <summary>
+/// Basic behavior tree. Takes a repeater node which will repeat through every action of the tree indefinately.
+/// </summary>
 public partial class BehaviorTree : Node
 {
 	[Export]

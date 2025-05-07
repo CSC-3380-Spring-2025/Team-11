@@ -1,8 +1,14 @@
 using Godot;
 using System;
 
+
+
+/// <summary>
+/// Displays title menu when the game paused.
+/// </summary>
 public partial class PauseUi : Control
 {
+	
 	private bool paused = false;
 	
 	public override void _Ready() 

@@ -2,6 +2,11 @@ using Godot;
 using System;
 using System.IO;
 
+
+
+/// <summary>
+/// The main menu, it deletes the players stats when the start button is pressed to start a new game.
+/// </summary>
 public partial class MainMenu : Control
 {
 	private DirAccess dir = DirAccess.Open("user://");

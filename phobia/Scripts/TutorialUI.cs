@@ -1,12 +1,16 @@
 using Godot;
 using System;
 
+
+/// <summary>
+/// The Tutorial UI displays the tutorial and closes when the enter key is pressed.
+/// </summary>
 public partial class TutorialUI : Control
 {
 
 	public bool hidden = false;
-
 	private Label tutorialLabel;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -21,5 +25,13 @@ public partial class TutorialUI : Control
 			Visible = false;
 		}
 
+		Godot.Collections.Array<InputEvent> flashlightToggle = InputMap.ActionGetEvents("toggle_flashlight");
+		Godot.Collections.Array<InputEvent> sprintToggle = InputMap.ActionGetEvents("sprint");
+
+		tutorialLabel.Text = "Welcome to the tutorial! You can use the flashlight to find your way through mazes.\n" + 
+		"To use the flashlight press " +  flashlightToggle[0].AsText().TrimSuffix(" (Physical)").ToLower() + ", to move around use WASD or Arrow Keys.\n" +
+		"To sprint press " + sprintToggle[0].AsText().TrimSuffix(" (Physical)").ToLower() + ". (Press Enter to Close)"; 
+
 	}
+
 }

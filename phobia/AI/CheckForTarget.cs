@@ -2,7 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-
+/// <summary>
+/// This behavior node checks for the player if the player is in it's line of sight.
+/// </summary>
 public partial class CheckForTarget : BehaviorNode
 {
 	[Export]

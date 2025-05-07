@@ -1,6 +1,10 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+
+/// <summary>
+/// This node keeps repeating until the node under it returns ERROR.
+/// </summary>
 public partial class RepeatUntilFail : BehaviorNode
 {
 	[Export]

@@ -1,6 +1,10 @@
 using Godot;
 using System;
 
+
+/// <summary>
+/// Basic node to use for creating item objects.
+/// </summary>
 public partial class ItemObject : Node3D
 {
 	// Called when the node enters the scene tree for the first time.
