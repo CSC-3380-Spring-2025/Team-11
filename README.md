@@ -7,10 +7,8 @@ Design Lead: Michael Vasquez (Mvasquez1)\
 Quality Assurance Tester: Eyzeya Douglas (edoug-the-19th)
 
 # About Our Software
-Our project is a first person horror game that takes place in a maze...	
-	Describe a little about what the project is about here.
+Our project is a first person horror game that takes place in a maze. The goal is to get to the door at the end of the level and progress through multiple mazes.
 ## Platforms Tested on
-- MacOS
 - Windows
 # Important Links
 Kanban Board: https://github.com/orgs/CSC-3380-Spring-2025/projects/24 \
@@ -95,39 +93,45 @@ All you need to do now is to go to File -> Open Folder to find the folder and th
 ### Downloading Dependencies
 Godot 4.3:\
 https://godotengine.org/download/archive/4.3-stable/
-Make sure to download the .NET version of Godot 4.3 \
+Make sure to download the .NET version of Godot 4.3 
 
 .NET SDK:\
 https://dotnet.microsoft.com/en-us/download
 Make sure to download the 64-bit version if using the 64-bit version of Godot.
 
 VSCode: \
-https://code.visualstudio.com \
+https://code.visualstudio.com 
 
-VSCode C# extension:
+VSCode C# extension: \
 https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
 ## Commands
-Describe how the commands and process to launch the project on the main branch in such a way that anyone working on the project knows how to check the affects of any code they add.
 
+To clone the project run git clone:
 ```sh
-Example terminal command syntax
+git clone https://github.com/CSC-3380-Spring-2025/Team-11.git
+```
+To stage changes:
+```sh
+git add .
+```
+To check the status of your tracked files:
+```sh
+git status
+```
+To commit changes:
+```sh
+git commit -m "message"
+```
+To push changes to remote:
+```sh
+git push origin target-branch
+```
+To get changes from another repo:
+```sh
+git pull
+```
+To update changes from remote:
+```sh
+git fetch
 ```
 
-It is very common in these sections to see code in peculiar boxes to help them stand out. Check the markdown section of the Project Specifications to see how to add more / customize these.
-
-```python
-def code_highlight_example(m: int, m: float, s: str) -> str:
-	return s + str(n*m)
-```
-
-```java
-public static void main(String[] args){
-	System.out.println("Hello, World!");
-}
-```
-
-```c#
-static void Main(){
-	Console.WriteLine("Hello, World!");
-}
-```
