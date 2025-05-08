@@ -16,8 +16,9 @@ Designs: https://drive.google.com/drive/folders/1Rv4fHErvdDAwb9iCyz6vXTz7CHMqZG6
 Styles Guide(s): https://docs.google.com/document/d/1_ZzTzE_Z5fh7o3Nl8PJiodl_-QYDmxRJcALpyWDgjjQ/edit?tab=t.0
 
 # How to Run Dev and Test Environment
-To run the project you first need to install Godot 4.3 .NET which can be downloaded at https://godotengine.org/download/archive/4.3-stable. Then extract the zip file to any location on your PC. 
-Afterwards you need to download the .NET SDK at https://dotnet.microsoft.com/en-us/download. After downloading the installation file go the file location on your PC and run it and follow it's installation instrucitons. Both of these are all you need the project however, I also used VSCode to create something called export variables where certain variables in the code can be controlled in the editor with sliders. These variables will work properly in the game without VSCode but to get them to appear, VSCode has to run the project at least once. VSCode is also just reccommended in general since Godot's editor is barebones. 
+To run the project you first need to install Godot 4.3 .NET which can be downloaded at https://godotengine.org/download/archive/4.3-stable. Make sure to select the .NET version. Then extract the zip file to any location on your PC. 
+Afterwards you need to download the .NET SDK at https://dotnet.microsoft.com/en-us/download. After downloading the installation file go the file location on your PC and run it and follow it's installation instrucitons. Both of these are all you need the project however, I also used VSCode to create something called export variables where certain variables in the code can be controlled in the editor with sliders. These variables will still work properly in the editor and in game without VSCode but to get them to appear visually, VSCode has to run the project at least once. VSCode is also just reccommended in general since Godot's editor is barebones.
+
 To download VSCode go to https://code.visualstudio.com/ and press on the download for Windows button or click on the other platforms link at the bottom right of the download button. After installing run the file and follow it's installation instructions. After it's finished installing you will also need the C# extension for VSCode at https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp. Press the install button and it will take your VSCode installation. There, you just need to click install.
 
 Now, to run the project, first open Godot and then click the Import button. Navigate to the folder where the project is located and click the project.godot file and then click Import & Edit. Wait until the assets are reimported. If the progress bar hangs or the project closes simply open Godot again click on the project in the file list and click the edit button and the assets should be reimported. To run the project click the play button on the top right of the screen. This is the minimum needed to run the project. However to access some of the export variables and to have a better coding enviroment we need to set up VSCode.
@@ -83,7 +84,7 @@ For the task.json file:
 ```
 These steps are also located at https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_basics.html under the Visual Studio Code section.
 
-All you need to do now is to go to File -> Open Folder to find the folder and then start the debugger in VSCode and the Godot project will run. Run the project at least once in VSCode to get the Export variables created in the files to show up in the editor.
+All you need to do now is to go to File -> Open Folder to find the folder and then start the debugger in VSCode and the Godot project will run. Run the project at least once in VSCode to get the Export variables show up in the editor.
 
 ## Dependencies
 - Godot .NET 4.3 
