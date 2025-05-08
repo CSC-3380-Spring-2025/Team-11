@@ -9,12 +9,14 @@ public partial class SettingsMenu : Control
 	[Export]
 	private Button settingsButton;
 	private Button remapButton;
+	private HSlider musicVolumeSlider;
 	private InputSettings inputSettings;
 
 
 	public override void _Ready()
 	{
 		remapButton = GetNode<Button>("PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/RemapButton");
+		musicVolumeSlider = GetNode<HSlider>("MusicVolumeSlider");
 		inputSettings = GetNode<InputSettings>("InputSettings"); 
 		
 		remapButton.Pressed += OnRemapButtonPressed;

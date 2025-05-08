@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://cqxhh7xaegsf0"
+=======
+uid="uid://ctdlu7j4fnlmd"
+>>>>>>> Stashed changes
 path.s3tc="res://.godot/imported/halloweenbits_texture.png-1c3b1d6f4ca92da4da705282b36b0035.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
