@@ -16,7 +16,7 @@ Designs: [link]\
 Styles Guide(s): https://docs.google.com/document/d/1_ZzTzE_Z5fh7o3Nl8PJiodl_-QYDmxRJcALpyWDgjjQ/edit?tab=t.0
 
 # How to Run Dev and Test Environment
-To run the project you first need to install Godot 4.3 .NET which can be downloaded at https://godotengine.org/download/archive/4.4-stable/. Then extract the zip file to any location on your PC. 
+To run the project you first need to install Godot 4.3 .NET which can be downloaded at https://godotengine.org/download/archive/4.3-stable. Then extract the zip file to any location on your PC. 
 Afterwards you need to download the .NET SDK at https://dotnet.microsoft.com/en-us/download. After downloading the installation file go the file location on your PC and run it and follow it's installation instrucitons. Both of these are all you need to run the project however VSCode has certain export variabes that only appear once VSCode is used to build the porject at least once and it's also just reccommended in general since Godot's editor is barebones. 
 To download VSCode go to https://code.visualstudio.com/ and press on the download for Windows button or click on the other platforms link at the bottom right of the download button. After installing run the file and follow it's installation instructions. After it's finished installing you will also need the C# extension for VSCode at https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp. Press the install button and it will take your VSCode installation. There, you just need to click install.
 
