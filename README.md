@@ -12,7 +12,7 @@ Our project is a first person horror game that takes place in a maze. The goal i
 - Windows
 # Important Links
 Kanban Board: https://github.com/orgs/CSC-3380-Spring-2025/projects/24 \
-Designs: https://drive.google.com/drive/folders/1Rv4fHErvdDAwb9iCyz6vXTz7CHMqZG6H?usp=sharing\
+Designs: https://drive.google.com/drive/folders/1Rv4fHErvdDAwb9iCyz6vXTz7CHMqZG6H?usp=sharing \
 Styles Guide(s): https://docs.google.com/document/d/1_ZzTzE_Z5fh7o3Nl8PJiodl_-QYDmxRJcALpyWDgjjQ/edit?tab=t.0
 
 # How to Run Dev and Test Environment
